@@ -1,0 +1,234 @@
+/* -- [ Less Variables ] --------------------------------------------------------------------------*/
+
+@color1: #f0f4f7; /* Background */
+@color2: darken(saturate(@color1,30%),40%); /* Links */
+@color3: darken(desaturate(@color1,90%),40%); /* Body Copy */
+@cta: @color2;
+@color5: #EEF9D3; /* update comments */
+
+@aside: #ffd621;
+@gallery: #000;
+@image: #000;
+@quote: #df1d82;
+@status: #1fb9f3;
+@video: #a8e71e;
+@audio: #411bd3;
+@chat: #a8e81e;
+@sticky: #1b60d3;
+
+@fontstack2: 'Source Sans Pro', sans-serif;
+@fontstack1: 'Oswald', Georgia, serif;
+@fontstack3: monospace, sans-serif; /* Monospace */
+
+/* -- [ Functions ] --------------------------------------------------------------------------*/
+
+.lifted() {
+	position: relative;
+	&:before, &:after {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		-ms-transform: skew(-3deg,-2deg);
+		-webkit-transform: skew(-3deg,-2deg); /* Safari and Chrome */
+		-o-transform: skew(-3deg,-2deg); /* Opera */
+		-moz-transform: skew(-3deg,-2deg); /* Firefox */
+		bottom: 13px;
+		.box_shadow(0,10px,9px,0,rgba(0,0,0,0.2));
+		height: 70px;
+		left: 3px;
+		max-width: 50%;
+		width: 61%;
+	}
+	&:after {
+		-ms-transform: skew(3deg,2deg); /* IE 9 */
+		-webkit-transform: skew(3deg,2deg); /* Safari and Chrome */
+		-o-transform: skew(3deg,2deg); /* Opera */
+		-moz-transform: skew(3deg,2deg); /* Firefox */
+		left: auto;
+		right: 3px;
+	}
+}
+
+.iconbefore {
+	font-family: "GeneralFoundicons";
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: inherit;
+	speak:none;
+	width:1.5em;
+	display: inline-block;
+}
+
+.iconafter {
+	font-family: "GeneralFoundicons";
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: inherit;
+	speak:none;
+	width:1.5em;
+	display: inline-block;
+	float: right;
+	text-align: right;
+}
+
+.contentbox {
+	/*background: rgba(255,255,255,0.55);
+	background-size: 50px;
+	border:1px solid rgba(0,0,0,0.2);
+	border-right-width:0;
+	border-bottom-width:0;
+	-webkit-box-shadow:
+		0 .267em .8em rgba(0,0,0,0.055),
+		inset 0 0 0 1px rgba(255,255,255,0.9);*/
+	background:#fff;
+	.box_shadow(0,1px,2px,0,rgba(0,0,0,0.1));
+	border:1px solid rgba(0,0,0,0.2);
+	border-right-width:0;
+	border-bottom-width:0;
+}
+
+/* -- [ Less Mixins ] --------------------------------------------------------------------------*/
+
+.tar()
+{
+	text-align: right;
+}
+
+.tac()
+{
+	text-align: center; 
+}
+
+.hide() 
+{
+	display: none;
+}
+
+.clearfix() 
+{
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}  
+
+.clear() {
+	clear: both;
+}
+
+.border_radius(@radius:10px)
+{
+    -webkit-border-radius:@radius;
+    -moz-border-radius:@radius;
+    border-radius:@radius;
+}
+
+.border_radius_right(@radius:10px)
+{
+    -webkit-border-top-right-radius: @radius;
+    -webkit-border-bottom-right-radius: @radius;
+    -moz-border-radius-topright: @radius;
+    -moz-border-radius-bottomright: @radius;
+    border-top-right-radius: @radius;
+    border-bottom-right-radius: @radius;
+}
+
+.border_radius_left(@radius:10px)
+{
+    -webkit-border-top-left-radius: @radius;
+    -webkit-border-bottom-left-radius: @radius;
+    -moz-border-radius-topleft: @radius;
+    -moz-border-radius-bottomleft: @radius;
+    border-top-left-radius: @radius;
+    border-bottom-left-radius: @radius;
+}
+
+.border_radius_bottom(@radius:10px)
+{
+    -webkit-border-bottom-left-radius: @radius;
+    -webkit-border-bottom-right-radius: @radius;
+    -moz-border-radius-bottomleft: @radius;
+    -moz-border-radius-bottomright: @radius;
+    border-bottom-left-radius: @radius;
+    border-bottom-right-radius: @radius;
+}
+
+.border_radius_top(@radius:10px)
+{
+    -webkit-border-top-left-radius: @radius;
+    -webkit-border-top-right-radius: @radius;
+    -moz-border-radius-topleft: @radius;
+    -moz-border-radius-topright: @radius;
+    border-top-left-radius: @radius;
+    border-top-right-radius: @radius;
+}
+
+.box_shadow(@shadow_x:3px, @shadow_y:3px, @shadow_rad:3px, @shadow_in:3px, @shadow_color:#888)
+{
+    box-shadow:@shadow_x @shadow_y @shadow_rad @shadow_in @shadow_color;
+    -webkit-box-shadow:@shadow_x @shadow_y @shadow_rad @shadow_in @shadow_color;
+    -moz-box-shadow:@shadow_x @shadow_y @shadow_rad @shadow_in @shadow_color;
+    -o-box-shadow:@shadow_x @shadow_y @shadow_rad @shadow_in @shadow_color;
+}
+
+.inset_box_shadow(@shadow_x:3px, @shadow_y:3px, @shadow_rad:3px, @shadow_in:3px, @shadow_color:#888)
+{
+    box-shadow:inset @shadow_x @shadow_y @shadow_rad @shadow_in @shadow_color;
+    -webkit-box-shadow:inset @shadow_x @shadow_y @shadow_rad @shadow_in @shadow_color;
+    -moz-box-shadow:inset @shadow_x @shadow_y @shadow_rad @shadow_in @shadow_color;
+    -o-box-shadow:inset @shadow_x @shadow_y @shadow_rad @shadow_in @shadow_color;
+}
+ 
+.text_shadow(@shadow_x:3px, @shadow_y:3px, @shadow_rad:3px, @shadow_color:#fff)
+{
+    text-shadow:@shadow_x @shadow_y @shadow_rad @shadow_color;
+}
+
+.vertical_gradient(@from: #000, @to: #FFF) {
+	background: @from;
+    background: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+    background: -webkit-linear-gradient(@from, @to);
+    background: -moz-linear-gradient(center top, @from 0%, @to 100%);
+    background: -moz-gradient(center top, @from 0%, @to 100%);
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=%d,endColorstr=%d)", @from, @to));
+	-ms-filter: %("progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=%d, endColorstr=%d)", @from, @to);
+}
+
+.transition(@selector:all, @animation:ease-in-out, @duration:.2s) {
+    -webkit-transition:@selector @animation @duration;
+    -moz-transition:@selector @animation @duration;
+    -o-transition:@selector @animation @duration;
+    transition:@selector @animation @duration;
+}
+ 
+.opacity(@opacity:0.75) {
+    filter:~"alpha(opacity=@opacity * 100)";
+    -moz-opacity:@opacity;
+    -khtml-opacity: @opacity;
+    opacity: @opacity;
+}
+
+.borderbox () {
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.rotate(@degree:1deg) {
+	-webkit-transform: rotate(@degree);  /* Saf3.1+, Chrome */
+	-moz-transform: rotate(@degree);  /* FF3.5+ */
+	-ms-transform: rotate(@degree);  /* IE9 */
+	-o-transform: rotate(@degree);  /* Opera 10.5 */ 
+	transform: rotate(@degree);
+	zoom: 1;
+}
+
+.scale(@scale:1deg) {
+	-webkit-transform: scale(@scale);  /* Saf3.1+, Chrome */
+	-moz-transform: scale(@scale);  /* FF3.5+ */
+	-ms-transform: scale(@scale);  /* IE9 */
+	-o-transform: scale(@scale);  /* Opera 10.5 */ 
+	transform: scale(@scale);
+	zoom: 1;
+}

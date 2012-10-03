@@ -1,0 +1,29 @@
+@import '../less/mixins.less';
+@import url("http://fonts.googleapis.com/css?family=Oswald");
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro");
+
+body#tinymce.wp-editor { 
+    font-family: @fontstack2; 
+    margin:1em;
+    font-size:1.125em;
+    line-height: 1.5;
+    padding-right:31%;
+    color: @color3; 
+    
+    h1, h2, h3, h4, h5 {
+	    font-family: @fontstack1;
+    }
+    
+    code, pre {
+		background: rgba(0,0,0,0.05);
+		padding:0.1em 0.201em;
+		.border_radius(0.201em);
+		color: #dc5494;
+		margin:0 .201em;
+		text-shadow:0 1px 0 rgba(0,0,0,0.05);
+	}
+}
+
+body#tinymce.wp-editor a {
+    color: @color2;
+}

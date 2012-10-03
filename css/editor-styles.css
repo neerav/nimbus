@@ -1,0 +1,79 @@
+@import url("http://fonts.googleapis.com/css?family=Oswald");
+
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro");
+/* -- [ Less Variables ] --------------------------------------------------------------------------*/
+/* Background */
+/* Links */
+/* Body Copy */
+/* update comments */
+/* Monospace */
+/* -- [ Functions ] --------------------------------------------------------------------------*/
+.iconbefore {
+  font-family: "GeneralFoundicons";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+}
+.iconafter {
+  font-family: "GeneralFoundicons";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  float: right;
+  text-align: right;
+}
+.contentbox {
+  /*background: rgba(255,255,255,0.55);
+	background-size: 50px;
+	border:1px solid rgba(0,0,0,0.2);
+	border-right-width:0;
+	border-bottom-width:0;
+	-webkit-box-shadow:
+		0 .267em .8em rgba(0,0,0,0.055),
+		inset 0 0 0 1px rgba(255,255,255,0.9);*/
+
+  background: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-right-width: 0;
+  border-bottom-width: 0;
+}
+/* -- [ Less Mixins ] --------------------------------------------------------------------------*/
+body#tinymce.wp-editor {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 1em;
+  font-size: 1.125em;
+  line-height: 1.5;
+  padding-right: 31%;
+  color: #8d8d8d;
+}
+body#tinymce.wp-editor h1,
+body#tinymce.wp-editor h2,
+body#tinymce.wp-editor h3,
+body#tinymce.wp-editor h4,
+body#tinymce.wp-editor h5 {
+  font-family: 'Oswald', Georgia, serif;
+}
+body#tinymce.wp-editor code,
+body#tinymce.wp-editor pre {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.1em 0.201em;
+  -webkit-border-radius: 0.201em;
+  -moz-border-radius: 0.201em;
+  border-radius: 0.201em;
+  color: #dc5494;
+  margin: 0 .201em;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+body#tinymce.wp-editor a {
+  color: #4997d2;
+}
