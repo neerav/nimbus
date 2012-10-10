@@ -642,7 +642,7 @@ input[type="submit"],
   -moz-border-radius: 100%;
   border-radius: 100%;
   position: relative;
-  -webkit-box-shadow: 0 0 0 0.267em #ffffff, 0 0 0 0.5em rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 0 0 0.267em #ffffff, 0 0.136em 0.618em rgba(0, 0, 0, 0.95);
 }
 #header .logo img:hover {
   -webkit-transform: rotate(-10deg);
