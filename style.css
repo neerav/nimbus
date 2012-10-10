@@ -1454,6 +1454,8 @@ article .meta ul li.tags:before {
   -webkit-box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
   -o-box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
+  background: url(images/loader.gif) no-repeat #ffffff;
+  cursor: pointer;
 }
 @media only screen and (min-width: 768px) {
   /* Only apply the layout if the user is on a desktop / tablet */
@@ -1681,5 +1683,8 @@ article .meta ul li.tags:before {
   /* here come styles from mobile-retina.css */
   #header img {
     max-width: 128px;
+  }
+  #lightbox img {
+    background-size: 16px 16px;
   }
 }
