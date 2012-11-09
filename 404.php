@@ -4,7 +4,7 @@
 
 	<section id="content" class="<?php post_class(); ?> eightcol page" role="main">
 
-	<h1>404</h1>
+	<h1><?php _e('404 not found', 'nimbus'); ?></h1>
 
 	</section>
 

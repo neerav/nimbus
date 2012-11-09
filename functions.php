@@ -13,8 +13,8 @@ add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', '
 require_once ( get_template_directory() . '/includes/theme-options.php' );
 
 // Display logo based on theme option settings. Display my gravatar if not set.
-if ( ! function_exists( 'display_logo' ) ) {
-	function display_logo() {
+if ( ! function_exists( 'nimbus_display_logo' ) ) {
+	function nimbus_display_logo() {
 		$admin_email = get_option('admin_email');
 		?>
 		<div class="logo">
@@ -34,19 +34,20 @@ if ( ! is_admin() ) { add_action( 'wp_enqueue_scripts', 'nimbus_add_scripts' ); 
 if ( ! function_exists( 'nimbus_add_scripts' ) ) {
 	function nimbus_add_scripts() {
 		wp_register_style( 'woocommerce', get_template_directory_uri() . '/css/woocommerce.css' );
-		wp_register_style( 'nivo-zoom-css', get_template_directory_uri() . '/css/nivo-zoom.css' );
-		wp_enqueue_script( 'plugins', get_template_directory_uri() . '/js/plugins.min.js', array( 'jquery' ), '', true );
+		wp_register_script( 'html5shiv', get_template_directory_uri() . '/js/html5shiv.js' );
+		wp_enqueue_script( 'nimbus-plugins', get_template_directory_uri() . '/js/plugins.min.js', array( 'jquery' ), '', true );
 		wp_enqueue_script( 'responsive-enhance', get_template_directory_uri() . '/js/responsive-enhance.js', array( 'jquery' ), '', true );
-		wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.min.js', array( 'jquery' ), '', true );
+		wp_enqueue_script( 'nimbus-script', get_template_directory_uri() . '/js/script.min.js', array( 'jquery' ), '', true );
 		wp_enqueue_script( 'comment-reply' );
 		if ( is_home() || is_front_page() || is_archive() || is_search() ) {
 			wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/jquery.masonry.js', array( 'jquery' ), '', true );
-			add_action( 'wp_head', 'nimbus_fire_masonry' );
 		}
 	}
 }
 
+add_action( 'wp_head', 'nimbus_fire_masonry' );
 function nimbus_fire_masonry() {
+	if ( is_home() || is_front_page() || is_archive() || is_search() ) {
 	?>
 	<script>
 		jQuery(window).load(function(){
@@ -62,6 +63,7 @@ function nimbus_fire_masonry() {
 		});
 	</script>
 	<?php
+	}
 }
 
 // Add HTML5 shim in <IE9
@@ -72,7 +74,7 @@ function nimbus_html5() {
 		$browser = $_SERVER['HTTP_USER_AGENT'];
 		$browser = substr( "$browser", 25, 8);
 		if ($browser == "MSIE 6.0" || $browser == "MSIE 7.0" || $browser == "MSIE 8.0" ) {
-			echo '<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>'; 	
+			wp_enqueue_script( 'html5shiv' );	
 		}
 	}
 }
@@ -80,18 +82,22 @@ function nimbus_html5() {
 /*----------------------*/
 /* Register main nav */
 /*----------------------*/
-register_nav_menu('main', 'Main menu');
+register_nav_menu('main', __('Main menu') );
 
 /*----------------------*/
 /* Register Sidebar */
 /*----------------------*/
-if ( function_exists('register_sidebar') )
-register_sidebar(array(
-    'before_widget' => '<section class="widget">',
-    'after_widget' => '</section>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
-));
+add_action( 'init', 'nimbus_widgets_init' );
+
+if (!function_exists( 'nimbus_widgets_init')) {
+	function nimbus_widgets_init() {		
+	    register_sidebar(array(
+		    'before_widget' => '<section class="widget">',
+		    'after_widget' => '</section>',
+		    'before_title' => '<h3>',
+		    'after_title' => '</h3>',
+		));	}
+}
 
 /*----------------------*/
 /* Prepare featured images for mobile which are served conditionally (big props to http://viewportindustries.com/blog/automatic-responsive-images-in-wordpress/) */

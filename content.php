@@ -31,6 +31,7 @@
 		} else {
 			the_excerpt();
 		}
+		wp_link_pages();
 		?>	
 	
 	</section><!--/.article-content-->

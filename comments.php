@@ -3,7 +3,7 @@
  * The template for displaying Comments.
  */
 ?>
-	<div id="comments">
+	<div id="comments" <?php if ( ! comments_open() && post_type_supports( get_post_type(), 'comments' ) && is_page() ) { echo 'class="page-nocomments"'; } ?>>
 	<?php if ( post_password_required() ) : ?>
 		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'nimbus' ); ?></p>
 	</div><!-- #comments -->
@@ -44,7 +44,7 @@
 		<?php endif; // check for comment navigation ?>
 
 	<?php
-		elseif ( ! comments_open() && post_type_supports( get_post_type(), 'comments' ) ) :
+		elseif ( ! comments_open() && post_type_supports( get_post_type(), 'comments' ) && ! is_page() ) :
 	?>
 		<p class="nocomments"><?php _e( 'Comments are closed.', 'nimbus' ); ?></p>
 	<?php endif; ?>

@@ -12,18 +12,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title><?php bloginfo('name'); ?> | <?php is_home() ? bloginfo('description') : wp_title(''); ?></title> 
-  <meta name="description" content="<?php get_bloginfo ( 'description' );  ?>">
-  <meta name="author" content="James nimbus">
 
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="shortcut icon" href="<?php bloginfo ( 'template_url' );  ?>/favicon.ico">
-  <link rel="apple-touch-icon" href="<?php bloginfo ( 'template_url' );  ?>/apple-touch-icon.png">
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
   <!-- CSS : implied media="all" -->
-  <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
     
   <?php wp_head(); ?>
 </head>
@@ -35,7 +31,7 @@
 		<header id="header" class="row visible">
 			
 			
-			<?php display_logo(); ?>
+			<?php nimbus_display_logo(); ?>
 			
 			<?php if ( is_home() ) { ?>
 			
@@ -51,7 +47,7 @@
 			
 			<nav class="main-nav sixcol last">
   
-				<?php wp_nav_menu( 'main' ); ?>
+				<?php wp_nav_menu( array( 'menu' => 'main' ) ); ?>
 			
 			</nav>
 			

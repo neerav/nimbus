@@ -7,11 +7,12 @@ Theme URI: https://github.com/jameskoster/nimbus
 Description: A responsive theme with a masonry inspired homepage
 Author: James Koster
 Author URI: http://jameskoster.co.uk/
-Version: 0.1.1
+Version: 0.1.2
 Tags: white, two-columns, left-sidebar, flexible-width, post-formats, sticky-post, threaded-comments, translation-ready, theme-options
 
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Foundation Icons License: MIT Open Source License 
 Modular Scale: http://modularscale.com/scale/?px1=16&px2=18&ra1=1.333&ra2=0
 */
 /*-- [ Imports ] ----------------------------------------------------------------------------------------------*/
@@ -432,6 +433,7 @@ h6 {
   line-height: 1.333;
   position: relative;
   word-spacing: .113em;
+  word-wrap: break-word;
 }
 h1 a,
 h2 a,
@@ -533,6 +535,10 @@ pre {
 span.ampersand {
   font-family: Baskerville, Palatino, "Book Antiqua", serif;
   font-style: italic;
+}
+img {
+  max-width: 100%;
+  height: auto;
 }
 /*--[ Anchors ]--------------------------------------------------------------------------------*/
 a {
@@ -706,9 +712,6 @@ img.mugshot {
   float: right;
   margin: 1.777em 0 1.777em 1.777em;
 }
-.wp-caption {
-  width: auto !important;
-}
 .gallery-caption,
 .wp-caption-text {
   font-style: italic;
@@ -815,17 +818,17 @@ ol.commentlist {
   list-style: none;
   padding: 0;
 }
-ol.commentlist li {
+ol.commentlist li.comment {
   margin-bottom: 2.665em;
   list-style: none;
 }
-ol.commentlist li ul.children {
+ol.commentlist li.comment ul.children {
   padding-top: 2.665em;
 }
-ol.commentlist li.bypostauthor .comment-body {
+ol.commentlist li.comment.bypostauthor .comment-body {
   position: relative;
 }
-ol.commentlist li.bypostauthor .comment-body:before {
+ol.commentlist li.comment.bypostauthor .comment-body:before {
   font-family: "GeneralFoundicons";
   font-weight: normal;
   font-style: normal;
@@ -1555,6 +1558,12 @@ article .meta ul li.tags:before {
   .search article .meta ul li:nth-child(2n) {
     float: right;
     clear: none;
+  }
+  .single #content #comments.page-nocomments,
+  .page #content #comments.page-nocomments {
+    padding: 0;
+    background: none;
+    border: 0;
   }
   .single #content article,
   .page #content article,
