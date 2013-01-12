@@ -51,7 +51,6 @@ class NimbusOptions
         <!--Customizer CSS--> 
         <style type="text/css">
                 <?php self::generate_css('#site-title a', 'color', 'header_textcolor', '#'); ?> 
-                <?php self::generate_css('body', 'background-color', 'background_color', '#'); ?> 
                 <?php self::generate_css('a', 'color', 'link_textcolor'); ?> 
                 <?php self::generate_css('html', 'background-color', 'background_color', '#'); ?> 
                 <?php self::generate_css('ul.menu ul li a', 'background-color', 'background_color', '#'); ?> 
@@ -98,3 +97,8 @@ class NimbusOptions
 }
 add_action( 'customize_register'    , array( 'NimbusOptions' , 'register' ) );
 add_action( 'wp_head'               , array( 'NimbusOptions' , 'render' ) );
+
+$args = array(
+    'default-color' => '2b2b2b',
+);
+add_theme_support( 'custom-background', $args );

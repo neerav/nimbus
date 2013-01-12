@@ -38,7 +38,6 @@ if ( ! function_exists( 'nimbus_add_scripts' ) ) {
 		wp_register_style( 'woocommerce', get_template_directory_uri() . '/css/woocommerce.css' );
 		wp_register_script( 'html5shiv', get_template_directory_uri() . '/js/html5shiv.js' );
 		wp_enqueue_script( 'nimbus-plugins', get_template_directory_uri() . '/js/plugins.min.js', array( 'jquery' ), '', true );
-		wp_enqueue_script( 'responsive-enhance', get_template_directory_uri() . '/js/responsive-enhance.js', array( 'jquery' ), '', true );
 		wp_enqueue_script( 'nimbus-script', get_template_directory_uri() . '/js/script.min.js', array( 'jquery' ), '', true );
 		wp_enqueue_script( 'comment-reply' );
 	}

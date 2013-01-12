@@ -10,25 +10,14 @@
 
 	<section class="article-content">
 
-		<?php 	
-	
-			// Get the featured image
-			$image_id = get_post_thumbnail_id();  
-		
-			// Get the full size image details
-			$image_url = wp_get_attachment_image_src($image_id, 'full');
-			$image_url = $image_url[0];	
-		
-			// Get the smaller image
-			$bw_image_url = wp_get_attachment_image_src($image_id, 'thumbnail-bw');
-			$bw_image_url = $bw_image_url[0];	
-		
-			if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+		<?php 
+		if ( has_post_thumbnail()) {
+			$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
+			echo '<a href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" class="zoom">';
+				the_post_thumbnail();
+			echo '</a>';
+		}
 		?>
-		
-			<a href="<?php echo $image_url; ?>" title="<?php printf( esc_attr__( '%s', 'nimbus' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" class="img-wrap zoom"><img class="featured-image wp-post-image" src="<?php echo $bw_image_url; ?>" data-fullsrc="<?php echo $image_url; ?>" title="<?php the_title(); ?>" id="post-featured-img" /></a>
-			
-		<?php } ?>
 	
 		<?php 
 		the_content();

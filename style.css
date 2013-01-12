@@ -631,9 +631,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-embed {
-  max-width: 100%;
-}
 /**
  * Anchors
  */
@@ -1561,6 +1558,17 @@ table {
     *width: 16.614583333333332%;
     *margin-left: 2.725694444444444%;
     *margin-right: 2.725694444444444%;
+  }
+  .post .attachment-post-thumbnail {
+    display: inline;
+    float: left;
+    width: 94.44444444444444%;
+    margin-left: 2.7777777777777777%;
+    margin-right: 2.7777777777777777%;
+    *width: 94.39236111111111%;
+    *margin-left: 2.725694444444444%;
+    *margin-right: 2.725694444444444%;
+    height: auto;
   }
   /**
   	 * Posts
