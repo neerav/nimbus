@@ -1,3 +1,13 @@
+<?php
+/**
+ * The template for displaying pages.
+ *
+ * @package WordPress
+ * @subpackage Nimbus
+ * @since Nimbus 0.1
+ */
+?>
+
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

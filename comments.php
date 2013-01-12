@@ -1,3 +1,13 @@
+<?php
+/**
+ * The template for comments.
+ *
+ * @package WordPress
+ * @subpackage Nimbus
+ * @since Nimbus 0.1
+ */
+?>
+
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
 	<div class="comments" <?php if ( ! comments_open() && post_type_supports( get_post_type(), 'comments' ) && is_page() ) { echo 'class="page-nocomments"'; } ?>>

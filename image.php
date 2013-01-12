@@ -1,3 +1,12 @@
+<?php
+/**
+ * The template for displaying images.
+ *
+ * @package WordPress
+ * @subpackage Nimbus
+ * @since Nimbus 0.1
+ */
+?>
 <?php 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 get_header(); 
@@ -5,7 +14,7 @@ get_header();
 
 <div class="row">
 
-	<section id="content" class="eightcol single" role="main">
+	<section class="content" role="main">
 	
 		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>					
 		
@@ -13,32 +22,16 @@ get_header();
 				
 			<h1 class="title"><?php the_title(); ?></h1>
 			
-			
-			
-			<?php 	
-			
-				// Get the featured image
-				$image_id = get_post_thumbnail_id();  
-			
-				// Get the full size image details
-				$image_url = wp_get_attachment_image_src($image_id, 'full');
-				$image_url = $image_url[0];	
-			
-				// Get the smaller image
-				$bw_image_url = wp_get_attachment_image_src($image_id, 'thumbnail-bw');
-				$bw_image_url = $bw_image_url[0];	
-			
-				if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+			<?php 
+				if ( has_post_thumbnail()) {
+					$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
+					echo '<a href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" class="zoom">';
+						the_post_thumbnail();
+					echo '</a>';
+				}
 			?>
 			
-				<img class="featured-image wp-post-image" src="<?php echo $bw_image_url; ?>" data-fullsrc="<?php echo $image_url; ?>" title="<?php the_title(); ?>" id="post-featured-img" />
-				
-			<?php } ?>
-			
-			
-			
-			
-			<section class="article-content ninecol last">
+			<section class="article-content">
 			
 				<div class="attachment">
 					<?php

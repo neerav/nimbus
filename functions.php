@@ -1,4 +1,14 @@
 <?php
+/**
+ * Nimbus functions and definitions
+ *
+ * @package WordPress
+ * @subpackage Nimbus
+ * @since Nimbus 0.1
+ */
+?>
+
+<?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /*----------------------*/

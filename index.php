@@ -1,4 +1,14 @@
 <?php
+/**
+ * The main template file.
+ *
+ * @package WordPress
+ * @subpackage Nimbus
+ * @since Nimbus 0.1
+ */
+?>
+
+<?php
 // File Security Check
 if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
     die ( 'You do not have sufficient permissions to access this page!' );
