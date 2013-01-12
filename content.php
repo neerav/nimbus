@@ -1,6 +1,11 @@
-<article <?php post_class(); ?>>
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
+<article <?php post_class(); ?>>
 	
+	<header class="post-header">
+		<time class="post-date"><?php the_time(get_option('date_format')); ?></time>
+		<h1 class="title" data-text="<?php the_title(); ?>"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'nimbus' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+	</header>
 	<?php 	
 	
 		// Get the featured image
@@ -20,17 +25,10 @@
 		<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'nimbus' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" class="img-wrap"><img class="featured-image wp-post-image" src="<?php echo $bw_image_url; ?>" data-fullsrc="<?php echo $image_url; ?>" title="<?php the_title(); ?>" id="post-featured-img" /></a>
 		
 	<?php } ?>
-	
-	<h1 class="title" data-text="<?php the_title(); ?>"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'nimbus' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-	
-	
+
 	<section class="article-content">
 		<?php 
-		if ( is_single() ) { 
-			the_content();
-		} else {
-			the_excerpt();
-		}
+		the_content();
 		wp_link_pages();
 		?>	
 	

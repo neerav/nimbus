@@ -1,3 +1,6 @@
+[12/01/2013 - version 0.2]
+- Complete redesign
+
 [09/11/2012 - version 0.1.2]
 
 [03/09/2012 - version 0.1.1]

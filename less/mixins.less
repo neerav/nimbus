@@ -1,24 +1,25 @@
-/* -- [ Less Variables ] --------------------------------------------------------------------------*/
+/**
+ * Variables
+ */
+@color_bg: 		#2b2b2b;	// Background
+@color_theme: 	#49a0a0;	// Links
+@color_body: 	#666;		// Body Copy
 
-@color1: #f0f4f7; /* Background */
-@color2: darken(saturate(@color1,30%),40%); /* Links */
-@color3: darken(desaturate(@color1,90%),40%); /* Body Copy */
-@cta: @color2;
-@color5: #EEF9D3; /* update comments */
+@color_aside: 	#ffd621;
+@color_gallery:	#000;
+@color_image:	#000;
+@color_quote:	#df1d82;
+@color_status:	#1fb9f3;
+@color_video:	#a8e71e;
+@color_audio:	#411bd3;
+@color_chat:	#a8e81e;
+@color_sticky:	#1b60d3;
 
-@aside: #ffd621;
-@gallery: #000;
-@image: #000;
-@quote: #df1d82;
-@status: #1fb9f3;
-@video: #a8e71e;
-@audio: #411bd3;
-@chat: #a8e81e;
-@sticky: #1b60d3;
-
-@fontstack2: 'Source Sans Pro', sans-serif;
-@fontstack1: 'Oswald', Georgia, serif;
-@fontstack3: monospace, sans-serif; /* Monospace */
+@fontstack_headings: 'Open Sans Condensed', sans-serif;
+@fontstack_headings_sidebar: 'Open Sans Condensed', sans-serif;
+@fontstack_body: 'Open Sans', sans-serif;
+@fontstack_monospace: monospace, sans-serif; /* Monospace */
+@fontstack_navigation: 'Cantarell', sans-serif;
 
 /* -- [ Functions ] --------------------------------------------------------------------------*/
 
@@ -117,14 +118,14 @@
 	clear: both;
 }
 
-.border_radius(@radius:10px)
+.border_radius(@radius:3px)
 {
     -webkit-border-radius:@radius;
     -moz-border-radius:@radius;
     border-radius:@radius;
 }
 
-.border_radius_right(@radius:10px)
+.border_radius_right(@radius:3px)
 {
     -webkit-border-top-right-radius: @radius;
     -webkit-border-bottom-right-radius: @radius;
@@ -134,7 +135,7 @@
     border-bottom-right-radius: @radius;
 }
 
-.border_radius_left(@radius:10px)
+.border_radius_left(@radius:3px)
 {
     -webkit-border-top-left-radius: @radius;
     -webkit-border-bottom-left-radius: @radius;
@@ -144,7 +145,7 @@
     border-bottom-left-radius: @radius;
 }
 
-.border_radius_bottom(@radius:10px)
+.border_radius_bottom(@radius:3px)
 {
     -webkit-border-bottom-left-radius: @radius;
     -webkit-border-bottom-right-radius: @radius;
@@ -154,7 +155,7 @@
     border-bottom-right-radius: @radius;
 }
 
-.border_radius_top(@radius:10px)
+.border_radius_top(@radius:3px)
 {
     -webkit-border-top-left-radius: @radius;
     -webkit-border-top-right-radius: @radius;
@@ -231,4 +232,11 @@
 	-o-transform: scale(@scale);  /* Opera 10.5 */ 
 	transform: scale(@scale);
 	zoom: 1;
+}
+/**
+ * Animation
+ */
+@-webkit-keyframes fadein {
+    from	{ .opacity(0); }
+    to 		{ .opacity(1); }
 }

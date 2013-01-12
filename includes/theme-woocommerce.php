@@ -14,7 +14,7 @@ add_action( 'woocommerce_after_main_content', 'nimbus_after_content', 20 );
 if (!function_exists('nimbus_before_content')) {
 	function nimbus_before_content() { ?>
 	    <div class="row">
-	    	<section id="content" class="eightcol woocommerce">
+	    	<section class="content woocommerce">
 	<?php
 	}
 }
@@ -22,7 +22,7 @@ if (!function_exists('nimbus_before_content')) {
 if (!function_exists('nimbus_after_content')) {
 	function nimbus_after_content() {
 	?>
-		</section><!-- /#content -->
+		</section><!-- /.content -->
 		<?php woocommerce_get_sidebar(); ?>
 	    </div><!-- /.row-->
 	    <?php
@@ -31,4 +31,6 @@ if (!function_exists('nimbus_after_content')) {
 
 // Remove the breadcrumbs
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
-?>
+
+// Remove the add to cart button in the loop for neat-ness
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );

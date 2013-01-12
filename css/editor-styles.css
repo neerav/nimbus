@@ -1,11 +1,9 @@
 @import url("http://fonts.googleapis.com/css?family=Oswald");
 
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro");
-/* -- [ Less Variables ] --------------------------------------------------------------------------*/
-/* Background */
-/* Links */
-/* Body Copy */
-/* update comments */
+/**
+ * Variables
+ */
 /* Monospace */
 /* -- [ Functions ] --------------------------------------------------------------------------*/
 .iconbefore {
@@ -48,20 +46,37 @@
   border-bottom-width: 0;
 }
 /* -- [ Less Mixins ] --------------------------------------------------------------------------*/
+/**
+ * Animation
+ */
+@-webkit-keyframes fadein {
+  from {
+    filter: alpha(opacity=@opacity * 100);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+  }
+  to {
+    filter: alpha(opacity=@opacity * 100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+  }
+}
 body#tinymce.wp-editor {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin: 1em;
   font-size: 1.125em;
   line-height: 1.5;
   padding-right: 31%;
-  color: #8d8d8d;
+  color: #666666;
 }
 body#tinymce.wp-editor h1,
 body#tinymce.wp-editor h2,
 body#tinymce.wp-editor h3,
 body#tinymce.wp-editor h4,
 body#tinymce.wp-editor h5 {
-  font-family: 'Oswald', Georgia, serif;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 body#tinymce.wp-editor code,
 body#tinymce.wp-editor pre {
@@ -75,5 +90,5 @@ body#tinymce.wp-editor pre {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
 }
 body#tinymce.wp-editor a {
-  color: #4997d2;
+  color: #49a0a0;
 }

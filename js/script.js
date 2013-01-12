@@ -40,6 +40,6 @@ jQuery(document).ready(function(){
 	jQuery("h1.title a, .single h1.title, .logo-wrap h1, #logo").each(function(){var wordArray=jQuery(this).text().split(" ");var finalTitle="";for(i=0;i<=wordArray.length-1;i++){finalTitle+=wordArray[i];if(i==(wordArray.length-2)){finalTitle+="&nbsp;"}else{finalTitle+=" "}}jQuery(this).html(finalTitle)});
 	
 	// Fire fitvids
-	jQuery("#wrapper").fitVids();
+	jQuery(".wrapper").fitVids();
 		
 });

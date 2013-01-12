@@ -18,11 +18,11 @@ class NimbusOptions
     public static function register( $wp_customize )
     {
         $wp_customize->add_setting('link_textcolor', array(
-                'default'   => '#2BA6CB',
+                'default'   => '#49a0a0',
                 //'transport' => 'postMessage',
         ) );
         $wp_customize->add_setting('background_color', array(
-                'default'   => '#f0f4f7',
+                'default'   => '#2b2b2b',
                 //'transport' => 'postMessage',
         ) );
         $wp_customize->remove_section('static_front_page');
@@ -54,6 +54,7 @@ class NimbusOptions
                 <?php self::generate_css('body', 'background-color', 'background_color', '#'); ?> 
                 <?php self::generate_css('a', 'color', 'link_textcolor'); ?> 
                 <?php self::generate_css('html', 'background-color', 'background_color', '#'); ?> 
+                <?php self::generate_css('ul.menu ul li a', 'background-color', 'background_color', '#'); ?> 
         </style> 
         <!--/Customizer CSS-->
         <?php

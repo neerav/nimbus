@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
+
 <article <?php post_class(); ?>>
 	<?php
 		$content = get_the_content();
@@ -9,5 +11,8 @@
 		$linkurl = $linktoend;
 		endif;
 	?>
-	<h1 class="title"><a href="<?php echo $linkurl; ?>" rel="external" title="<?php _e('External link to', 'nimbus'); ?> <?php the_title(); ?>"><?php the_title(); ?> &rarr;</a></h1>
+	<header class="post-header">
+		<time class="post-date"><?php the_time(get_option('date_format')); ?></time>
+		<h1 class="title"><em><?php _e('link:', 'nimbus' ); ?></em> <a href="<?php echo $linkurl; ?>" rel="external" title="<?php _e('External link to', 'nimbus'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></h1>
+	</header>
 </article>

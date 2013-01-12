@@ -1,12 +1,12 @@
-<?php get_header(); ?>
+<?php 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+get_header(); 
+?>
 
-<div class="row">
-
-	<section id="content" class="<?php post_class(); ?> eightcol page" role="main">
+	<section class="<?php post_class(); ?> content page" role="main">
 
 	<h1><?php _e('404 not found', 'nimbus'); ?></h1>
 
 	</section>
 
-</div><!--/.row-->
 <?php get_footer(); ?>

@@ -1,9 +1,6 @@
-<?php
-/**
- * The template for displaying Comments.
- */
-?>
-	<div id="comments" <?php if ( ! comments_open() && post_type_supports( get_post_type(), 'comments' ) && is_page() ) { echo 'class="page-nocomments"'; } ?>>
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
+
+	<div class="comments" <?php if ( ! comments_open() && post_type_supports( get_post_type(), 'comments' ) && is_page() ) { echo 'class="page-nocomments"'; } ?>>
 	<?php if ( post_password_required() ) : ?>
 		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'nimbus' ); ?></p>
 	</div><!-- #comments -->
@@ -13,7 +10,7 @@
 	?>
 
 	<?php if ( have_comments() ) : ?>
-		<h2 id="comments-title">
+		<h2 class="comments-title">
 			<?php
 				printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'nimbus' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
@@ -31,7 +28,7 @@
 		<ol class="commentlist">
 			<?php
 
-				wp_list_comments();
+				wp_list_comments( 'callback=nimbus_comment&avatar_size=96' );
 			?>
 		</ol>
 

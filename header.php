@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
+
 <!doctype html>  
 
 <!--[if lt IE 7 ]> <html <?php language_attributes(); ?> class="no-js ie6"> <![endif]-->
@@ -26,9 +28,9 @@
 
 <body <?php body_class(); ?>>
 
-  <div id="wrapper" class="<?php if (!is_home()) echo 'not-home'; ?>">
+  <div class="wrapper <?php if (!is_home()) echo 'not-home'; ?>">
   
-		<header id="header" class="row visible">
+		<header class="header">
 			
 			
 			<?php nimbus_display_logo(); ?>
@@ -42,16 +44,19 @@
 			    <h1 class="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
 			    
 			<?php } ?>
+
+			<p class="intro"><?php bloginfo('description'); ?></p>
 			
-			<h3 class="nav-toggle"><a href="#" class="button"><?php _e('Navigation','nimbus'); ?></a></h3>
+			<p><a href="#" class="nav-toggle button"><?php _e('Navigation','nimbus'); ?></a></p>
 			
-			<nav class="main-nav sixcol last">
+			<nav class="main-nav">
   
 				<?php wp_nav_menu( array( 'menu' => 'main' ) ); ?>
 			
 			</nav>
-			
-			<?php get_sidebar(); ?>
-		
+
+			<hr />
+					
 		</header>
   
+		<?php get_sidebar(); ?>

@@ -7,7 +7,7 @@
 	});
 
 	// Show/hide the main navigation
-  	jQuery('.nav-toggle a').click(function() {
+  	jQuery('.nav-toggle').click(function() {
 	  jQuery('.main-nav').slideToggle('fast', function() {
 	  	return false;
 	    // Animation complete.

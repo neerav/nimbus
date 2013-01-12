@@ -1,7 +1,7 @@
 nimbus
 ======
 
-A responsive WordPress theme with a masonry inspired homepage.
+A responsive WordPress theme with a focus on typography.
 
 License
 =======

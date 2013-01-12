@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /*----------------------*/
 /* Add theme support for post thumbnails, automatic feed links and post formats */
@@ -20,6 +21,7 @@ if ( ! function_exists( 'nimbus_display_logo' ) ) {
 		<div class="logo">
 			<a href="<?php echo home_url(); ?>" title="<?php get_bloginfo('name'); ?>">
 				<img src="http://www.gravatar.com/avatar/<?php echo md5( strtolower( trim( $admin_email ) ) ); ?>?s=256&d=identicon&r=PG" alt="<?php get_bloginfo('name'); ?>" class="mugshot" />
+				<span></span>
 			</a>
 		</div><!--/.logo-->
 		<?php		
@@ -39,30 +41,6 @@ if ( ! function_exists( 'nimbus_add_scripts' ) ) {
 		wp_enqueue_script( 'responsive-enhance', get_template_directory_uri() . '/js/responsive-enhance.js', array( 'jquery' ), '', true );
 		wp_enqueue_script( 'nimbus-script', get_template_directory_uri() . '/js/script.min.js', array( 'jquery' ), '', true );
 		wp_enqueue_script( 'comment-reply' );
-		if ( is_home() || is_front_page() || is_archive() || is_search() ) {
-			wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/jquery.masonry.js', array( 'jquery' ), '', true );
-		}
-	}
-}
-
-add_action( 'wp_head', 'nimbus_fire_masonry' );
-function nimbus_fire_masonry() {
-	if ( is_home() || is_front_page() || is_archive() || is_search() ) {
-	?>
-	<script>
-		jQuery(window).load(function(){
-			if (jQuery(window).width() > 767) {	
-				jQuery('.post-wrap').masonry({
-				  itemSelector: '.post',
-				  // set columnWidth a fraction of the container width
-				  columnWidth: function( containerWidth ) {
-				    return containerWidth / 3;
-				  }
-				});
-			}
-		});
-	</script>
-	<?php
 	}
 }
 
@@ -82,7 +60,7 @@ function nimbus_html5() {
 /*----------------------*/
 /* Register main nav */
 /*----------------------*/
-register_nav_menu('main', __('Main menu') );
+register_nav_menu('main', __( 'Main menu', 'nimbus' ) );
 
 /*----------------------*/
 /* Register Sidebar */
@@ -116,11 +94,10 @@ if ( ! isset( $content_width ) ) $content_width = 900;
 if ( ! function_exists( 'nimbus_post_meta' ) ) {
 	function nimbus_post_meta() { ?>
 		<ul>
-			<li class="date"><?php the_time(get_option('date_format')); ?></li>
-			<li class="comment"><?php comments_popup_link( __( 'Leave a comment', 'nimbus' ), __( '1 Comment', 'nimbus' ), __( '% Comments', 'nimbus' ) ); ?></li>
+			<li class="comment"><?php comments_popup_link( __( '0 Comments', 'nimbus' ), __( '1 Comment', 'nimbus' ), __( '% Comments', 'nimbus' ) ); ?></li>
 			<li class="permalink"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'nimbus' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php _e('Permalink','nimbus'); ?></a></li>
 			<li class="categories"><?php the_category(', '); ?></li>
-			<?php if ( is_single() ) { the_tags('<li class="tags">',', ','</li>'); } ?>
+			<?php the_tags('<li class="tags">',', ','</li>'); ?>
 		</ul>
 	<?php }
 }
@@ -162,6 +139,48 @@ function nimbus_move_textarea( $input = array () ) {
 
     print $textarea;
 } 
+
+function nimbus_comment($comment, $args, $depth) {
+		$GLOBALS['comment'] = $comment;
+		extract($args, EXTR_SKIP);
+
+		if ( 'div' == $args['style'] ) {
+			$tag = 'div';
+			$add_below = 'comment';
+		} else {
+			$tag = 'li';
+			$add_below = 'div-comment';
+		}
+?>
+		<<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
+		<?php if ( 'div' != $args['style'] ) : ?>
+		<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+		<?php endif; ?>
+		<div class="comment-author vcard">
+		<?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+		<?php printf(__('<cite class="fn">%s</cite>'), get_comment_author_link()) ?>
+		<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
+			<?php
+				/* translators: 1: date, 2: time */
+				printf( __( '%1$s at %2$s', 'nimbus' ), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__( '(Edit)', 'nimbus' ),'  ','' );
+			?>
+		</div>
+		</div>
+<?php if ($comment->comment_approved == '0') : ?>
+		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'nimbus' ) ?></em>
+		<br />
+<?php endif; ?>
+
+		<?php comment_text() ?>
+
+		<div class="reply">
+		<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+		</div>
+		<?php if ( 'div' != $args['style'] ) : ?>
+		</div>
+		<?php endif; ?>
+<?php
+        }
 
 /*----------------------*/
 /* Excerpt length */
