@@ -6,9 +6,6 @@
  * @subpackage Nimbus
  * @since Nimbus 0.1
  */
-?>
-
-<?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /*----------------------*/
