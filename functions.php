@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /* Add theme support for post thumbnails, automatic feed links and post formats */
 /*----------------------*/
 add_theme_support( 'post-thumbnails' );
-add_theme_support( 'automatic-feed-links' ); 
+add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'  ) );
 
 /*----------------------*/
@@ -31,7 +31,7 @@ if ( ! function_exists( 'nimbus_display_logo' ) ) {
 				<span></span>
 			</a>
 		</div><!--/.logo-->
-		<?php		
+		<?php
 	}
 }
 
@@ -58,7 +58,7 @@ function nimbus_html5() {
 		$browser = $_SERVER['HTTP_USER_AGENT'];
 		$browser = substr( "$browser", 25, 8);
 		if ($browser == "MSIE 6.0" || $browser == "MSIE 7.0" || $browser == "MSIE 8.0" ) {
-			wp_enqueue_script( 'html5shiv' );	
+			wp_enqueue_script( 'html5shiv' );
 		}
 	}
 }
@@ -74,7 +74,7 @@ register_nav_menu('main', __( 'Main menu', 'nimbus' ) );
 add_action( 'init', 'nimbus_widgets_init' );
 
 if (!function_exists( 'nimbus_widgets_init')) {
-	function nimbus_widgets_init() {		
+	function nimbus_widgets_init() {
 	    register_sidebar(array(
 		    'before_widget' => '<section class="widget">',
 		    'after_widget' => '</section>',
@@ -99,33 +99,58 @@ if ( ! isset( $content_width ) ) $content_width = 900;
 /*----------------------*/
 if ( ! function_exists( 'nimbus_post_meta' ) ) {
 	function nimbus_post_meta() { ?>
-		<ul>
-			<li class="comment"><?php comments_popup_link( __( '0 Comments', 'nimbus' ), __( '1 Comment', 'nimbus' ), __( '% Comments', 'nimbus' ) ); ?></li>
-			<li class="permalink"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'nimbus' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php _e('Permalink','nimbus'); ?></a></li>
-			<li class="categories"><?php the_category(', '); ?></li>
-			<?php the_tags('<li class="tags">',', ','</li>'); ?>
-		</ul>
-	<?php }
+		<div class="post-meta">
+			<ul>
+				<li class="comment"><?php comments_popup_link( __( '0 Comments', 'nimbus' ), __( '1 Comment', 'nimbus' ), __( '% Comments', 'nimbus' ) ); ?></li>
+				<li class="permalink"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'nimbus' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php _e('Permalink','nimbus'); ?></a></li>
+				<li class="categories"><?php the_category(''); ?></li>
+				<?php the_tags('<li class="tags">', '','</li>'); ?>
+			</ul>
+		<?php
+			if ( is_single() ) {
+				nimbus_post_nav();
+			}
+			?>
+		</div><!-- /.post-meta-->
+		<?php
+	}
 }
 
 /*----------------------*/
 /* Pagination */
 /*----------------------*/
-if ( ! function_exists( 'nimbus_content_nav' ) ) :
-/**
- * Display navigation to next/previous pages when applicable (taken straight from TwentyEleven)
- */
-function nimbus_content_nav( $nav_id ) {
-	global $wp_query;
+if ( ! function_exists( 'nimbus_content_nav' ) ) {
+	/**
+	 * Display navigation to next/previous pages when applicable (taken straight from TwentyEleven)
+	 */
+	function nimbus_content_nav( $nav_id ) {
+		global $wp_query;
 
-	if ( $wp_query->max_num_pages > 1 ) : ?>
-		<nav id="<?php echo $nav_id; ?>" class="navigation">
-			<div class="next"><?php previous_posts_link( __( '<span class="meta-nav">&larr;</span> Newer posts', 'nimbus' ) ); ?></div>
-			<div class="prev"><?php next_posts_link( __( 'Older posts <span class="meta-nav">&rarr;</span>', 'nimbus' ) ); ?></div>
-		</nav><!-- #nav-above -->
-	<?php endif;
+		if ( $wp_query->max_num_pages > 1 ) : ?>
+			<nav id="<?php echo $nav_id; ?>" class="navigation">
+				<div class="next"><?php previous_posts_link( __( '<span class="meta-nav">&larr;</span> Newer posts', 'nimbus' ) ); ?></div>
+				<div class="prev"><?php next_posts_link( __( 'Older posts <span class="meta-nav">&rarr;</span>', 'nimbus' ) ); ?></div>
+			</nav><!-- #nav-above -->
+		<?php endif;
+	}
 }
-endif;
+
+/*----------------------*/
+/* Post Pagination */
+/*----------------------*/
+if ( ! function_exists( 'nimbus_post_nav' ) ) {
+	/**
+	 * Display navigation to next/previous posts
+	 */
+	function nimbus_post_nav() {
+		?>
+			<nav class="navigation <?php if ( is_single() ) { echo 'single'; } ?>">
+				<div class="next"><?php previous_post_link( '%link' ); ?></div>
+				<div class="prev"><?php next_post_link( '%link' ); ?></div>
+			</nav><!-- #nav-above -->
+		<?php
+	}
+}
 
 /*----------------------*/
 /* Move text area in comment form above inputs */
@@ -144,7 +169,7 @@ function nimbus_move_textarea( $input = array () ) {
     }
 
     print $textarea;
-} 
+}
 
 function nimbus_comment($comment, $args, $depth) {
 		$GLOBALS['comment'] = $comment;
@@ -216,4 +241,3 @@ if (class_exists('woocommerce')) {
 	require_once ( get_template_directory() . '/includes/theme-woocommerce.php' );
 	add_action( 'wp_enqueue_scripts', create_function("", "wp_enqueue_style( 'woocommerce' );"));
 }
-?>

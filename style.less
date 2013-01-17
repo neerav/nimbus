@@ -4,12 +4,12 @@ Theme URI: https://github.com/jameskoster/nimbus
 Description: A responsive theme with a focus on typography
 Author: James Koster
 Author URI: http://jameskoster.co.uk/
-Version: 0.2
+Version: 0.2.1
 Tags: gray, two-columns, left-sidebar, flexible-width, post-formats, sticky-post, threaded-comments, translation-ready, theme-options, dark
 
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Foundation Icons License: MIT Open Source License 
+Foundation Icons License: MIT Open Source License
 Modular Scale: http://modularscale.com/scale/?px1=16&px2=18&ra1=1.333&ra2=0
 */
 
@@ -60,17 +60,39 @@ html {
 body {
 	text-align: left;
 	font-size:1.125em;
-	line-height: 1.777; 
+	line-height: 1.777;
 	overflow-x:hidden;
 	color: @color_body;
+	&:before, &:after {
+		display: block;
+		content: "";
+		height:.422em;
+		position: fixed;
+		left:0;
+		right:0;
+		background: @color_theme;
+		z-index: 9999;
+	}
+	&:before {
+		top:0;
+	}
+	&:after {
+		bottom:0;
+	}
 }
 
-h1, h2, h3, h4, h5, h6 { 
-	font-family: @fontstack_headings; 
-	font-weight: 700; 
-	color:rgba(0,0,0,0.75); 
-	margin:0; 
-	margin-bottom:1em; 
+body.admin-bar {
+	&:before {
+		top:28px;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: @fontstack_headings;
+	font-weight: 700;
+	color:rgba(0,0,0,0.75);
+	margin:0;
+	margin-bottom:1em;
 	color: @color_body + #444;
 	line-height: 1.333;
 	position: relative;
@@ -78,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {
 	word-wrap: break-word;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { 
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 	text-decoration: none;
 	color: @color_body + #333;
 	&:after {
@@ -91,20 +113,20 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 	}
 }
 
-h1, .site-title { 
-	display:block; 
-	font-size:1.777em; 
+h1, .site-title {
+	display:block;
+	font-size:1.777em;
 	letter-spacing: -1px;
 	text-transform: uppercase;
 }
-h2 { 
-	font-size:1.5em; 
+h2 {
+	font-size:1.5em;
 }
-h3 { 
-	font-size:1.333em; 
+h3 {
+	font-size:1.333em;
 }
-h4 { 
-	font-size:1.125em; 
+h4 {
+	font-size:1.125em;
 }
 
 p + h1, p + h2, p + h3, p + h4 {
@@ -132,7 +154,7 @@ p {
 	-webkit-hyphenate-limit-after : 1;
 	-webkit-hyphenate-limit-before : 3;
 	-moz-hyphens : manual;
-	orphans : 3; 
+	orphans : 3;
 	widows : 3;
 }
 
@@ -150,7 +172,7 @@ blockquote {
 	p:last-child {
 		margin-bottom:0;
 	}
-	
+
 	cite {
 		.small;
 		text-transform: uppercase;
@@ -159,11 +181,11 @@ blockquote {
 		color:@color_body + #222;
 		display: block;
 	}
-	
+
 	p + p cite, p + cite {
 		margin-top:-1.777em;
 	}
-	
+
 	&:before {
 		content: "\201C";
 		text-indent: -.563em;
@@ -177,7 +199,7 @@ blockquote {
 
 blockquote + blockquote {
 	border-top:1px solid rgba(0,0,0,0.1);
-	
+
 	p:first-child {
 		padding-top:1.777em;
 		border-top:2px solid  rgba(0,0,0,0.1);
@@ -211,7 +233,7 @@ img {
 /**
  * Anchors
  */
-a { 
+a {
 	color: @color_theme;
 	&:hover {
 		text-decoration: none;
@@ -356,7 +378,7 @@ hr {
 	font-size: .844em;
 	line-height: 1.33em
 }
-		
+
 img.alignleft {
 	max-width: none;
 	float: left;
@@ -387,6 +409,43 @@ img.wp-post-image {
  * Post Formats
  */
 
+.format-image, .format-link, .format-video, .format-status, .format-gallery, .format-audio {
+	.post-header h1 {
+		position: relative;
+		&:before {
+			.iconbefore;
+			content: "\f020";
+			color: @color_theme;
+			.opacity(0.5);
+			font-size: .563em;
+			position: absolute;
+			top:.563em;
+			left:-1.5em;
+		}
+	}
+}
+.format-link {
+	.post-header h1:before {
+		content: "\f00b";
+	}
+}
+.format-video {
+	.post-header h1:before {
+		content: "\f01f";
+	}
+}
+.format-status {
+	.post-header h1:before {
+		content: "\f022";
+	}
+}
+.format-audio {
+	.post-header h1:before {
+		content: "\f023";
+	}
+}
+
+
 /**
  * Gallery
  */
@@ -411,6 +470,7 @@ img.wp-post-image {
  * Comments
  */
 p.nocomments {
+	.column(9,9);
 	&:before {
 		.iconbefore;
 		content: "\f013";
@@ -548,16 +608,21 @@ p.nocomments {
 		display: inline-block;
 		padding:1em 0;
 	}
-	
+
 	.prev {
 		width:48%;
 		float: right;
 		text-align: right;
 	}
-	
+
 	.next {
 		width:48%;
 		float: left;
+	}
+}
+.single {
+	.navigation {
+		margin-bottom:3.157em;
 	}
 }
 
@@ -593,10 +658,10 @@ table {
 				content: "\f00d";
 			}
 			&.permalink:before {
-				content: "\f00b";	
+				content: "\f00b";
 			}
 			&.categories:before {
-				content: "\f02a";	
+				content: "\f02a";
 			}
 			&.tags:before {
 				content: "\f01a";
@@ -604,7 +669,13 @@ table {
 		}
 	}
 }*/
-.meta {
+.post-meta, .navigation.single {
+	ul, li {
+		list-style: none;
+		ul {
+			margin:0;
+		}
+	}
 	a {
 		color: @color_body;
 		text-transform: uppercase;
@@ -616,8 +687,48 @@ table {
 		padding:0 5px;
 		.border_radius(2px);
 		display: inline-block;
+		.transition();
 		&:hover {
 			background: rgba(0,0,0,0.3);
+		}
+	}
+}
+
+.single {
+	.navigation {
+		padding-top:1em;
+		margin-top:1em;
+		border-top:2px solid rgba(0,0,0,0.1);
+		a {
+			display: block;
+			width:4em;
+			height:4em;
+			text-indent: -999em;
+			text-align: left;
+			padding:0;
+			position: relative;
+			.border_radius(100%);
+			&:before {
+				display: block;
+				content: "\2039";
+				position: absolute;
+				top:0;
+				left:0;
+				right:0;
+				bottom:0;
+				text-indent: 0;
+				font-size:2.369em;
+				text-align: center;
+				line-height: 1.5;
+			}
+		}
+		.prev {
+			a {
+				float: right;
+				&:before {
+					content: "\203a";
+				}
+			}
 		}
 	}
 }
@@ -627,10 +738,12 @@ table {
  */
 #lightbox {
 	position:fixed; /* keeps the lightbox window in the current viewport */
-	top:0; 
-	left:0; 
-	width:100%; 
-	height:100%; 
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	width:100%;
+	height:100%;
 	background: rgba(0,0,0,0.8);
 	text-align:center;
 	z-index: 999;
@@ -640,7 +753,7 @@ table {
 		vertical-align: middle;
 	}
 	img {
-		max-width:940px;
+		max-width:300px;
 		.box_shadow(0,0,1em,0,rgba(0,0,0,0.5));
 		background: url(images/loader.gif) no-repeat center #fff;
 		cursor: pointer;
@@ -651,13 +764,13 @@ table {
  * Main Layout
  * @type Desktop
  */
-@media only screen and (min-width: 768px) { 
+@media only screen and (min-width: 768px) {
 
 /* Only apply the layout if the user is on a desktop / tablet */
 
 	body {
 		font-size:1.125em;
-	}	
+	}
 
 	/**
 	 * Layout
@@ -727,14 +840,13 @@ table {
 			.column(9);
 		}
 	}
-	
+
 	html {
 		-webkit-text-size-adjust: none;
 	}
-	
+
 	.wrapper {
 		max-width:62.918em;
-		margin:0 auto;
 		.clearfix;
 	}
 
@@ -765,8 +877,8 @@ table {
 	            display: inline-block;
 	            padding:.75em 0;
 	            -webkit-box-sizing: border-box;
-	            -moz-box-sizing: border-box;    
-	            box-sizing: border-box;  
+	            -moz-box-sizing: border-box;
+	            box-sizing: border-box;
 	            text-transform: uppercase;
 	            letter-spacing: 1px;
 	            text-decoration: none;
@@ -814,7 +926,7 @@ table {
 	                    content:"\2192";
 	                }
 	            }
-	        }            
+	        }
 	    }
 	    ul ul {
 	        left:100%;
@@ -843,6 +955,26 @@ table {
 		.attachment-post-thumbnail {
 			.column(9,9);
 			height: auto;
+		}
+		.article-content {
+			> a.zoom {
+				margin-bottom:1em;
+				display: block;
+			}
+			.attachment-post-thumbnail {
+				width:auto;
+				max-width:100%;
+				margin:0;
+				float: none;
+			}
+			> p:first-child {
+				font-size:1.333em;
+			}
+		}
+	}
+	.page {
+		.article-content {
+			font-size:1.333em;
 		}
 	}
 
@@ -886,11 +1018,11 @@ table {
 	.single {
 
 	}
-		
+
 	/**
 	 * Sidebar
 	 */
-	
+
 	.sidebar {
 		.column(3);
 		font-weight: 300;
@@ -904,22 +1036,31 @@ table {
 			font-weight: 400;
 		}
 	}
-	
+
 	/**
 	 * Footer
 	 */
-	
+
 	.footer {
 		.column(12);
 	}
-	
+
+	/**
+	 * Lightbox
+	 */
+	#lightbox {
+		img {
+			max-width:940px;
+		}
+	}
+
 }
 
 /**
  * Secondary Layout
  * @type 1024x768
  */
-@media only screen and (min-width: 768px) and (max-width: 1024px) { 
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
 	body {
 		font-size:1.125em;
 	}
@@ -929,8 +1070,10 @@ table {
  * Tertiary Layout
  * @type Large Desktop
  */
-@media only screen and (min-width: 1920px) { 
-
+@media only screen and (min-width: 1600px) {
+	body {
+		font-size:1.333em;
+	}
 }
 
 /**

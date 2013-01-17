@@ -23,6 +23,7 @@
 	?>
 	<header class="post-header">
 		<time class="post-date"><?php the_time(get_option('date_format')); ?></time>
-		<h1 class="title"><em><?php _e('link:', 'nimbus' ); ?></em> <a href="<?php echo $linkurl; ?>" rel="external" title="<?php _e('External link to', 'nimbus'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></h1>
+		<h1><a href="<?php echo $linkurl; ?>" rel="external" title="<?php _e('External link to', 'nimbus'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></h1>
+		<?php nimbus_post_nav(); ?>
 	</header>
 </article>

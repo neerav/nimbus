@@ -1,7 +1,7 @@
 jQuery(document).ready(function(){
 		
 	// Lightbox
-	jQuery('.zoom').click(function(e) {
+	jQuery('.zoom, .gallery a').click(function(e) {
         //prevent default action (hyperlink)
         e.preventDefault();
         //Get clicked link href

@@ -1,3 +1,15 @@
+[14/01/2013 - version 0.2.1]
+- Added top / bottom borders
+- Post image tweaks
+- Improved lightbox on mobile devices
+- No more meta bullets in mobile view
+- Lightbox support in [gallery]
+- Better post format support (icons)
+- Added single post nav
+- Removed comma separator in tag / category meta
+- Left aligned all content
+- Increased readability on larger screens
+
 [12/01/2013 - version 0.2]
 - Complete redesign
 

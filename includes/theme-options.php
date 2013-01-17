@@ -1,17 +1,17 @@
 <?php
 /**
  * Contains methods for customizing the theme customization screen.
- * 
+ *
  * @link http://codex.wordpress.org/Theme_Customization_API
  */
-class NimbusOptions 
+class NimbusOptions
 {
-    
+
     /**
      * Registers the settings with WordPress.
-     * 
+     *
      * Used by hook: 'customize_register'
-     * 
+     *
      * @see add_action('customize_register',$func)
      * @param WP_Customize_Manager $wp_customize
      */
@@ -37,24 +37,25 @@ class NimbusOptions
                 'settings'   => 'background_color',
         ) ) );
     }
-    
+
     /**
      * This will output the custom WordPress settings to the theme's WP head.
-     * 
+     *
      * Used by hook: 'wp_head'
-     * 
+     *
      * @see add_action('wp_head',$func)
      */
     public static function render()
     {
         ?>
-        <!--Customizer CSS--> 
+        <!--Customizer CSS-->
         <style type="text/css">
-                <?php self::generate_css('#site-title a', 'color', 'header_textcolor', '#'); ?> 
-                <?php self::generate_css('a', 'color', 'link_textcolor'); ?> 
-                <?php self::generate_css('html', 'background-color', 'background_color', '#'); ?> 
-                <?php self::generate_css('ul.menu ul li a', 'background-color', 'background_color', '#'); ?> 
-        </style> 
+                <?php self::generate_css('#site-title a', 'color', 'header_textcolor', '#'); ?>
+                <?php self::generate_css('a, .format-image .post-header h1:before, .format-link .post-header h1:before, .format-video .post-header h1:before, .format-status .post-header h1:before, .format-gallery .post-header h1:before, .format-audio .post-header h1:before', 'color', 'link_textcolor'); ?>
+                <?php self::generate_css('body:before, body:after', 'background', 'link_textcolor'); ?>
+                <?php self::generate_css('html', 'background-color', 'background_color', '#'); ?>
+                <?php self::generate_css('ul.menu ul li a', 'background-color', 'background_color', '#'); ?>
+        </style>
         <!--/Customizer CSS-->
         <?php
     }
@@ -64,7 +65,7 @@ class NimbusOptions
      * ($mod_name) has no defined value, the CSS will not be output.
      *
      * A custom helper function used within this class to keep code clean.
-     * 
+     *
      * @uses get_theme_mod()
      * @param string $selector CSS selector
      * @param string $style The name of the CSS property to modify
@@ -93,7 +94,7 @@ class NimbusOptions
         }
         return $return;
     }
-    
+
 }
 add_action( 'customize_register'    , array( 'NimbusOptions' , 'register' ) );
 add_action( 'wp_head'               , array( 'NimbusOptions' , 'render' ) );

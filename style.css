@@ -9,12 +9,12 @@ Theme URI: https://github.com/jameskoster/nimbus
 Description: A responsive theme with a focus on typography
 Author: James Koster
 Author URI: http://jameskoster.co.uk/
-Version: 0.2
+Version: 0.2.1
 Tags: gray, two-columns, left-sidebar, flexible-width, post-formats, sticky-post, threaded-comments, translation-ready, theme-options, dark
 
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Foundation Icons License: MIT Open Source License 
+Foundation Icons License: MIT Open Source License
 Modular Scale: http://modularscale.com/scale/?px1=16&px2=18&ra1=1.333&ra2=0
 */
 /**
@@ -461,6 +461,26 @@ body {
   overflow-x: hidden;
   color: #666666;
 }
+body:before,
+body:after {
+  display: block;
+  content: "";
+  height: .422em;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: #49a0a0;
+  z-index: 9999;
+}
+body:before {
+  top: 0;
+}
+body:after {
+  bottom: 0;
+}
+body.admin-bar:before {
+  top: 28px;
+}
 h1,
 h2,
 h3,
@@ -853,6 +873,50 @@ img.wp-post-image {
 /**
  * Post Formats
  */
+.format-image .post-header h1,
+.format-link .post-header h1,
+.format-video .post-header h1,
+.format-status .post-header h1,
+.format-gallery .post-header h1,
+.format-audio .post-header h1 {
+  position: relative;
+}
+.format-image .post-header h1:before,
+.format-link .post-header h1:before,
+.format-video .post-header h1:before,
+.format-status .post-header h1:before,
+.format-gallery .post-header h1:before,
+.format-audio .post-header h1:before {
+  font-family: "GeneralFoundicons";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  content: "\f020";
+  color: #49a0a0;
+  filter: alpha(opacity=@opacity * 100);
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+  font-size: .563em;
+  position: absolute;
+  top: .563em;
+  left: -1.5em;
+}
+.format-link .post-header h1:before {
+  content: "\f00b";
+}
+.format-video .post-header h1:before {
+  content: "\f01f";
+}
+.format-status .post-header h1:before {
+  content: "\f022";
+}
+.format-audio .post-header h1:before {
+  content: "\f023";
+}
 /**
  * Gallery
  */
@@ -896,6 +960,16 @@ img.wp-post-image {
 /**
  * Comments
  */
+p.nocomments {
+  display: inline;
+  float: left;
+  width: 94.44444444444444%;
+  margin-left: 2.7777777777777777%;
+  margin-right: 2.7777777777777777%;
+  *width: 94.39236111111111%;
+  *margin-left: 2.725694444444444%;
+  *margin-right: 2.725694444444444%;
+}
 p.nocomments:before {
   font-family: "GeneralFoundicons";
   font-weight: normal;
@@ -1146,6 +1220,9 @@ p.nocomments:before {
   width: 48%;
   float: left;
 }
+.single .navigation {
+  margin-bottom: 3.157em;
+}
 /**
  * Tables
  */
@@ -1183,10 +1260,10 @@ table {
 				content: "\f00d";
 			}
 			&.permalink:before {
-				content: "\f00b";	
+				content: "\f00b";
 			}
 			&.categories:before {
-				content: "\f02a";	
+				content: "\f02a";
 			}
 			&.tags:before {
 				content: "\f01a";
@@ -1194,7 +1271,20 @@ table {
 		}
 	}
 }*/
-.meta a {
+.post-meta ul,
+.navigation.single ul,
+.post-meta li,
+.navigation.single li {
+  list-style: none;
+}
+.post-meta ul ul,
+.navigation.single ul ul,
+.post-meta li ul,
+.navigation.single li ul {
+  margin: 0;
+}
+.post-meta a,
+.navigation.single a {
   color: #666666;
   text-transform: uppercase;
   font-size: .75em;
@@ -1207,9 +1297,50 @@ table {
   -moz-border-radius: 2px;
   border-radius: 2px;
   display: inline-block;
+  -webkit-transition: all ease-in-out 0.2s;
+  -moz-transition: all ease-in-out 0.2s;
+  -o-transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.2s;
 }
-.meta a:hover {
+.post-meta a:hover,
+.navigation.single a:hover {
   background: rgba(0, 0, 0, 0.3);
+}
+.single .navigation {
+  padding-top: 1em;
+  margin-top: 1em;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+.single .navigation a {
+  display: block;
+  width: 4em;
+  height: 4em;
+  text-indent: -999em;
+  text-align: left;
+  padding: 0;
+  position: relative;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+.single .navigation a:before {
+  display: block;
+  content: "\2039";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-indent: 0;
+  font-size: 2.369em;
+  text-align: center;
+  line-height: 1.5;
+}
+.single .navigation .prev a {
+  float: right;
+}
+.single .navigation .prev a:before {
+  content: "\203a";
 }
 /**
  * Lightbox
@@ -1220,6 +1351,8 @@ table {
 
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
@@ -1232,7 +1365,7 @@ table {
   vertical-align: middle;
 }
 #lightbox img {
-  max-width: 940px;
+  max-width: 300px;
   box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
@@ -1391,7 +1524,6 @@ table {
   }
   .wrapper {
     max-width: 62.918em;
-    margin: 0 auto;
     *zoom: 1;
   }
   .wrapper:after {
@@ -1570,6 +1702,22 @@ table {
     *margin-right: 2.725694444444444%;
     height: auto;
   }
+  .post .article-content > a.zoom {
+    margin-bottom: 1em;
+    display: block;
+  }
+  .post .article-content .attachment-post-thumbnail {
+    width: auto;
+    max-width: 100%;
+    margin: 0;
+    float: none;
+  }
+  .post .article-content > p:first-child {
+    font-size: 1.333em;
+  }
+  .page .article-content {
+    font-size: 1.333em;
+  }
   /**
   	 * Posts
   	 */
@@ -1638,6 +1786,12 @@ table {
     *margin-left: 2.0312499999999996%;
     *margin-right: 2.0312499999999996%;
   }
+  /**
+  	 * Lightbox
+  	 */
+  #lightbox img {
+    max-width: 940px;
+  }
 }
 /**
  * Secondary Layout
@@ -1652,8 +1806,10 @@ table {
  * Tertiary Layout
  * @type Large Desktop
  */
-@media only screen and (min-width: 1920px) {
-  
+@media only screen and (min-width: 1600px) {
+  body {
+    font-size: 1.333em;
+  }
 }
 /**
  * Retina
