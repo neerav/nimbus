@@ -956,7 +956,14 @@ table {
 			.column(9,9);
 			height: auto;
 		}
-		.article-content {
+	}
+
+	/**
+	 * Posts
+	 */
+	.post {
+	 	text-align: justify;
+	 	.article-content {
 			> a.zoom {
 				margin-bottom:1em;
 				display: block;
@@ -967,22 +974,7 @@ table {
 				margin:0;
 				float: none;
 			}
-			> p:first-child {
-				font-size:1.333em;
-			}
 		}
-	}
-	.page {
-		.article-content {
-			font-size:1.333em;
-		}
-	}
-
-	/**
-	 * Posts
-	 */
-	.post {
-	 	text-align: justify;
 	 }
 	.meta {
 		ul {
@@ -998,6 +990,24 @@ table {
 					text-transform: none;
 				}
 			}
+		}
+	}
+	.single {
+		.post {
+			.article-content {
+				> p:first-child {
+					font-size:1.333em;
+				}
+			}
+		}
+	}
+
+	/**
+	 * Pages
+	 */
+	.page {
+		.article-content {
+			font-size:1.333em;
 		}
 	}
 	/**

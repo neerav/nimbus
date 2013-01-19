@@ -9,6 +9,7 @@
 - Removed comma separator in tag / category meta
 - Left aligned all content
 - Increased readability on larger screens
+- Added content-quote.php
 
 [12/01/2013 - version 0.2]
 - Complete redesign

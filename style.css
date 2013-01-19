@@ -1702,6 +1702,12 @@ table {
     *margin-right: 2.725694444444444%;
     height: auto;
   }
+  /**
+  	 * Posts
+  	 */
+  .post {
+    text-align: justify;
+  }
   .post .article-content > a.zoom {
     margin-bottom: 1em;
     display: block;
@@ -1712,18 +1718,6 @@ table {
     margin: 0;
     float: none;
   }
-  .post .article-content > p:first-child {
-    font-size: 1.333em;
-  }
-  .page .article-content {
-    font-size: 1.333em;
-  }
-  /**
-  	 * Posts
-  	 */
-  .post {
-    text-align: justify;
-  }
   .meta ul {
     list-style: none;
     margin: 0;
@@ -1731,6 +1725,15 @@ table {
   }
   .format-link .post-header h1 em {
     text-transform: none;
+  }
+  .single .post .article-content > p:first-child {
+    font-size: 1.333em;
+  }
+  /**
+  	 * Pages
+  	 */
+  .page .article-content {
+    font-size: 1.333em;
   }
   /**
   	 * Footer

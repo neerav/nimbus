@@ -5,6 +5,7 @@
  * @package WordPress
  * @subpackage Nimbus
  * @since Nimbus 0.1
+ * @todo Move functions to includes/theme-functions.php, load Google fonts via action
  */
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 

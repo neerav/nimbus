@@ -3,6 +3,7 @@
  * Contains methods for customizing the theme customization screen.
  *
  * @link http://codex.wordpress.org/Theme_Customization_API
+ * @todo Font colours
  */
 class NimbusOptions
 {
