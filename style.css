@@ -805,12 +805,12 @@ hr {
   clear: both;
   display: inline;
   float: left;
-  width: 95.83333333333334%;
-  margin-left: 2.083333333333333%;
-  margin-right: 2.083333333333333%;
-  *width: 95.78125000000001%;
-  *margin-left: 2.0312499999999996%;
-  *margin-right: 2.0312499999999996%;
+  width: 94.79166666666666%;
+  margin-left: 2.604166666666667%;
+  margin-right: 2.604166666666667%;
+  *width: 94.73958333333333%;
+  *margin-left: 2.5520833333333335%;
+  *margin-right: 2.5520833333333335%;
   margin-top: 1.999em;
   display: none;
 }
@@ -869,6 +869,18 @@ img.wp-post-image {
 }
 .gallery img {
   border: 0 !important;
+}
+.gallery dl.gallery-item {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+
 }
 /**
  * Post Formats
@@ -963,12 +975,12 @@ img.wp-post-image {
 p.nocomments {
   display: inline;
   float: left;
-  width: 94.44444444444444%;
-  margin-left: 2.7777777777777777%;
-  margin-right: 2.7777777777777777%;
-  *width: 94.39236111111111%;
-  *margin-left: 2.725694444444444%;
-  *margin-right: 2.725694444444444%;
+  width: 93.05555555555556%;
+  margin-left: 3.4722222222222223%;
+  margin-right: 3.4722222222222223%;
+  *width: 93.00347222222223%;
+  *margin-left: 3.420138888888889%;
+  *margin-right: 3.420138888888889%;
 }
 p.nocomments:before {
   font-family: "GeneralFoundicons";
@@ -986,12 +998,12 @@ p.nocomments:before {
   clear: both;
   display: inline;
   float: left;
-  width: 94.44444444444444%;
-  margin-left: 2.7777777777777777%;
-  margin-right: 2.7777777777777777%;
-  *width: 94.39236111111111%;
-  *margin-left: 2.725694444444444%;
-  *margin-right: 2.725694444444444%;
+  width: 93.05555555555556%;
+  margin-left: 3.4722222222222223%;
+  margin-right: 3.4722222222222223%;
+  *width: 93.00347222222223%;
+  *margin-left: 3.420138888888889%;
+  *margin-right: 3.420138888888889%;
 }
 #comment-nav-above:after,
 #comment-nav-below:after {
@@ -1060,12 +1072,12 @@ p.nocomments:before {
 }*/
 .comments {
   display: block;
-  width: 105.55555555555556%;
-  margin-left: -2.7777777777777777%;
-  margin-right: -2.7777777777777777%;
-  *width: 105.50347222222223%;
-  *margin-left: -2.829861111111111%;
-  *margin-right: -2.829861111111111%;
+  width: 106.94444444444444%;
+  margin-left: -3.4722222222222223%;
+  margin-right: -3.4722222222222223%;
+  *width: 106.89236111111111%;
+  *margin-left: -3.524305555555556%;
+  *margin-right: -3.524305555555556%;
   *zoom: 1;
 }
 .comments:after {
@@ -1111,15 +1123,15 @@ p.nocomments:before {
 .comments #respond {
   display: inline;
   float: left;
-  width: 72.22222222222221%;
-  margin-left: 2.7777777777777777%;
-  margin-right: 2.7777777777777777%;
-  *width: 72.17013888888889%;
-  *margin-left: 2.725694444444444%;
-  *margin-right: 2.725694444444444%;
+  width: 70.83333333333334%;
+  margin-left: 3.4722222222222223%;
+  margin-right: 3.4722222222222223%;
+  *width: 70.78125000000001%;
+  *margin-left: 3.420138888888889%;
+  *margin-right: 3.420138888888889%;
 }
 .comments ul.children {
-  margin-left: 10.416666666666664%;
+  margin-left: 10.9375%;
   margin-bottom: 0;
 }
 .comments ul.children #respond {
@@ -1388,12 +1400,12 @@ table {
   .content {
     display: inline;
     float: left;
-    width: 70.83333333333334%;
-    margin-left: 2.083333333333333%;
-    margin-right: 2.083333333333333%;
-    *width: 70.78125000000001%;
-    *margin-left: 2.0312499999999996%;
-    *margin-right: 2.0312499999999996%;
+    width: 69.79166666666666%;
+    margin-left: 2.604166666666667%;
+    margin-right: 2.604166666666667%;
+    *width: 69.73958333333333%;
+    *margin-left: 2.5520833333333335%;
+    *margin-right: 2.5520833333333335%;
   }
   /**
   	 * Header
@@ -1424,22 +1436,22 @@ table {
   .header .logo {
     display: inline;
     float: left;
-    width: 20.833333333333336%;
-    margin-left: 2.083333333333333%;
-    margin-right: 2.083333333333333%;
-    *width: 20.781250000000004%;
-    *margin-left: 2.0312499999999996%;
-    *margin-right: 2.0312499999999996%;
+    width: 19.791666666666664%;
+    margin-left: 2.604166666666667%;
+    margin-right: 2.604166666666667%;
+    *width: 19.739583333333332%;
+    *margin-left: 2.5520833333333335%;
+    *margin-right: 2.5520833333333335%;
   }
   .header .logo a {
     position: relative;
     display: block;
-    width: 116.66666666666667%;
-    margin-left: -8.333333333333332%;
-    margin-right: -8.333333333333332%;
-    *width: 116.61458333333334%;
-    *margin-left: -8.385416666666666%;
-    *margin-right: -8.385416666666666%;
+    width: 120.83333333333333%;
+    margin-left: -10.416666666666668%;
+    margin-right: -10.416666666666668%;
+    *width: 120.78125%;
+    *margin-left: -10.468750000000002%;
+    *margin-right: -10.468750000000002%;
     *zoom: 1;
   }
   .header .logo a:after {
@@ -1458,12 +1470,12 @@ table {
   .header .logo a img {
     display: inline;
     float: left;
-    width: 50%;
-    margin-left: 8.333333333333332%;
-    margin-right: 8.333333333333332%;
-    *width: 49.947916666666664%;
-    *margin-left: 8.281249999999998%;
-    *margin-right: 8.281249999999998%;
+    width: 45.83333333333333%;
+    margin-left: 10.416666666666668%;
+    margin-right: 10.416666666666668%;
+    *width: 45.78124999999999%;
+    *margin-left: 10.364583333333334%;
+    *margin-right: 10.364583333333334%;
     -webkit-transition: all ease-in-out 0.4s;
     z-index: 900;
     background: #fff;
@@ -1473,12 +1485,12 @@ table {
   .header .logo a span {
     display: inline;
     float: left;
-    width: 50%;
-    margin-left: 8.333333333333332%;
-    margin-right: 8.333333333333332%;
-    *width: 49.947916666666664%;
-    *margin-left: 8.281249999999998%;
-    *margin-right: 8.281249999999998%;
+    width: 45.83333333333333%;
+    margin-left: 10.416666666666668%;
+    margin-right: 10.416666666666668%;
+    *width: 45.78124999999999%;
+    *margin-left: 10.364583333333334%;
+    *margin-right: 10.364583333333334%;
     position: absolute;
     text-indent: -99em;
     top: 0;
@@ -1512,12 +1524,12 @@ table {
   .header .main-nav {
     display: inline;
     float: left;
-    width: 70.83333333333334%;
-    margin-left: 2.083333333333333%;
-    margin-right: 2.083333333333333%;
-    *width: 70.78125000000001%;
-    *margin-left: 2.0312499999999996%;
-    *margin-right: 2.0312499999999996%;
+    width: 69.79166666666666%;
+    margin-left: 2.604166666666667%;
+    margin-right: 2.604166666666667%;
+    *width: 69.73958333333333%;
+    *margin-left: 2.5520833333333335%;
+    *margin-right: 2.5520833333333335%;
   }
   html {
     -webkit-text-size-adjust: none;
@@ -1626,12 +1638,12 @@ table {
   	 */
   .post {
     display: block;
-    width: 105.55555555555556%;
-    margin-left: -2.7777777777777777%;
-    margin-right: -2.7777777777777777%;
-    *width: 105.50347222222223%;
-    *margin-left: -2.829861111111111%;
-    *margin-right: -2.829861111111111%;
+    width: 106.94444444444444%;
+    margin-left: -3.4722222222222223%;
+    margin-right: -3.4722222222222223%;
+    *width: 106.89236111111111%;
+    *margin-left: -3.524305555555556%;
+    *margin-right: -3.524305555555556%;
     *zoom: 1;
   }
   .post:after {
@@ -1664,42 +1676,42 @@ table {
   .post .img-wrap {
     display: inline;
     float: left;
-    width: 94.44444444444444%;
-    margin-left: 2.7777777777777777%;
-    margin-right: 2.7777777777777777%;
-    *width: 94.39236111111111%;
-    *margin-left: 2.725694444444444%;
-    *margin-right: 2.725694444444444%;
+    width: 93.05555555555556%;
+    margin-left: 3.4722222222222223%;
+    margin-right: 3.4722222222222223%;
+    *width: 93.00347222222223%;
+    *margin-left: 3.420138888888889%;
+    *margin-right: 3.420138888888889%;
   }
   .post .article-content {
     display: inline;
     float: left;
-    width: 72.22222222222221%;
-    margin-left: 2.7777777777777777%;
-    margin-right: 2.7777777777777777%;
-    *width: 72.17013888888889%;
-    *margin-left: 2.725694444444444%;
-    *margin-right: 2.725694444444444%;
+    width: 70.83333333333334%;
+    margin-left: 3.4722222222222223%;
+    margin-right: 3.4722222222222223%;
+    *width: 70.78125000000001%;
+    *margin-left: 3.420138888888889%;
+    *margin-right: 3.420138888888889%;
   }
   .post .meta {
     display: inline;
     float: left;
-    width: 16.666666666666664%;
-    margin-left: 2.7777777777777777%;
-    margin-right: 2.7777777777777777%;
-    *width: 16.614583333333332%;
-    *margin-left: 2.725694444444444%;
-    *margin-right: 2.725694444444444%;
+    width: 15.277777777777779%;
+    margin-left: 3.4722222222222223%;
+    margin-right: 3.4722222222222223%;
+    *width: 15.225694444444445%;
+    *margin-left: 3.420138888888889%;
+    *margin-right: 3.420138888888889%;
   }
   .post .attachment-post-thumbnail {
     display: inline;
     float: left;
-    width: 94.44444444444444%;
-    margin-left: 2.7777777777777777%;
-    margin-right: 2.7777777777777777%;
-    *width: 94.39236111111111%;
-    *margin-left: 2.725694444444444%;
-    *margin-right: 2.725694444444444%;
+    width: 93.05555555555556%;
+    margin-left: 3.4722222222222223%;
+    margin-right: 3.4722222222222223%;
+    *width: 93.00347222222223%;
+    *margin-left: 3.420138888888889%;
+    *margin-right: 3.420138888888889%;
     height: auto;
   }
   /**
@@ -1755,12 +1767,12 @@ table {
   .sidebar {
     display: inline;
     float: left;
-    width: 20.833333333333336%;
-    margin-left: 2.083333333333333%;
-    margin-right: 2.083333333333333%;
-    *width: 20.781250000000004%;
-    *margin-left: 2.0312499999999996%;
-    *margin-right: 2.0312499999999996%;
+    width: 19.791666666666664%;
+    margin-left: 2.604166666666667%;
+    margin-right: 2.604166666666667%;
+    *width: 19.739583333333332%;
+    *margin-left: 2.5520833333333335%;
+    *margin-right: 2.5520833333333335%;
     font-weight: 300;
   }
   .sidebar h1,
@@ -1782,12 +1794,12 @@ table {
   .footer {
     display: inline;
     float: left;
-    width: 95.83333333333334%;
-    margin-left: 2.083333333333333%;
-    margin-right: 2.083333333333333%;
-    *width: 95.78125000000001%;
-    *margin-left: 2.0312499999999996%;
-    *margin-right: 2.0312499999999996%;
+    width: 94.79166666666666%;
+    margin-left: 2.604166666666667%;
+    margin-right: 2.604166666666667%;
+    *width: 94.73958333333333%;
+    *margin-left: 2.5520833333333335%;
+    *margin-right: 2.5520833333333335%;
   }
   /**
   	 * Lightbox
