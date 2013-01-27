@@ -7,7 +7,7 @@
 /* Monospace */
 /* -- [ Functions ] --------------------------------------------------------------------------*/
 .iconbefore {
-  font-family: "GeneralFoundicons";
+  font-family: "FontAwesome";
   font-weight: normal;
   font-style: normal;
   text-decoration: inherit;
@@ -16,7 +16,7 @@
   display: inline-block;
 }
 .iconafter {
-  font-family: "GeneralFoundicons";
+  font-family: "FontAwesome";
   font-weight: normal;
   font-style: normal;
   text-decoration: inherit;
@@ -45,7 +45,6 @@
   border-right-width: 0;
   border-bottom-width: 0;
 }
-/* -- [ Less Mixins ] --------------------------------------------------------------------------*/
 /**
  * Animation
  */

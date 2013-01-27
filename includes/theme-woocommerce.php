@@ -1,4 +1,4 @@
-<?php 
+<?php
 // WooCommerce functions and overrides
 
 // Remove content wrappers
@@ -28,6 +28,17 @@ if (!function_exists('nimbus_after_content')) {
 	    <?php
 	}
 }
+
+// Change number or products per row to 3
+add_filter('loop_shop_columns', 'loop_columns');
+if (!function_exists('loop_columns')) {
+	function loop_columns() {
+		return 3; // 3 products per row
+	}
+}
+
+// Display 12 products per page.
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 12;' ), 20 );
 
 // Remove the breadcrumbs
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);

@@ -3,7 +3,6 @@
  * Contains methods for customizing the theme customization screen.
  *
  * @link http://codex.wordpress.org/Theme_Customization_API
- * @todo Font colours
  */
 class NimbusOptions
 {
@@ -20,17 +19,31 @@ class NimbusOptions
     {
         $wp_customize->add_setting('link_textcolor', array(
                 'default'   => '#49a0a0',
-                //'transport' => 'postMessage',
+        ) );
+        $wp_customize->add_setting('headercolor', array(
+                'default'   => '#aaaaaa',
+        ) );
+        $wp_customize->add_setting('textcolor', array(
+                'default'   => '#666666',
         ) );
         $wp_customize->add_setting('background_color', array(
                 'default'   => '#2b2b2b',
-                //'transport' => 'postMessage',
         ) );
         $wp_customize->remove_section('static_front_page');
         $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_textcolor', array(
                 'label'      => __( 'Link Color', 'nimbus' ),
                 'section'    => 'colors',
                 'settings'   => 'link_textcolor',
+        ) ) );
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'headercolor', array(
+                'label'      => __( 'Header Color', 'nimbus' ),
+                'section'    => 'colors',
+                'settings'   => 'headercolor',
+        ) ) );
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'textcolor', array(
+                'label'      => __( 'Text Color', 'nimbus' ),
+                'section'    => 'colors',
+                'settings'   => 'textcolor',
         ) ) );
         $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'background_color', array(
                 'label'      => __( 'Background Color', 'nimbus' ),
@@ -53,7 +66,9 @@ class NimbusOptions
         <style type="text/css">
                 <?php self::generate_css('#site-title a', 'color', 'header_textcolor', '#'); ?>
                 <?php self::generate_css('a, .format-image .post-header h1:before, .format-link .post-header h1:before, .format-video .post-header h1:before, .format-status .post-header h1:before, .format-gallery .post-header h1:before, .format-audio .post-header h1:before', 'color', 'link_textcolor'); ?>
-                <?php self::generate_css('body:before, body:after', 'background', 'link_textcolor'); ?>
+                <?php self::generate_css('body:before, body:after, input[type="submit"], .button', 'background', 'link_textcolor'); ?>
+                <?php self::generate_css('body', 'color', 'textcolor'); ?>
+                <?php self::generate_css('h1, h2, h3, h4, h5, h6', 'color', 'headercolor'); ?>
                 <?php self::generate_css('html', 'background-color', 'background_color', '#'); ?>
                 <?php self::generate_css('ul.menu ul li a', 'background-color', 'background_color', '#'); ?>
         </style>

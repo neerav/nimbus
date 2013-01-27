@@ -23,11 +23,17 @@
 	?>
 	<header class="post-header">
 		<time class="post-date"><?php the_time(get_option('date_format')); ?></time>
+	</header><!--/.post-header-->
+	<section class="article-content">
 		<h1><a href="<?php echo $linkurl; ?>" rel="external" title="<?php _e('External link to', 'nimbus'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></h1>
+	</section><!--/.article-content-->
+	<aside class="meta">
 		<?php
 			if ( is_single() ) {
-				nimbus_post_nav();
+				echo '<div class="post-meta">';
+					nimbus_post_nav();
+				echo '</div>';
 			}
 		?>
-	</header>
+	</aside><!--/.meta-->
 </article>

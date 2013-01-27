@@ -1,15 +1,21 @@
 [14/01/2013 - version 0.2.1]
 - Added top / bottom borders
-- Post image tweaks
+- Featured image / post format:image tweaks
 - Improved lightbox on mobile devices
 - No more meta bullets in mobile view
 - Lightbox support in [gallery]
 - Better post format support (icons)
 - Added single post nav
 - Removed comma separator in tag / category meta
-- Left aligned all content
-- Increased readability on larger screens
+- Left aligned layout
+- Improved readability on larger screens
 - Added content-quote.php
+- Bumped the font size up a notch
+- Comment / Meta styling on mobile devices
+- Threaded comments align to grid
+- Ditched Foundation icons for FontAwesome 3.0
+- Typography tweaks
+- Google fonts loaded via wp_enqueue_style
 
 [12/01/2013 - version 0.2]
 - Complete redesign

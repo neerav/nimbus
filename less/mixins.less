@@ -1,25 +1,26 @@
 /**
  * Variables
  */
-@color_bg: 		#2b2b2b;	// Background
-@color_theme: 	#49a0a0;	// Links
-@color_body: 	#666;		// Body Copy
+@color_bg: 			#2b2b2b;	// Background
+@color_theme: 		#49a0a0;	// Links
+@color_body: 		#666;		// Body Copy
 
-@color_aside: 	#ffd621;
-@color_gallery:	#000;
-@color_image:	#000;
-@color_quote:	#df1d82;
-@color_status:	#1fb9f3;
-@color_video:	#a8e71e;
-@color_audio:	#411bd3;
-@color_chat:	#a8e81e;
-@color_sticky:	#1b60d3;
+@color_aside: 		#ffd621;
+@color_gallery:		#000;
+@color_image:		#000;
+@color_quote:		#df1d82;
+@color_status:		#1fb9f3;
+@color_video:		#a8e71e;
+@color_audio:		#411bd3;
+@color_chat:		#a8e81e;
+@color_sticky:		#1b60d3;
+@FontAwesomePath:   "includes/typefaces";
 
-@fontstack_headings: 'Open Sans Condensed', sans-serif;
-@fontstack_headings_sidebar: 'Open Sans Condensed', sans-serif;
-@fontstack_body: 'Open Sans', sans-serif;
-@fontstack_monospace: monospace, sans-serif; /* Monospace */
-@fontstack_navigation: 'Cantarell', sans-serif;
+@fontstack_headings: 			'Open Sans Condensed', sans-serif;
+@fontstack_headings_sidebar: 	'Open Sans Condensed', sans-serif;
+@fontstack_body: 				'Open Sans', sans-serif;
+@fontstack_monospace: 			monospace, sans-serif; /* Monospace */
+@fontstack_navigation: 			'Cantarell', sans-serif;
 
 /* -- [ Functions ] --------------------------------------------------------------------------*/
 
@@ -51,7 +52,7 @@
 }
 
 .iconbefore {
-	font-family: "GeneralFoundicons";
+	font-family: "FontAwesome";
 	font-weight: normal;
 	font-style: normal;
 	text-decoration: inherit;
@@ -61,7 +62,7 @@
 }
 
 .iconafter {
-	font-family: "GeneralFoundicons";
+	font-family: "FontAwesome";
 	font-weight: normal;
 	font-style: normal;
 	text-decoration: inherit;
@@ -88,34 +89,18 @@
 	border-bottom-width:0;
 }
 
-/* -- [ Less Mixins ] --------------------------------------------------------------------------*/
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix() {
+	*zoom:1;
 
-.tar()
-{
-	text-align: right;
-}
-
-.tac()
-{
-	text-align: center; 
-}
-
-.hide() 
-{
-	display: none;
-}
-
-.clearfix() 
-{
+	&:before,
 	&:after {
-		content: "";
-		display: block;
-		clear: both;
+	    content:"";
+	    display:table;
 	}
-}  
-
-.clear() {
-	clear: both;
+	&:after {
+	    clear:both;
+	}
 }
 
 .border_radius(@radius:3px)
@@ -180,7 +165,7 @@
     -moz-box-shadow:inset @shadow_x @shadow_y @shadow_rad @shadow_in @shadow_color;
     -o-box-shadow:inset @shadow_x @shadow_y @shadow_rad @shadow_in @shadow_color;
 }
- 
+
 .text_shadow(@shadow_x:3px, @shadow_y:3px, @shadow_rad:3px, @shadow_color:#fff)
 {
     text-shadow:@shadow_x @shadow_y @shadow_rad @shadow_color;
@@ -192,8 +177,6 @@
     background: -webkit-linear-gradient(@from, @to);
     background: -moz-linear-gradient(center top, @from 0%, @to 100%);
     background: -moz-gradient(center top, @from 0%, @to 100%);
-    filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=%d,endColorstr=%d)", @from, @to));
-	-ms-filter: %("progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=%d, endColorstr=%d)", @from, @to);
 }
 
 .transition(@selector:all, @animation:ease-in-out, @duration:.2s) {
@@ -202,7 +185,7 @@
     -o-transition:@selector @animation @duration;
     transition:@selector @animation @duration;
 }
- 
+
 .opacity(@opacity:0.75) {
     filter:~"alpha(opacity=@opacity * 100)";
     -moz-opacity:@opacity;
@@ -220,7 +203,7 @@
 	-webkit-transform: rotate(@degree);  /* Saf3.1+, Chrome */
 	-moz-transform: rotate(@degree);  /* FF3.5+ */
 	-ms-transform: rotate(@degree);  /* IE9 */
-	-o-transform: rotate(@degree);  /* Opera 10.5 */ 
+	-o-transform: rotate(@degree);  /* Opera 10.5 */
 	transform: rotate(@degree);
 	zoom: 1;
 }
@@ -229,7 +212,7 @@
 	-webkit-transform: scale(@scale);  /* Saf3.1+, Chrome */
 	-moz-transform: scale(@scale);  /* FF3.5+ */
 	-ms-transform: scale(@scale);  /* IE9 */
-	-o-transform: scale(@scale);  /* Opera 10.5 */ 
+	-o-transform: scale(@scale);  /* Opera 10.5 */
 	transform: scale(@scale);
 	zoom: 1;
 }
