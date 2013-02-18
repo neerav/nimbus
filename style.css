@@ -1,7 +1,7 @@
 /*
 Theme Name: nimbus
 Theme URI: https://github.com/jameskoster/nimbus
-Description: A responsive theme with a focus on typography. Nimbus has a light-on-dark aesthetic by default but that can be easily changed via the customisation options. Nimbus is also compatible with WooCommerce for your eCommerce needs.
+Description: A responsive theme with a focus on typography. Nimbus has a light-on-dark aesthetic by default but that can be easily changed via the customisation options. Nimbus is also compatible with WooCommerce for your eCommerce needs. <a href="http://twitter.com/jameskoster/">Follow me on Twitter</a> for updates.
 Author: James Koster
 Author URI: http://jameskoster.co.uk/
 Version: 0.2.1
@@ -782,12 +782,12 @@ hr {
   clear: both;
   display: inline;
   float: left;
-  width: 96.6662057917672%;
-  margin-left: 1.6668971041164076%;
-  margin-right: 1.6668971041164076%;
-  *width: 96.61412245843387%;
-  *margin-left: 1.6148137707830743%;
-  *margin-right: 1.6148137707830743%;
+  width: 95.83333333333334%;
+  margin-left: 2.0833333333333335%;
+  margin-right: 2.0833333333333335%;
+  *width: 95.78125000000001%;
+  *margin-left: 2.03125%;
+  *margin-right: 2.03125%;
   margin-top: 1.999em;
   display: none;
 }
@@ -822,11 +822,13 @@ hr {
 .aligncenter {
   display: block;
   margin: 0 auto 1.777em;
+  max-width: 100%;
 }
 .alignright {
   display: block;
   float: right;
   margin: 1.777em 0 1.777em 1.777em;
+  max-width: 100%;
 }
 .gallery-caption,
 .wp-caption-text {
@@ -838,6 +840,7 @@ img.alignleft {
   max-width: none;
   float: left;
   margin: 1.777em 1.777em 1.777em 0;
+  max-width: 100%;
 }
 img.wp-post-image {
   width: 100%;
@@ -941,12 +944,12 @@ img.wp-post-image {
   /* Opera/IE 8+ */
 
   display: block;
-  width: 120.00276524939689%;
-  margin-left: -10.001382624698445%;
-  margin-right: -10.001382624698445%;
-  *width: 119.95068191606356%;
-  *margin-left: -10.05346595803178%;
-  *margin-right: -10.05346595803178%;
+  width: 125%;
+  margin-left: -12.5%;
+  margin-right: -12.5%;
+  *width: 124.94791666666667%;
+  *margin-left: -12.552083333333334%;
+  *margin-right: -12.552083333333334%;
   *zoom: 1;
 }
 .gallery-nav:before,
@@ -968,12 +971,12 @@ img.wp-post-image {
 .gallery-nav a {
   display: inline;
   float: left;
-  width: 29.99723475060311%;
-  margin-left: 10.001382624698445%;
-  margin-right: 10.001382624698445%;
-  *width: 29.945151417269777%;
-  *margin-left: 9.949299291365111%;
-  *margin-right: 9.949299291365111%;
+  width: 25%;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  *width: 24.947916666666668%;
+  *margin-left: 12.447916666666666%;
+  *margin-right: 12.447916666666666%;
   display: block;
 }
 .gallery-nav a:nth-child(2n) {
@@ -988,12 +991,12 @@ img.wp-post-image {
 p.nocomments {
   display: inline;
   float: left;
-  width: 94.99930868765077%;
-  margin-left: 2.5003456561746114%;
-  margin-right: 2.5003456561746114%;
-  *width: 94.94722535431744%;
-  *margin-left: 2.448262322841278%;
-  *margin-right: 2.448262322841278%;
+  width: 93.75%;
+  margin-left: 3.125%;
+  margin-right: 3.125%;
+  *width: 93.69791666666667%;
+  *margin-left: 3.0729166666666665%;
+  *margin-right: 3.0729166666666665%;
 }
 p.nocomments:before {
   font-family: "FontAwesome";
@@ -1011,12 +1014,12 @@ p.nocomments:before {
   clear: both;
   display: inline;
   float: left;
-  width: 94.99930868765077%;
-  margin-left: 2.5003456561746114%;
-  margin-right: 2.5003456561746114%;
-  *width: 94.94722535431744%;
-  *margin-left: 2.448262322841278%;
-  *margin-right: 2.448262322841278%;
+  width: 93.75%;
+  margin-left: 3.125%;
+  margin-right: 3.125%;
+  *width: 93.69791666666667%;
+  *margin-left: 3.0729166666666665%;
+  *margin-right: 3.0729166666666665%;
 }
 #comment-nav-above:before,
 #comment-nav-below:before,
@@ -1107,12 +1110,12 @@ p.nocomments:before {
   margin-bottom: 0;
   margin-left: 0;
   display: block;
-  width: 105.00069131234923%;
-  margin-left: -2.5003456561746114%;
-  margin-right: -2.5003456561746114%;
-  *width: 104.9486079790159%;
-  *margin-left: -2.552428989507945%;
-  *margin-right: -2.552428989507945%;
+  width: 106.25%;
+  margin-left: -3.125%;
+  margin-right: -3.125%;
+  *width: 106.19791666666667%;
+  *margin-left: -3.1770833333333335%;
+  *margin-right: -3.1770833333333335%;
   *zoom: 1;
 }
 .comments ul.children:before,
@@ -1126,22 +1129,22 @@ p.nocomments:before {
 .comments ul.children > li {
   display: inline;
   float: left;
-  width: 82.49930868765077%;
-  margin-left: 2.5003456561746114%;
-  margin-right: 2.5003456561746114%;
-  *width: 82.44722535431744%;
-  *margin-left: 2.448262322841278%;
-  *margin-right: 2.448262322841278%;
+  width: 81.25%;
+  margin-left: 3.125%;
+  margin-right: 3.125%;
+  *width: 81.19791666666667%;
+  *margin-left: 3.0729166666666665%;
+  *margin-right: 3.0729166666666665%;
   float: right;
 }
 .comments ul.children ul.children {
   display: block;
-  width: 105.71507578554198%;
-  margin-left: -2.857537892770984%;
-  margin-right: -2.857537892770984%;
-  *width: 105.66299245220866%;
-  *margin-left: -2.9096212261043175%;
-  *margin-right: -2.9096212261043175%;
+  width: 107.14285714285714%;
+  margin-left: -3.571428571428571%;
+  margin-right: -3.571428571428571%;
+  *width: 107.09077380952381%;
+  *margin-left: -3.6235119047619047%;
+  *margin-right: -3.6235119047619047%;
   *zoom: 1;
 }
 .comments ul.children ul.children:before,
@@ -1155,22 +1158,22 @@ p.nocomments:before {
 .comments ul.children ul.children > li {
   display: inline;
   float: left;
-  width: 79.99920992874372%;
-  margin-left: 2.857537892770984%;
-  margin-right: 2.857537892770984%;
-  *width: 79.9471265954104%;
-  *margin-left: 2.8054545594376505%;
-  *margin-right: 2.8054545594376505%;
+  width: 78.57142857142857%;
+  margin-left: 3.571428571428571%;
+  margin-right: 3.571428571428571%;
+  *width: 78.51934523809524%;
+  *margin-left: 3.5193452380952377%;
+  *margin-right: 3.5193452380952377%;
   float: right;
 }
 .comments ul.children ul.children ul.children {
   display: block;
-  width: 106.66758841646565%;
-  margin-left: -3.333794208232815%;
-  margin-right: -3.333794208232815%;
-  *width: 106.61550508313232%;
-  *margin-left: -3.3858775415661486%;
-  *margin-right: -3.3858775415661486%;
+  width: 108.33333333333333%;
+  margin-left: -4.166666666666667%;
+  margin-right: -4.166666666666667%;
+  *width: 108.28125%;
+  *margin-left: -4.21875%;
+  *margin-right: -4.21875%;
   *zoom: 1;
 }
 .comments ul.children ul.children ul.children:before,
@@ -1184,22 +1187,22 @@ p.nocomments:before {
 .comments ul.children ul.children ul.children > li {
   display: inline;
   float: left;
-  width: 76.66574491686772%;
-  margin-left: 3.333794208232815%;
-  margin-right: 3.333794208232815%;
-  *width: 76.6136615835344%;
-  *margin-left: 3.2817108748994817%;
-  *margin-right: 3.2817108748994817%;
+  width: 75%;
+  margin-left: 4.166666666666667%;
+  margin-right: 4.166666666666667%;
+  *width: 74.94791666666667%;
+  *margin-left: 4.114583333333334%;
+  *margin-right: 4.114583333333334%;
   float: right;
 }
 .comments ul.children ul.children ul.children ul.children {
   display: block;
-  width: 108.00110609975877%;
-  margin-left: -4.000553049879377%;
-  margin-right: -4.000553049879377%;
-  *width: 107.94902276642544%;
-  *margin-left: -4.05263638321271%;
-  *margin-right: -4.05263638321271%;
+  width: 110.00000000000001%;
+  margin-left: -5%;
+  margin-right: -5%;
+  *width: 109.94791666666669%;
+  *margin-left: -5.052083333333333%;
+  *margin-right: -5.052083333333333%;
   *zoom: 1;
 }
 .comments ul.children ul.children ul.children ul.children:before,
@@ -1213,12 +1216,12 @@ p.nocomments:before {
 .comments ul.children ul.children ul.children ul.children > li {
   display: inline;
   float: left;
-  width: 71.99889390024123%;
-  margin-left: 4.000553049879377%;
-  margin-right: 4.000553049879377%;
-  *width: 71.9468105669079%;
-  *margin-left: 3.9484697165460436%;
-  *margin-right: 3.9484697165460436%;
+  width: 70%;
+  margin-left: 5%;
+  margin-right: 5%;
+  *width: 69.94791666666667%;
+  *margin-left: 4.947916666666667%;
+  *margin-right: 4.947916666666667%;
   float: right;
 }
 .comments .comment-author {
@@ -1249,9 +1252,6 @@ p.nocomments:before {
 .comments .comment-author .comment-meta {
   font-size: .844em;
 }
-.comments .comment-author .comment-meta a {
-  color: #666666;
-}
 .comments .comment-body {
   margin-bottom: 1.777em;
 }
@@ -1265,7 +1265,7 @@ p.nocomments:before {
  * Widgets
  */
 .widget {
-  margin-bottom: 1.777em;
+  margin-bottom: 3.552em;
 }
 .widget ul,
 .widget ol {
@@ -1277,26 +1277,6 @@ p.nocomments:before {
 .main-nav {
   display: none;
 }
-/*.navigation {
-	.clearfix;
-	clear:both;
-
-	a {
-		display: inline-block;
-		padding:1em 0;
-	}
-
-	.prev {
-		width:48%;
-		float: right;
-		text-align: right;
-	}
-
-	.next {
-		width:48%;
-		float: left;
-	}
-}*/
 /**
  * Tables
  */
@@ -1337,12 +1317,10 @@ table {
   margin: 0;
 }
 .post-meta a {
-  text-transform: uppercase;
-  font-size: .75em;
-  font-weight: 700;
-  letter-spacing: 1px;
   text-decoration: none;
   display: inline-block;
+  font-weight: 400;
+  margin-right: .422em;
 }
 .navigation {
   padding-top: 1em;
@@ -1377,7 +1355,7 @@ table {
 }
 .navigation a:before {
   font-family: "FontAwesome";
-  content: "\f060";
+  content: "\f104";
   position: absolute;
   top: 0;
   left: 0;
@@ -1391,7 +1369,7 @@ table {
   margin-left: -0.422em;
 }
 .navigation .next a:before {
-  content: "\f061";
+  content: "\f105";
   text-align: right;
 }
 .navigation .next a:hover {
@@ -1402,14 +1380,14 @@ table {
   padding-top: 0;
 }
 #nav-below.navigation a:before {
-  content: "\f060";
+  content: "\f0a8";
   text-align: left;
 }
 #nav-below.navigation a:hover {
   margin-left: -0.422em;
 }
 #nav-below.navigation .prev a:before {
-  content: "\f061";
+  content: "\f0a9";
   text-align: right;
 }
 #nav-below.navigation .prev a:hover {
@@ -1461,13 +1439,13 @@ table {
   .content {
     display: inline;
     float: left;
-    width: 63.332872458433854%;
-    margin-left: 1.6668971041164076%;
-    margin-right: 1.6668971041164076%;
-    *width: 63.28078912510052%;
-    *margin-left: 1.6148137707830743%;
-    *margin-right: 1.6148137707830743%;
-    margin-left: 10.00023043744974%;
+    width: 62.5%;
+    margin-left: 2.0833333333333335%;
+    margin-right: 2.0833333333333335%;
+    *width: 62.447916666666664%;
+    *margin-left: 2.03125%;
+    *margin-right: 2.03125%;
+    margin-left: 10.416666666666668%;
   }
   /**
   	 * Header
@@ -1487,28 +1465,28 @@ table {
   .header .intro {
     display: none;
   }
-  .header .nav-toggle {
+  .header .toggle-container {
     display: none !important;
   }
   .header .logo {
     display: inline;
     float: left;
-    width: 21.666205791767187%;
-    margin-left: 1.6668971041164076%;
-    margin-right: 1.6668971041164076%;
-    *width: 21.614122458433854%;
-    *margin-left: 1.6148137707830743%;
-    *margin-right: 1.6148137707830743%;
+    width: 20.833333333333332%;
+    margin-left: 2.0833333333333335%;
+    margin-right: 2.0833333333333335%;
+    *width: 20.78125%;
+    *margin-left: 2.03125%;
+    *margin-right: 2.03125%;
   }
   .header .logo a {
     position: relative;
     display: block;
-    width: 113.33517683293127%;
-    margin-left: -6.66758841646563%;
-    margin-right: -6.66758841646563%;
-    *width: 113.28309349959794%;
-    *margin-left: -6.719671749798963%;
-    *margin-right: -6.719671749798963%;
+    width: 116.66666666666667%;
+    margin-left: -8.333333333333334%;
+    margin-right: -8.333333333333334%;
+    *width: 116.61458333333334%;
+    *margin-left: -8.385416666666668%;
+    *margin-right: -8.385416666666668%;
     *zoom: 1;
   }
   .header .logo a:before,
@@ -1522,12 +1500,12 @@ table {
   .header .logo a img {
     display: inline;
     float: left;
-    width: 53.33148983373541%;
-    margin-left: 6.66758841646563%;
-    margin-right: 6.66758841646563%;
-    *width: 53.279406500402075%;
-    *margin-left: 6.615505083132297%;
-    *margin-right: 6.615505083132297%;
+    width: 50%;
+    margin-left: 8.333333333333334%;
+    margin-right: 8.333333333333334%;
+    *width: 49.947916666666664%;
+    *margin-left: 8.28125%;
+    *margin-right: 8.28125%;
     -webkit-transition: all ease-in-out 0.4s;
     z-index: 900;
     background: #fff;
@@ -1537,12 +1515,12 @@ table {
   .header .logo a span {
     display: inline;
     float: left;
-    width: 53.33148983373541%;
-    margin-left: 6.66758841646563%;
-    margin-right: 6.66758841646563%;
-    *width: 53.279406500402075%;
-    *margin-left: 6.615505083132297%;
-    *margin-right: 6.615505083132297%;
+    width: 50%;
+    margin-left: 8.333333333333334%;
+    margin-right: 8.333333333333334%;
+    *width: 49.947916666666664%;
+    *margin-left: 8.28125%;
+    *margin-right: 8.28125%;
     position: absolute;
     text-indent: -99em;
     top: 0;
@@ -1576,13 +1554,13 @@ table {
   .header .main-nav {
     display: inline;
     float: left;
-    width: 63.332872458433854%;
-    margin-left: 1.6668971041164076%;
-    margin-right: 1.6668971041164076%;
-    *width: 63.28078912510052%;
-    *margin-left: 1.6148137707830743%;
-    *margin-right: 1.6148137707830743%;
-    margin-left: 10.00023043744974%;
+    width: 62.5%;
+    margin-left: 2.0833333333333335%;
+    margin-right: 2.0833333333333335%;
+    *width: 62.447916666666664%;
+    *margin-left: 2.03125%;
+    *margin-right: 2.03125%;
+    margin-left: 10.416666666666668%;
     clear: none;
   }
   html {
@@ -1683,12 +1661,12 @@ table {
   .post,
   article.attachment {
     display: block;
-    width: 105.00069131234923%;
-    margin-left: -2.5003456561746114%;
-    margin-right: -2.5003456561746114%;
-    *width: 104.9486079790159%;
-    *margin-left: -2.552428989507945%;
-    *margin-right: -2.552428989507945%;
+    width: 106.25%;
+    margin-left: -3.125%;
+    margin-right: -3.125%;
+    *width: 106.19791666666667%;
+    *margin-left: -3.1770833333333335%;
+    *margin-right: -3.1770833333333335%;
     *zoom: 1;
   }
   .post:before,
@@ -1719,45 +1697,45 @@ table {
   article.attachment .img-wrap {
     display: inline;
     float: left;
-    width: 94.99930868765077%;
-    margin-left: 2.5003456561746114%;
-    margin-right: 2.5003456561746114%;
-    *width: 94.94722535431744%;
-    *margin-left: 2.448262322841278%;
-    *margin-right: 2.448262322841278%;
+    width: 93.75%;
+    margin-left: 3.125%;
+    margin-right: 3.125%;
+    *width: 93.69791666666667%;
+    *margin-left: 3.0729166666666665%;
+    *margin-right: 3.0729166666666665%;
   }
   .post .article-content,
   article.attachment .article-content {
     display: inline;
     float: left;
-    width: 69.99930868765077%;
-    margin-left: 2.5003456561746114%;
-    margin-right: 2.5003456561746114%;
-    *width: 69.94722535431744%;
-    *margin-left: 2.448262322841278%;
-    *margin-right: 2.448262322841278%;
+    width: 68.75%;
+    margin-left: 3.125%;
+    margin-right: 3.125%;
+    *width: 68.69791666666667%;
+    *margin-left: 3.0729166666666665%;
+    *margin-right: 3.0729166666666665%;
   }
   .post .meta,
   article.attachment .meta {
     display: inline;
     float: left;
-    width: 19.999308687650778%;
-    margin-left: 2.5003456561746114%;
-    margin-right: 2.5003456561746114%;
-    *width: 19.947225354317446%;
-    *margin-left: 2.448262322841278%;
-    *margin-right: 2.448262322841278%;
+    width: 18.75%;
+    margin-left: 3.125%;
+    margin-right: 3.125%;
+    *width: 18.697916666666668%;
+    *margin-left: 3.0729166666666665%;
+    *margin-right: 3.0729166666666665%;
   }
   .post .attachment-post-thumbnail,
   article.attachment .attachment-post-thumbnail {
     display: inline;
     float: left;
-    width: 94.99930868765077%;
-    margin-left: 2.5003456561746114%;
-    margin-right: 2.5003456561746114%;
-    *width: 94.94722535431744%;
-    *margin-left: 2.448262322841278%;
-    *margin-right: 2.448262322841278%;
+    width: 93.75%;
+    margin-left: 3.125%;
+    margin-right: 3.125%;
+    *width: 93.69791666666667%;
+    *margin-left: 3.0729166666666665%;
+    *margin-right: 3.0729166666666665%;
     height: auto;
   }
   /**
@@ -1765,6 +1743,15 @@ table {
   	 */
   .post {
     text-align: justify;
+    *zoom: 1;
+  }
+  .post:before,
+  .post:after {
+    content: "";
+    display: table;
+  }
+  .post:after {
+    clear: both;
   }
   .post .article-content > a.zoom {
     margin-bottom: 1em;
@@ -1788,7 +1775,10 @@ table {
     font-size: 1.125em;
   }
   .post-meta {
-    font-size: .844em;
+    font-size: .75em;
+  }
+  .post-meta ul {
+    float: none;
   }
   .post-meta li {
     float: none;
@@ -1797,6 +1787,17 @@ table {
   /**
   	 * Pages
   	 */
+  .page {
+    *zoom: 1;
+  }
+  .page:before,
+  .page:after {
+    content: "";
+    display: table;
+  }
+  .page:after {
+    clear: both;
+  }
   .page .article-content {
     font-size: 1.125em;
   }
@@ -1820,12 +1821,12 @@ table {
   	 */
   .comments {
     display: block;
-    width: 105.00069131234923%;
-    margin-left: -2.5003456561746114%;
-    margin-right: -2.5003456561746114%;
-    *width: 104.9486079790159%;
-    *margin-left: -2.552428989507945%;
-    *margin-right: -2.552428989507945%;
+    width: 106.25%;
+    margin-left: -3.125%;
+    margin-right: -3.125%;
+    *width: 106.19791666666667%;
+    *margin-left: -3.1770833333333335%;
+    *margin-right: -3.1770833333333335%;
     *zoom: 1;
   }
   .comments:before,
@@ -1841,12 +1842,12 @@ table {
   .comments #respond {
     display: inline;
     float: left;
-    width: 69.99930868765077%;
-    margin-left: 2.5003456561746114%;
-    margin-right: 2.5003456561746114%;
-    *width: 69.94722535431744%;
-    *margin-left: 2.448262322841278%;
-    *margin-right: 2.448262322841278%;
+    width: 68.75%;
+    margin-left: 3.125%;
+    margin-right: 3.125%;
+    *width: 68.69791666666667%;
+    *margin-left: 3.0729166666666665%;
+    *margin-right: 3.0729166666666665%;
   }
   /**
   	 * Sidebar
@@ -1854,12 +1855,12 @@ table {
   .sidebar {
     display: inline;
     float: left;
-    width: 21.666205791767187%;
-    margin-left: 1.6668971041164076%;
-    margin-right: 1.6668971041164076%;
-    *width: 21.614122458433854%;
-    *margin-left: 1.6148137707830743%;
-    *margin-right: 1.6148137707830743%;
+    width: 20.833333333333332%;
+    margin-left: 2.0833333333333335%;
+    margin-right: 2.0833333333333335%;
+    *width: 20.78125%;
+    *margin-left: 2.03125%;
+    *margin-right: 2.03125%;
     font-size: .844em;
     font-weight: 300;
   }
@@ -1881,12 +1882,12 @@ table {
   .footer {
     display: inline;
     float: left;
-    width: 96.6662057917672%;
-    margin-left: 1.6668971041164076%;
-    margin-right: 1.6668971041164076%;
-    *width: 96.61412245843387%;
-    *margin-left: 1.6148137707830743%;
-    *margin-right: 1.6148137707830743%;
+    width: 95.83333333333334%;
+    margin-left: 2.0833333333333335%;
+    margin-right: 2.0833333333333335%;
+    *width: 95.78125000000001%;
+    *margin-left: 2.03125%;
+    *margin-right: 2.03125%;
   }
   /**
   	 * Lightbox

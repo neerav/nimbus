@@ -8,17 +8,17 @@
  */
 ?>
 
-<?php 
+<?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-get_header(); 
+get_header();
 ?>
 
 <section class="content" role="main">
-	
+
 	<h1 class="archive_header search">
 		<?php _e( 'Search results for', 'nimbus' ); ?> &ldquo; <?php the_search_query(); ?> &rdquo;
-	</h1>        
-    		
+	</h1>
+
 	<?php if ( have_posts() ) : ?>
 
 		<?php /* Start the Loop */ ?>
@@ -27,7 +27,7 @@ get_header();
 			<?php get_template_part( 'content', get_post_format() ); ?>
 
 		<?php endwhile; ?>
-		
+
 		<?php nimbus_content_nav( 'nav-below' ); ?>
 
 	<?php else : ?>
@@ -46,5 +46,5 @@ get_header();
 	<?php endif; ?>
 
 </section>
-	
+
 <?php get_footer(); ?>

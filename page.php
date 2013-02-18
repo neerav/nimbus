@@ -8,9 +8,9 @@
  */
 ?>
 
-<?php 
+<?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-get_header(); 
+get_header();
 ?>
 
 <section class="content" role="main">

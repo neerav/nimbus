@@ -8,18 +8,21 @@
  */
 
 /**
- * Display logo based on admin email
+ * Setup Theme
  */
-if ( ! function_exists( 'nimbus_display_logo' ) ) {
-	function nimbus_display_logo() {
-		$admin_email = get_option( 'admin_email' ); ?>
-		<div class="logo">
-			<a href="<?php echo home_url(); ?>" title="<?php get_bloginfo( 'name' ); ?>">
-				<img src="http://www.gravatar.com/avatar/<?php echo md5( strtolower( trim( $admin_email ) ) ); ?>?s=256&d=identicon&r=PG" alt="<?php get_bloginfo( 'name' ); ?>" class="mugshot" />
-				<span></span>
-			</a>
-		</div><!--/.logo-->
-	<?php }
+if ( ! function_exists( 'nimbus_setup' ) ) {
+	function nimbus_setup() {
+		add_theme_support( 'post-thumbnails' );										// Enable Post Thumbnails
+		add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'woocommerce' );
+		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
+
+		/**
+		 * Define content width
+		 * @var integer
+		 */
+		if ( ! isset( $content_width ) ) $content_width = 900;
+	}
 }
 
 /**
@@ -27,21 +30,46 @@ if ( ! function_exists( 'nimbus_display_logo' ) ) {
  */
 if ( ! function_exists( 'nimbus_add_scripts' ) ) {
 	function nimbus_add_scripts() {
+		// Register styles
 		wp_register_style( 'woocommerce', get_template_directory_uri() . '/css/woocommerce.css' );
-		wp_enqueue_style( 'open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700' );
-		wp_enqueue_style( 'open-sans-condensed', 'http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' );
-		wp_enqueue_style( 'cantarell', 'http://fonts.googleapis.com/css?family=Cantarell' );
+
+		// Enqueue styles
+		wp_enqueue_style( 'nimbus-styles', get_stylesheet_uri() );
+
+		// Register scripts
 		wp_register_script( 'html5shiv', get_template_directory_uri() . '/js/html5shiv.js' );
+
+		// Enqueue Scripts
 		wp_enqueue_script( 'nimbus-plugins', get_template_directory_uri() . '/js/plugins.min.js', array( 'jquery' ), '', true );
 		wp_enqueue_script( 'nimbus-script', get_template_directory_uri() . '/js/script.min.js', array( 'jquery' ), '', true );
 		wp_enqueue_script( 'comment-reply' );
+
+		// Enqueue Google fonts
+		wp_enqueue_style( 'open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700' );
+		wp_enqueue_style( 'open-sans-condensed', 'http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' );
+		wp_enqueue_style( 'cantarell', 'http://fonts.googleapis.com/css?family=Cantarell' );
 	}
+}
+
+/**
+ * Display logo based on admin email
+ */
+if ( ! function_exists( 'nimbus_display_logo' ) ) {
+	function nimbus_display_logo() {
+		$admin_email = get_option( 'admin_email' ); ?>
+		<div class="logo">
+			<a href="<?php echo esc_url(home_url()); ?>" title="<?php get_bloginfo( 'name' ); ?>">
+				<?php echo get_avatar( $admin_email, 256 ); ?>
+				<span></span>
+			</a>
+		</div><!--/.logo-->
+	<?php }
 }
 
 /**
  * Add HTML5 shiv in <ie9
  */
-if (!function_exists( 'nimbus_html5' ) ) {
+if ( ! function_exists( 'nimbus_html5' ) ) {
 	function nimbus_html5() {
 		global $is_IE;
 		if ( $is_IE ) {
@@ -68,11 +96,6 @@ if ( ! function_exists( 'nimbus_widgets_init' ) ) {
 	}
 }
 
-/**
- * Define content width
- * @var integer
- */
-if ( ! isset( $content_width ) ) $content_width = 900;
 
 /**
  * Post Meta
@@ -186,10 +209,11 @@ if ( ! function_exists( 'nimbus_comment' ) ) {
 	}
 }
 
+
 /**
  * Custom excerpt length
  */
-if ( ! function_exists( 'custom_excerpt_length' ) ) {
+if ( ! function_exists( 'nimbus_excerpt_length' ) ) {
 	function custom_excerpt_length( $length ) {
 		return 63;
 	}
@@ -198,7 +222,7 @@ if ( ! function_exists( 'custom_excerpt_length' ) ) {
 /**
  * Custom excerpt more
  */
-if ( ! function_exists( 'new_excerpt_more' ) ) {
+if ( ! function_exists( 'nimbus_excerpt_more' ) ) {
 	function new_excerpt_more( $more ) {
 		return '...';
 	}

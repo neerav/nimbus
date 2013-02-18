@@ -23,15 +23,12 @@
   <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title><?php bloginfo('name'); ?> | <?php is_home() ? bloginfo('description') : wp_title(''); ?></title>
+  <title><?php bloginfo('name'); wp_title( '|', true, 'left' ); ?></title>
 
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
-  <!-- CSS : implied media="all" -->
-  <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
 
   <?php wp_head(); ?>
 </head>
@@ -51,7 +48,7 @@
 
 			<?php } else { ?>
 
-			    <h1 class="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+			    <h1 class="site-title"><a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a></h1>
 
 			<?php } ?>
 
@@ -61,7 +58,7 @@
 
 			<nav class="main-nav">
 
-				<?php wp_nav_menu( array( 'menu' => 'main' ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'main', 'menu_class' => 'menu' ) ); ?>
 
 			</nav>
 

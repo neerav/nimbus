@@ -1,7 +1,7 @@
 /*
 Theme Name: nimbus
 Theme URI: https://github.com/jameskoster/nimbus
-Description: A responsive theme with a focus on typography. Nimbus has a light-on-dark aesthetic by default but that can be easily changed via the customisation options. Nimbus is also compatible with WooCommerce for your eCommerce needs.
+Description: A responsive theme with a focus on typography. Nimbus has a light-on-dark aesthetic by default but that can be easily changed via the customisation options. Nimbus is also compatible with WooCommerce for your eCommerce needs. <a href="http://twitter.com/jameskoster/">Follow me on Twitter</a> for updates.
 Author: James Koster
 Author URI: http://jameskoster.co.uk/
 Version: 0.2.1
@@ -388,12 +388,14 @@ hr {
 .aligncenter {
 	display: block;
 	margin:0 auto 1.777em;
+	max-width:100%;
 }
 
 .alignright {
 	display: block;
 	float: right;
 	margin:1.777em 0 1.777em 1.777em;
+	max-width:100%;
 }
 
 .gallery-caption, .wp-caption-text {
@@ -406,6 +408,7 @@ img.alignleft {
 	max-width: none;
 	float: left;
 	margin:1.777em 1.777em 1.777em 0;
+	max-width:100%;
 }
 
 img.wp-post-image {
@@ -618,9 +621,6 @@ p.nocomments {
 		}
 		.comment-meta {
 			font-size:.844em;
-			a {
-				color: @color_body;
-			}
 		}
 	}
 	.comment-body {
@@ -639,7 +639,7 @@ p.nocomments {
  * Widgets
  */
 .widget {
-	margin-bottom:1.777em;
+	margin-bottom:3.552em;
 	ul, ol {
 		list-style: none;
 	}
@@ -651,27 +651,6 @@ p.nocomments {
 .main-nav {
 	display: none;
 }
-
-/*.navigation {
-	.clearfix;
-	clear:both;
-
-	a {
-		display: inline-block;
-		padding:1em 0;
-	}
-
-	.prev {
-		width:48%;
-		float: right;
-		text-align: right;
-	}
-
-	.next {
-		width:48%;
-		float: left;
-	}
-}*/
 
 /**
  * Tables
@@ -704,12 +683,13 @@ table {
 		}
 	}
 	a {
-		text-transform: uppercase;
-		font-size:.75em;
-		font-weight: 700;
-		letter-spacing: 1px;
+		//text-transform: uppercase;
+		//letter-spacing: 1px;
 		text-decoration: none;
 		display: inline-block;
+		//font-family: @fontstack_headings_sidebar;
+		font-weight: 400;
+		margin-right:.422em;
 	}
 }
 
@@ -732,7 +712,7 @@ table {
 		width:100%;
 		&:before {
 			font-family: "FontAwesome";
-			content: "\f060";
+			content: "\f104";
 			position: absolute;
 			top:0;
 			left:0;
@@ -749,7 +729,7 @@ table {
 	.next {
 		a {
 			&:before {
-				content: "\f061";
+				content: "\f105";
 				text-align: right;
 			}
 			&:hover {
@@ -770,7 +750,7 @@ table {
 	&.navigation {
 		a {
 			&:before {
-				content: "\f060";
+				content: "\f0a8";
 				text-align: left;
 			}
 			&:hover {
@@ -780,7 +760,7 @@ table {
 		.prev {
 			a {
 				&:before {
-					content: "\f061";
+					content: "\f0a9";
 					text-align: right;
 				}
 				&:hover {
@@ -848,7 +828,7 @@ table {
 		.site-title, .intro {
 			display: none;
 		}
-		.nav-toggle {
+		.toggle-container {
 			display:none !important;
 		}
 		.logo {
@@ -1019,6 +999,7 @@ table {
 	 */
 	.post {
 	 	text-align: justify;
+	 	.clearfix;
 	 	.article-content {
 			> a.zoom {
 				margin-bottom:1em;
@@ -1058,7 +1039,10 @@ table {
 		}
 	}
 	.post-meta {
-		font-size:.844em;
+		font-size:.75em;
+		ul {
+			float: none;
+		}
 		li {
 			float: none;
 			margin-right:0;
@@ -1068,6 +1052,7 @@ table {
 	 * Pages
 	 */
 	.page {
+		.clearfix;
 		.article-content {
 			font-size:1.125em;
 		}
