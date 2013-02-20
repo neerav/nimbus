@@ -214,7 +214,7 @@ if ( ! function_exists( 'nimbus_comment' ) ) {
  * Custom excerpt length
  */
 if ( ! function_exists( 'nimbus_excerpt_length' ) ) {
-	function custom_excerpt_length( $length ) {
+	function nimbus_excerpt_length( $length ) {
 		return 63;
 	}
 }
@@ -223,7 +223,7 @@ if ( ! function_exists( 'nimbus_excerpt_length' ) ) {
  * Custom excerpt more
  */
 if ( ! function_exists( 'nimbus_excerpt_more' ) ) {
-	function new_excerpt_more( $more ) {
+	function nimbus_excerpt_more( $more ) {
 		return '...';
 	}
 }
