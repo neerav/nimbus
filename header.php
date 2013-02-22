@@ -35,10 +35,11 @@
 
 <body <?php body_class(); ?>>
 
-  <div class="wrapper <?php if (!is_home()) echo 'not-home'; ?>">
 
-		<header class="header">
 
+	<header class="header">
+
+		<div class="wrapper">
 
 			<?php nimbus_display_logo(); ?>
 
@@ -62,8 +63,12 @@
 
 			</nav>
 
-			<hr />
+		</div><!--/.wrapper-->
 
-		</header>
+	</header>
+
+	<hr class="top" />
+
+	<div class="wrapper <?php if (!is_home()) echo 'not-home'; ?>">
 
 		<?php get_sidebar(); ?>

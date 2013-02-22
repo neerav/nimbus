@@ -68,6 +68,7 @@ class NimbusOptions
                 <?php self::generate_css('a, .format-image .post-header h1:before, .format-link .post-header h1:before, .format-video .post-header h1:before, .format-status .post-header h1:before, .format-gallery .post-header h1:before, .format-audio .post-header h1:before', 'color', 'link_textcolor'); ?>
                 <?php self::generate_css('body:before, body:after, input[type="submit"], .button', 'background', 'link_textcolor'); ?>
                 <?php self::generate_css('body', 'color', 'textcolor'); ?>
+                <?php self::generate_css('hr', 'background', 'textcolor'); ?>
                 <?php self::generate_css('h1, h2, h3, h4, h5, h6', 'color', 'headercolor'); ?>
                 <?php self::generate_css('html', 'background-color', 'background_color', '#'); ?>
                 <?php self::generate_css('ul.menu ul li a', 'background-color', 'background_color', '#'); ?>
