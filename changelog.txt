@@ -1,3 +1,6 @@
+[22/02/2013 - version 0.2.3]
+- Changed header layout slightly to improve visual hierarchy and nav styling
+
 [18/02/2013 - version 0.2.2]
 - Fixed broken function names
 - Several small tweaks

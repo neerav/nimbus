@@ -4,7 +4,7 @@ Theme URI: https://github.com/jameskoster/nimbus
 Description: A responsive theme with a focus on typography. Nimbus has a light-on-dark aesthetic by default but that can be easily changed via the customisation options. Nimbus is also compatible with WooCommerce for your eCommerce needs. <a href="http://twitter.com/jameskoster/">Follow me on Twitter</a> for updates.
 Author: James Koster
 Author URI: http://jameskoster.co.uk/
-Version: 0.2.2
+Version: 0.2.3
 Tags: gray, two-columns, left-sidebar, flexible-width, post-formats, sticky-post, threaded-comments, translation-ready, theme-options, dark
 
 License: GNU General Public License v2.0
@@ -59,6 +59,8 @@ Modular Scale: http://modularscale.com/scale/?px1=16&px2=18&ra1=1.333&ra2=0
   border-right-width: 0;
   border-bottom-width: 0;
 }
+/* -- [ Objects ] --------------------------------------------------------------------------*/
+/* -- [ Mixins ] --------------------------------------------------------------------------*/
 /**
  * Animation
  */
@@ -476,7 +478,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.heading {
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.75);
@@ -494,29 +497,35 @@ h2 a,
 h3 a,
 h4 a,
 h5 a,
-h6 a {
+h6 a,
+.heading a {
   text-decoration: none;
 }
 h1,
-.site-title {
+.site-title,
+.alpha {
   display: block;
   font-size: 1.777em;
   letter-spacing: -1px;
   text-transform: uppercase;
 }
 h1.archive-header,
-.site-title.archive-header {
+.site-title.archive-header,
+.alpha.archive-header {
   font-weight: 400;
   font-size: 1.125em;
   letter-spacing: 1px;
 }
-h2 {
+h2,
+.beta {
   font-size: 1.5em;
 }
-h3 {
+h3,
+.gamma {
   font-size: 1.333em;
 }
-h4 {
+h4,
+.delta {
   font-size: 1.125em;
 }
 p + h1,
@@ -754,7 +763,7 @@ hr {
   display: none;
 }
 .header .logo {
-  margin-bottom: 1em;
+  margin-bottom: 0;
   width: 6.312em;
   float: left;
 }
@@ -765,6 +774,7 @@ hr {
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
+  display: block;
 }
 .header .logo a span {
   display: none;
@@ -776,26 +786,7 @@ hr {
 }
 .header .main-nav {
   clear: both;
-}
-.header ul.menu {
-  list-style: none;
-}
-.header ul.menu ul {
-  margin: 0;
-  list-style: none;
-}
-.header hr {
-  clear: both;
-  display: inline;
-  float: left;
-  width: 95.83333333333334%;
-  margin-left: 2.0833333333333335%;
-  margin-right: 2.0833333333333335%;
-  *width: 95.78125000000001%;
-  *margin-left: 2.03125%;
-  *margin-right: 2.03125%;
-  margin-top: 1.999em;
-  display: none;
+  margin-bottom: 0;
 }
 .header .nav-toggle {
   text-indent: -999em;
@@ -814,6 +805,22 @@ hr {
   text-align: center;
   text-indent: 0;
   line-height: 3.157;
+}
+.header + hr {
+  margin-bottom: 2.665em;
+  margin-top: 0;
+}
+/**
+ * Navigation
+ */
+ul.menu {
+  list-style: none;
+  margin: 0;
+  padding-top: 1.777em;
+}
+ul.menu ul {
+  margin: 0;
+  list-style: none;
 }
 /**
  * Posts
@@ -1400,6 +1407,15 @@ table {
   margin-left: .422em;
 }
 /**
+ * Footer
+ */
+.footer {
+  padding: 2.665em 0;
+}
+.footer p {
+  margin: 0;
+}
+/**
  * Lightbox
  */
 #lightbox {
@@ -1458,6 +1474,7 @@ table {
   	 */
   .header {
     *zoom: 1;
+    margin-bottom: 0;
   }
   .header:before,
   .header:after {
@@ -1466,6 +1483,9 @@ table {
   }
   .header:after {
     clear: both;
+  }
+  .header .wrapper {
+    position: relative;
   }
   .header .site-title,
   .header .intro {
@@ -1483,6 +1503,11 @@ table {
     *width: 20.78125%;
     *margin-left: 2.03125%;
     *margin-right: 2.03125%;
+    margin-bottom: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999;
   }
   .header .logo a {
     position: relative;
@@ -1566,11 +1591,8 @@ table {
     *width: 62.447916666666664%;
     *margin-left: 2.03125%;
     *margin-right: 2.03125%;
-    margin-left: 10.416666666666668%;
+    margin-left: 35.41666666666667%;
     clear: none;
-  }
-  .header + hr {
-    margin-bottom: 2.665em;
   }
   html {
     -webkit-text-size-adjust: none;
@@ -1593,13 +1615,15 @@ table {
   .main-nav {
     display: block !important;
     text-align: left;
+    padding-top: 2.369em;
+    margin-bottom: 0;
   }
   ul.menu {
     position: relative;
     letter-spacing: 1px;
     font-weight: 700;
     margin-bottom: 0;
-    margin-left: 0;
+    margin-left: -0.844em;
     padding: 0;
     /* CHILDREN */
   
@@ -1612,7 +1636,7 @@ table {
   }
   ul.menu li a {
     display: inline-block;
-    padding: .75em 0;
+    padding: 1.333em .844em;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -1630,7 +1654,7 @@ table {
     text-decoration: underline;
   }
   ul.menu > li {
-    margin-right: 1.999em;
+    margin-right: .563em;
   }
   ul.menu ul {
     width: 15em;
@@ -1642,24 +1666,40 @@ table {
     margin: 0;
     padding: 0;
     text-align: left;
+    background-color: #49a0a0;
+    padding: .356em 0;
+    -webkit-border-bottom-left-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    -moz-border-radius-bottomright: 3px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+    -moz-box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+    -o-box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
   }
   ul.menu ul li {
     float: none;
     display: block;
+    padding: .356em .844em;
   }
   ul.menu ul li a {
     width: 100%;
-    background: #2b2b2b;
     display: inline-block;
     text-transform: none;
     letter-spacing: 0;
+    font-size: .844em;
+    padding: 0;
+    background: none;
+    color: #2b2b2b;
   }
   ul.menu ul li.parent > a:after {
     content: "\2192";
   }
   ul.menu ul ul {
     left: 100%;
-    top: 0;
+    top: -0.356em;
   }
   ul.menu li:hover > ul {
     visibility: visible;

@@ -4,7 +4,7 @@ Theme URI: https://github.com/jameskoster/nimbus
 Description: A responsive theme with a focus on typography. Nimbus has a light-on-dark aesthetic by default but that can be easily changed via the customisation options. Nimbus is also compatible with WooCommerce for your eCommerce needs. <a href="http://twitter.com/jameskoster/">Follow me on Twitter</a> for updates.
 Author: James Koster
 Author URI: http://jameskoster.co.uk/
-Version: 0.2.2
+Version: 0.2.3
 Tags: gray, two-columns, left-sidebar, flexible-width, post-formats, sticky-post, threaded-comments, translation-ready, theme-options, dark
 
 License: GNU General Public License v2.0
@@ -86,7 +86,7 @@ body.admin-bar {
 	}
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .heading {
 	font-family: @fontstack_headings;
 	font-weight: 700;
 	color:rgba(0,0,0,0.75);
@@ -98,13 +98,12 @@ h1, h2, h3, h4, h5, h6 {
 	word-spacing: .113em;
 	word-wrap: break-word;
 	text-align: left;
+	a {
+		text-decoration: none;
+	}
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-	text-decoration: none;
-}
-
-h1, .site-title {
+h1, .site-title, .alpha {
 	display:block;
 	font-size:1.777em;
 	letter-spacing: -1px;
@@ -115,13 +114,13 @@ h1, .site-title {
 		letter-spacing: 1px;
 	}
 }
-h2 {
+h2, .beta {
 	font-size:1.5em;
 }
-h3 {
+h3, .gamma {
 	font-size:1.333em;
 }
-h4 {
+h4, .delta {
 	font-size:1.125em;
 }
 
@@ -331,13 +330,14 @@ hr {
 		display: none;
 	}
 	.logo {
-		margin-bottom:1em;
+		margin-bottom:0;
 		width:6.312em;
 		float: left;
 		a {
 			display: block;
 			img {
 				.border_radius(100%);
+				display: block;
 			}
 			span {
 				display:none;
@@ -351,19 +351,7 @@ hr {
 	}
 	.main-nav {
 		clear:both;
-	}
-	ul.menu {
-		list-style: none;
-		ul {
-			margin:0;
-			list-style: none;
-		}
-	}
-	hr {
-		clear:both;
-		.column(12);
-		margin-top:1.999em;
-		display: none;
+		margin-bottom:0;
 	}
 	.nav-toggle {
 		text-indent: -999em;
@@ -382,6 +370,23 @@ hr {
 			text-indent: 0;
 			line-height: 3.157;
 		}
+	}
+	& + hr {
+		margin-bottom:2.665em;
+		margin-top:0;
+	}
+}
+
+/**
+ * Navigation
+ */
+ul.menu {
+	list-style: none;
+	margin:0;
+	padding-top:1.777em;
+	ul {
+		margin:0;
+		list-style: none;
 	}
 }
 
@@ -783,6 +788,16 @@ table {
 }
 
 /**
+ * Footer
+ */
+.footer {
+	padding:2.665em 0;
+	p {
+		margin:0;
+	}
+}
+
+/**
  * Lightbox
  */
 #lightbox {
@@ -836,6 +851,10 @@ table {
 
 	.header {
 		.clearfix;
+		margin-bottom:0;
+		.wrapper {
+			position:relative;
+		}
 		.site-title, .intro {
 			display: none;
 		}
@@ -844,6 +863,11 @@ table {
 		}
 		.logo {
 			.column(3);
+			margin-bottom:0;
+			position: absolute;
+			top:0;
+			left:0;
+			z-index: 99999;
 			a {
 				position: relative;
 				.row(3);
@@ -888,11 +912,8 @@ table {
 		}
 		.main-nav {
 			.column(8);
-			.push(1);
+			.push(4);
 			clear: none;
-		}
-		& + hr {
-			margin-bottom:2.665em;
 		}
 	}
 
@@ -911,13 +932,15 @@ table {
 	.main-nav {
 		display: block !important;
 		text-align: left;
+		padding-top:2.369em;
+		margin-bottom:0;
 	}
 	ul.menu {
 	    position: relative;
 	    letter-spacing: 1px;
 	    font-weight: 700;
 	    margin-bottom:0;
-	    margin-left:0;
+	    margin-left:-.844em; // the horizontal padding of a top level anchor.
 	    padding:0;
 	    li {
 	        position: relative;
@@ -926,7 +949,7 @@ table {
 	        list-style: none;
 	        a {
 	            display: inline-block;
-	            padding:.75em 0;
+	            padding:1.333em .844em;
 	            -webkit-box-sizing: border-box;
 	            -moz-box-sizing: border-box;
 	            box-sizing: border-box;
@@ -948,7 +971,7 @@ table {
 	        }
 	    }
 	    > li {
-	    	margin-right:1.999em;
+	    	margin-right:.563em;
 	    }
 	    /* CHILDREN */
 	    ul {
@@ -961,15 +984,23 @@ table {
 	        margin:0;
 	        padding:0;
 	        text-align: left;
+	        background-color: @color_theme;
+	        padding:.356em 0;
+	        .border_radius_bottom;
+	        .inset_box_shadow(0,1px,0,0,rgba(255,255,255,0.2));
 	        li {
 	            float: none;
 	            display: block;
+	            padding:.356em .844em;
 	            a {
 	                width: 100%;
-	                background: @color_bg;
 	                display: inline-block;
 	                text-transform: none;
 	                letter-spacing: 0;
+	                font-size:.844em;
+	                padding:0;
+	                background: none;
+	                color: @color_bg;
 	            }
 	            &.parent {
 	                > a:after {
@@ -980,7 +1011,7 @@ table {
 	    }
 	    ul ul {
 	        left:100%;
-	        top:0;
+	        top:-.356em;
 	    }
 	    li:hover > ul {
 	        visibility: visible;
