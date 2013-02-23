@@ -106,7 +106,7 @@ if ( ! function_exists( 'nimbus_post_meta' ) ) {
 			<ul>
 				<li class="comment"><?php comments_popup_link( __( '0 Comments', 'nimbus' ), __( '1 Comment', 'nimbus' ), __( '% Comments', 'nimbus' ) ); ?></li>
 				<li class="permalink"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'nimbus' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php _e( 'Permalink', 'nimbus' ); ?></a></li>
-				<li class="categories"><?php the_category(''); ?></li>
+				<li class="categories"><?php the_category(', '); ?></li>
 				<?php the_tags( '<li class="tags">', '','</li>' ); ?>
 			</ul>
 			<?php if ( is_single() ) {
@@ -183,13 +183,13 @@ if ( ! function_exists( 'nimbus_comment' ) ) {
 		<?php } ?>
 			<div class="comment-author vcard">
 				<?php if ( $args['avatar_size'] != 0) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-				<?php printf( __( '<cite class="fn">%s</cite>' ), get_comment_author_link() ) ?>
-				<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-					<?php
+
+				<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>" class="date-link"><?php
 						/* translators: 1: date, 2: time */
-						printf( __( '%1$s at %2$s', 'nimbus' ), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__( '(Edit)', 'nimbus' ),'  ','' );
+						printf( __( '%1$s at %2$s', 'nimbus' ), get_comment_date(), get_comment_time()) ?></a><?php edit_comment_link(__( '(Edit)', 'nimbus' ),'  ','' );
 					?>
 				</div>
+				<?php printf( __( '<cite class="fn">%s</cite>' ), get_comment_author_link() ) ?>
 			</div>
 
 			<?php if ($comment->comment_approved == '0') { ?>
@@ -204,6 +204,7 @@ if ( ! function_exists( 'nimbus_comment' ) ) {
 			</div><!--/.reply-->
 			<?php if ( 'div' != $args['style'] ) { ?>
 		</div>
+		<hr/>
 		<?php } ?>
 	<?php
 	}

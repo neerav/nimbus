@@ -64,19 +64,43 @@ class NimbusOptions
         ?>
         <!--Customizer CSS-->
         <style type="text/css">
-                <?php self::generate_css('#site-title a', 'color', 'header_textcolor', '#'); ?>
-                <?php self::generate_css('a, .format-image .post-header h1:before, .format-link .post-header h1:before, .format-video .post-header h1:before, .format-status .post-header h1:before, .format-gallery .post-header h1:before, .format-audio .post-header h1:before', 'color', 'link_textcolor'); ?>
-                <?php self::generate_css('body:before, body:after, input[type="submit"], .button', 'background', 'link_textcolor'); ?>
-                <?php self::generate_css('body', 'color', 'textcolor'); ?>
-                <?php self::generate_css('hr', 'background', 'textcolor'); ?>
-                <?php self::generate_css('h1, h2, h3, h4, h5, h6', 'color', 'headercolor'); ?>
-                <?php self::generate_css('html', 'background-color', 'background_color', '#'); ?>
-                <?php self::generate_css('input[type="submit"], .button', 'color', 'background_color', '#'); ?>
+                <?php
+                    // Link color applied to color
+                    self::generate_css( 'a, .format-image .post-header h1:before, .format-link .post-header h1:before, .format-video .post-header h1:before, .format-status .post-header h1:before, .format-gallery .post-header h1:before, .format-audio .post-header h1:before', 'color', 'link_textcolor' );
 
+                    // Link color applied to background
+                    self::generate_css( 'body:before, body:after, input[type="submit"], .button', 'background', 'link_textcolor' );
+
+                    // Text color applied to color
+                    self::generate_css( 'body', 'color', 'textcolor' );
+
+                    // Text color applied to background
+                    self::generate_css( 'hr, ul.menu li.current-menu-item a:before', 'background', 'textcolor' );
+
+                    // Text color applied to border-color
+                    self::generate_css( '.header .logo a img, .header .logo a span', 'border-color', 'textcolor' );
+
+                    // Header color applied to color
+                    self::generate_css( 'h1, h2, h3, h4, h5, h6, .alpha, .beta, .gamma, .delta, .comments .comment-author cite a, .comments .comment-author cite', 'color', 'headercolor' );
+
+                    // Header color applied to background
+                    self::generate_css( 'input[type="text"], textarea', 'background', 'headercolor' );
+
+                    // Background color applied to color
+                    self::generate_css( 'input[type="submit"], .button, input[type="text"], textarea', 'color', 'background_color', '#' );
+
+                    // Background color applied to background
+                    self::generate_css( 'html', 'background-color', 'background_color', '#' );
+                ?>
                 @media only screen and (min-width: 768px) {
                     /* Styles only applied to desktop */
-                    <?php self::generate_css('ul.menu ul li a', 'color', 'background_color', '#' ); ?>
-                    <?php self::generate_css('ul.menu ul', 'background', 'link_textcolor'); ?>
+                    <?php
+                        // Background color applied to color
+                        self::generate_css( 'ul.menu ul li a', 'color', 'background_color', '#' );
+
+                        // Link color applied to background
+                        self::generate_css( 'ul.menu ul', 'background', 'link_textcolor' );
+                    ?>
                 }
         </style>
         <!--/Customizer CSS-->

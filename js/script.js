@@ -1,7 +1,7 @@
 jQuery(document).ready(function(){
-		
+
 	// Lightbox
-	jQuery('.zoom, .gallery a').click(function(e) {
+	jQuery( '.zoom, .gallery a' ).click(function(e) {
         //prevent default action (hyperlink)
         e.preventDefault();
         //Get clicked link href
@@ -32,14 +32,17 @@ jQuery(document).ready(function(){
         }
     });
     //Click anywhere on the page to get rid of lightbox window
-    jQuery('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
-        jQuery('#lightbox').hide();
+    jQuery( '#lightbox' ).live('click', function() { //must use live, as the lightbox element is inserted into the DOM
+        jQuery( '#lightbox' ).hide();
     });
-	
+
 	// Avoid widows in headings
-	jQuery("h1.title a, .single h1.title, .logo-wrap h1, #logo").each(function(){var wordArray=jQuery(this).text().split(" ");var finalTitle="";for(i=0;i<=wordArray.length-1;i++){finalTitle+=wordArray[i];if(i==(wordArray.length-2)){finalTitle+="&nbsp;"}else{finalTitle+=" "}}jQuery(this).html(finalTitle)});
-	
+	jQuery( 'h1.title a, .single h1.title, .logo-wrap h1, #logo' ).each(function(){var wordArray=jQuery(this).text().split(" ");var finalTitle="";for(i=0;i<=wordArray.length-1;i++){finalTitle+=wordArray[i];if(i==(wordArray.length-2)){finalTitle+="&nbsp;"}else{finalTitle+=" "}}jQuery(this).html(finalTitle)});
+
 	// Fire fitvids
-	jQuery(".wrapper").fitVids();
-		
+	jQuery( '.wrapper' ).fitVids();
+
+    // Add .parent class to appropriate menu items
+    jQuery( 'ul.sub-menu' ).parent().addClass( 'parent' );
+
 });

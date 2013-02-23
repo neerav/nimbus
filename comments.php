@@ -37,7 +37,6 @@
 
 		<ol class="commentlist">
 			<?php
-
 				wp_list_comments( 'callback=nimbus_comment&avatar_size=96' );
 			?>
 		</ol>

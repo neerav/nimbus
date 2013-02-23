@@ -60,6 +60,104 @@ Modular Scale: http://modularscale.com/scale/?px1=16&px2=18&ra1=1.333&ra2=0
   border-bottom-width: 0;
 }
 /* -- [ Objects ] --------------------------------------------------------------------------*/
+.icon_date {
+  display: inline;
+}
+.icon_date:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  content: "\f073";
+}
+.icon_external {
+  display: inline-block;
+}
+.icon_external:after {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  float: right;
+  text-align: right;
+  content: "\f08e";
+}
+.icon_video:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  content: "\f03d";
+}
+.icon_status:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  content: "\f0e7";
+}
+.icon_audio:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  content: "\f025";
+}
+.icon_comment:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  content: "\f075";
+}
+.icon_link:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  content: "\f0c1";
+}
+.icon_folder:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  content: "\f07b";
+}
+.icon_tag:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  content: "\f02b";
+}
 /* -- [ Mixins ] --------------------------------------------------------------------------*/
 /**
  * Animation
@@ -479,10 +577,13 @@ h3,
 h4,
 h5,
 h6,
-.heading {
+.heading,
+.alpha,
+.beta,
+.gamma,
+.delta {
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 700;
-  color: rgba(0, 0, 0, 0.75);
   margin: 0;
   margin-bottom: 1em;
   color: #aaaaaa;
@@ -498,7 +599,11 @@ h3 a,
 h4 a,
 h5 a,
 h6 a,
-.heading a {
+.heading a,
+.alpha a,
+.beta a,
+.gamma a,
+.delta a {
   text-decoration: none;
 }
 h1,
@@ -646,9 +751,10 @@ img {
  */
 a {
   color: #49a0a0;
+  text-decoration: none;
 }
 a:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 /**
  * Forms
@@ -700,7 +806,8 @@ textarea {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  background: #fff;
+  background: #aaaaaa;
+  color: #2b2b2b;
   outline: none;
 }
 textarea {
@@ -722,8 +829,8 @@ input[type="submit"],
   border-radius: 3px;
   text-decoration: none;
   font-weight: 700;
-  -webkit-box-shadow: inset 0 -2px 6px rgba(0, 0, 0, 0.05), inset 0 -2px 30px rgba(0, 0, 0, 0.015), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 -2px 6px rgba(0, 0, 0, 0.05), inset 0 -2px 30px rgba(0, 0, 0, 0.015), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 -2px 6px rgba(0, 0, 0, 0.15), inset 0 -2px 30px rgba(0, 0, 0, 0.025), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 -2px 6px rgba(0, 0, 0, 0.15), inset 0 -2px 30px rgba(0, 0, 0, 0.025), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 input[type="submit"]:hover,
 .button:hover {
@@ -776,9 +883,29 @@ hr {
   -moz-border-radius: 100%;
   border-radius: 100%;
   display: block;
+  border: 0.356em solid #666666;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+
 }
 .header .logo a span {
   display: none;
+  border: 0.356em solid #666666;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+
 }
 .header p.toggle-container {
   width: 2.369em;
@@ -919,6 +1046,9 @@ img.wp-post-image {
   display: inline-block;
   content: "\f03e";
 }
+.format-link h1 a {
+  display: inline-block;
+}
 .format-link h1 a:after {
   font-family: "FontAwesome";
   font-weight: normal;
@@ -930,18 +1060,45 @@ img.wp-post-image {
   float: right;
   text-align: right;
   content: "\f08e";
-  float: none;
 }
 .format-video .post-date:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
   content: "\f03d";
 }
 .format-status .post-date:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
   content: "\f0e7";
 }
 .format-audio .post-date:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
   content: "\f025";
 }
 .format-chat .post-date:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
   content: "\f075";
 }
 /**
@@ -1058,42 +1215,6 @@ p.nocomments:before {
 #comment-nav-below .nav-next {
   float: right;
 }
-/*ol.commentlist {
-	list-style: none;
-	padding:0;
-	li.comment {
-		margin-bottom:2.665em;
-		list-style: none;
-		ul.children {
-			padding-top:2.665em;
-		}
-		&.bypostauthor {
-			.comment-body {
-				position: relative;
-				&:before {
-					.iconbefore;
-					content: "\f02d";
-					position: absolute;
-					top:0;
-					left:-2em;
-					color: @color_body + #333;
-				}
-			}
-		}
-	}
-	.comment-author {
-		.clearfix;
-		margin-bottom:1.333em;
-		cite {
-			font-style: normal;
-		}
-		img {
-			.border_radius(100%);
-			float: left;
-			margin-right:1em;
-		}
-	}
-}*/
 .comments ol.commentlist,
 .comments ul.children {
   padding-left: 0;
@@ -1251,23 +1372,89 @@ p.nocomments:before {
   clear: both;
 }
 .comments .comment-author img {
-  float: left;
+  float: right;
   height: 48px;
   width: 48px;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
-  margin-right: 1em;
+  margin-left: 1em;
 }
 .comments .comment-author cite {
-  font-weight: 700;
   font-style: normal;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 1em;
+  color: #aaaaaa;
+  line-height: 1.333;
+  position: relative;
+  word-spacing: .113em;
+  word-wrap: break-word;
+  text-align: left;
+  font-size: 1.333em;
+}
+.comments .comment-author cite a {
+  text-decoration: none;
+}
+.comments .comment-author cite a {
+  display: inline-block;
+  color: #aaaaaa;
+}
+.comments .comment-author cite a:after {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  float: right;
+  text-align: right;
+  content: "\f08e";
 }
 .comments .comment-author .comment-meta {
-  font-size: .844em;
+  font-family: 'Cantarell', sans-serif;
+  text-transform: uppercase;
+  font-size: .75em;
+  letter-spacing: 1px;
+  filter: alpha(opacity=@opacity * 100);
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  opacity: 0.7;
+}
+.comments .comment-author .comment-meta .date-link {
+  display: inline;
+}
+.comments .comment-author .comment-meta .date-link:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  content: "\f073";
 }
 .comments .comment-body {
-  margin-bottom: 1.777em;
+  margin-bottom: 2.665em;
+}
+.comments .comment-reply-link {
+  font-size: .844em;
+}
+.comments .comment-reply-link:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  content: "\f112";
+}
+.comments hr {
+  margin-bottom: 2.665em;
+  margin-top: 0;
 }
 #respond {
   clear: both;
@@ -1309,6 +1496,17 @@ table {
   -moz-opacity: 0.7;
   -khtml-opacity: 0.7;
   opacity: 0.7;
+  display: inline;
+}
+.post-date:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  content: "\f073";
 }
 .sticky .post-date:before {
   font-family: "FontAwesome";
@@ -1319,6 +1517,9 @@ table {
   width: 1.5em;
   display: inline-block;
   content: "\f08d";
+}
+.post-meta {
+  text-align: left;
 }
 .post-meta ul,
 .post-meta li {
@@ -1335,6 +1536,46 @@ table {
   display: inline-block;
   font-weight: 400;
   margin-right: .422em;
+}
+.post-meta li.comment:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  content: "\f075";
+}
+.post-meta li.permalink:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  content: "\f0c1";
+}
+.post-meta li.categories:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  content: "\f07b";
+}
+.post-meta li.tags:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  content: "\f02b";
 }
 .navigation {
   padding-top: 1em;
@@ -1366,10 +1607,14 @@ table {
   -o-transition: all ease-in-out 0.2s;
   transition: all ease-in-out 0.2s;
   width: 100%;
+  filter: alpha(opacity=@opacity * 100);
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
 }
 .navigation a:before {
   font-family: "FontAwesome";
-  content: "\f104";
+  content: "\f053";
   position: absolute;
   top: 0;
   left: 0;
@@ -1381,9 +1626,13 @@ table {
 }
 .navigation a:hover {
   margin-left: -0.422em;
+  filter: alpha(opacity=@opacity * 100);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  opacity: 1;
 }
 .navigation .next a:before {
-  content: "\f105";
+  content: "\f054";
   text-align: right;
 }
 .navigation .next a:hover {
@@ -1645,14 +1894,33 @@ table {
     text-decoration: none;
   }
   ul.menu li.parent > a:after {
-    content: "\2193";
-    line-height: 1;
-    margin-left: 1em;
+    font-family: "FontAwesome";
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    speak: none;
+    width: 1.5em;
+    display: inline-block;
     float: right;
+    text-align: right;
+    content: "\f107";
   }
-  ul.menu li.current-menu-item a,
-  ul.menu li.current-page-item a {
-    text-decoration: underline;
+  ul.menu li.current-menu-item > a {
+    position: relative;
+  }
+  ul.menu li.current-menu-item > a:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: .356em;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #666666;
+    filter: alpha(opacity=@opacity * 100);
+    -moz-opacity: 0.2;
+    -khtml-opacity: 0.2;
+    opacity: 0.2;
   }
   ul.menu > li {
     margin-right: .563em;
@@ -1696,7 +1964,16 @@ table {
     color: #2b2b2b;
   }
   ul.menu ul li.parent > a:after {
-    content: "\2192";
+    font-family: "FontAwesome";
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    speak: none;
+    width: 1.5em;
+    display: inline-block;
+    float: right;
+    text-align: right;
+    content: "\f054";
   }
   ul.menu ul ul {
     left: 100%;
@@ -1832,6 +2109,9 @@ table {
   }
   .post-meta li {
     float: none;
+    margin-right: 0;
+  }
+  .post-meta li a {
     margin-right: 0;
   }
   /**

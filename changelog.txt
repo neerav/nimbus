@@ -1,5 +1,13 @@
 [22/02/2013 - version 0.2.3]
 - Changed header layout slightly to improve visual hierarchy and nav styling
+- Improved button styling
+- Added dropdown indicators to menus and improved active state
+- Added icon to comment reply link
+- Links underlined on hover rather than the opposite
+- Comments styling tidy
+- Textarea / input color tidy
+- Iconised meta
+- Bordered the logo
 
 [18/02/2013 - version 0.2.2]
 - Fixed broken function names
