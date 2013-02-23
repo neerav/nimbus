@@ -107,7 +107,7 @@ if ( ! function_exists( 'nimbus_post_meta' ) ) {
 				<li class="comment"><?php comments_popup_link( __( '0 Comments', 'nimbus' ), __( '1 Comment', 'nimbus' ), __( '% Comments', 'nimbus' ) ); ?></li>
 				<li class="permalink"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'nimbus' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php _e( 'Permalink', 'nimbus' ); ?></a></li>
 				<li class="categories"><?php the_category(', '); ?></li>
-				<?php the_tags( '<li class="tags">', '','</li>' ); ?>
+				<?php the_tags( '<li class="tags">', ', ','</li>' ); ?>
 			</ul>
 			<?php if ( is_single() ) {
 				nimbus_post_nav();
