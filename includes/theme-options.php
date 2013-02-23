@@ -71,6 +71,8 @@ class NimbusOptions
                 <?php self::generate_css('hr', 'background', 'textcolor'); ?>
                 <?php self::generate_css('h1, h2, h3, h4, h5, h6', 'color', 'headercolor'); ?>
                 <?php self::generate_css('html', 'background-color', 'background_color', '#'); ?>
+                <?php self::generate_css('input[type="submit"], .button', 'color', 'background_color', '#'); ?>
+
                 @media only screen and (min-width: 768px) {
                     /* Styles only applied to desktop */
                     <?php self::generate_css('ul.menu ul li a', 'color', 'background_color', '#' ); ?>
