@@ -77,9 +77,6 @@ class NimbusOptions
                     // Text color applied to background
                     self::generate_css( 'hr, ul.menu li.current-menu-item a:before', 'background', 'textcolor' );
 
-                    // Text color applied to border-color
-                    self::generate_css( '.header .logo a img, .header .logo a span', 'border-color', 'textcolor' );
-
                     // Header color applied to color
                     self::generate_css( 'h1, h2, h3, h4, h5, h6, .alpha, .beta, .gamma, .delta, .comments .comment-author cite a, .comments .comment-author cite', 'color', 'headercolor' );
 
@@ -100,6 +97,9 @@ class NimbusOptions
 
                         // Link color applied to background
                         self::generate_css( 'ul.menu ul', 'background', 'link_textcolor' );
+
+                        // Text color applied to border-color
+                        self::generate_css( '.header .logo a img, .header .logo a span', 'border-color', 'textcolor' );
                     ?>
                 }
         </style>

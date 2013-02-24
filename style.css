@@ -883,7 +883,6 @@ hr {
   -moz-border-radius: 100%;
   border-radius: 100%;
   display: block;
-  border: 0.356em solid #666666;
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
 
@@ -896,7 +895,6 @@ hr {
 }
 .header .logo a span {
   display: none;
-  border: 0.356em solid #666666;
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
 
@@ -1792,6 +1790,7 @@ table {
     background: #fff;
     text-align: center;
     -webkit-transform: perspective(400px) rotateY(0deg);
+    border: 0.356em solid #666666;
   }
   .header .logo a span {
     display: inline;
@@ -1823,6 +1822,7 @@ table {
     -webkit-backface-visibility: hidden;
     -webkit-transition: all ease-in-out 0.4s;
     -moz-transition: all ease-in-out 0.4s;
+    border: 0.356em solid #666666;
   }
   .header .logo a:hover img {
     z-index: 900;
