@@ -856,7 +856,8 @@ hr {
  */
 .header {
   *zoom: 1;
-  margin: 2.665em 0;
+  margin: 0 0 2.665em 0;
+  padding: 2.665em 0 0 0;
 }
 .header:before,
 .header:after {
@@ -1522,18 +1523,14 @@ table {
 .post-meta ul,
 .post-meta li {
   list-style: none;
-  float: left;
-  margin-right: .75em;
 }
 .post-meta ul ul,
 .post-meta li ul {
   margin: 0;
 }
 .post-meta a {
-  text-decoration: none;
   display: inline-block;
   font-weight: 400;
-  margin-right: .422em;
 }
 .post-meta li.comment:before {
   font-family: "FontAwesome";
@@ -2136,7 +2133,7 @@ table {
   	 */
   .footer {
     clear: both;
-    margin: 1.777em 0;
+    margin: 1.777em 0 0 0;
     padding: 1.777em 0;
     font-size: .844em;
   }
@@ -2215,6 +2212,8 @@ table {
     *width: 95.78125000000001%;
     *margin-left: 2.03125%;
     *margin-right: 2.03125%;
+    float: none;
+    display: block;
   }
   /**
   	 * Lightbox
