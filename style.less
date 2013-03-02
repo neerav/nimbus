@@ -207,12 +207,18 @@ code, pre {
 	.border_radius(0.201em);
 	color: #dc5494;
 	margin:0 .201em;
+	padding:0 .201em;
 	text-shadow:0 1px 0 rgba(0,0,0,0.05);
+	border:1px solid rgba(0,0,0,0.1);
 }
 
 pre {
 	padding:.633em;
 	margin-bottom:1.777em;
+	code {
+		background: none;
+		border:0;
+	}
 }
 
 span.ampersand {
@@ -1169,6 +1175,29 @@ table {
 		}
 	}
 
+	/**
+	 * Layout options
+	 * sidebar-content is default, these styles override floats / margins etc for content-sidebar
+	 */
+	body.content-sidebar {
+		.header {
+			.logo {
+				float:right;
+				left:auto;
+				right:0;
+			}
+			.main-nav {
+				float: left;
+				.column(8);
+			}
+		}
+		.sidebar {
+			float: right;
+		}
+		.content {
+			.column(8);
+		}
+	}
 }
 
 /**

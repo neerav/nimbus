@@ -732,11 +732,17 @@ pre {
   border-radius: 0.201em;
   color: #dc5494;
   margin: 0 .201em;
+  padding: 0 .201em;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 pre {
   padding: .633em;
   margin-bottom: 1.777em;
+}
+pre code {
+  background: none;
+  border: 0;
 }
 span.ampersand {
   font-family: Baskerville, Palatino, "Book Antiqua", serif;
@@ -2220,6 +2226,38 @@ table {
   	 */
   #lightbox img {
     max-width: 940px;
+  }
+  /**
+  	 * Layout options
+  	 * sidebar-content is default, these styles override floats / margins etc for content-sidebar
+  	 */
+  body.content-sidebar .header .logo {
+    float: right;
+    left: auto;
+    right: 0;
+  }
+  body.content-sidebar .header .main-nav {
+    display: inline;
+    float: left;
+    width: 62.5%;
+    margin-left: 2.0833333333333335%;
+    margin-right: 2.0833333333333335%;
+    *width: 62.447916666666664%;
+    *margin-left: 2.03125%;
+    *margin-right: 2.03125%;
+  }
+  body.content-sidebar .sidebar {
+    float: right;
+  }
+  body.content-sidebar .content {
+    display: inline;
+    float: left;
+    width: 62.5%;
+    margin-left: 2.0833333333333335%;
+    margin-right: 2.0833333333333335%;
+    *width: 62.447916666666664%;
+    *margin-left: 2.03125%;
+    *margin-right: 2.03125%;
   }
 }
 /**

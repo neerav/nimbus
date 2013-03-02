@@ -50,6 +50,38 @@ class NimbusOptions
                 'section'    => 'colors',
                 'settings'   => 'background_color',
         ) ) );
+
+
+        /**
+         * Layout
+         */
+        // Add layout section
+        $wp_customize->add_section( 'nimbus_layout', array(
+            'title'    => __( 'Layout', 'nimbus' ),
+            'priority' => 50,
+        ) );
+
+
+        // Add layout default
+        $wp_customize->add_setting( 'nimbus_theme_options[theme_layout]', array(
+            'type'              => 'option',
+            'default'           => 'sidebar-content',
+            'sanitize_callback' => 'sanitize_key',
+        ) );
+
+        // Add layout options
+        $layouts = nimbus_layouts();
+        $choices = array();
+        foreach ( $layouts as $layout ) {
+            $choices[$layout['value']] = $layout['label'];
+        }
+        $wp_customize->add_control( 'nimbus_theme_options[theme_layout]', array(
+            'section'    => 'nimbus_layout',
+            'type'       => 'radio',
+            'choices'    => $choices,
+        ) );
+
+
     }
 
     /**
@@ -150,3 +182,85 @@ $args = array(
     'default-color' => '2b2b2b',
 );
 add_theme_support( 'custom-background', $args );
+
+
+/**
+ * Returns the options array for Nimbus.
+ *
+ * @since Nimbus 0.2.4
+ */
+function nimbus_get_theme_options() {
+    return get_option( 'nimbus_theme_options', nimbus_get_default_theme_options() );
+}
+
+
+/**
+ * Returns the default options for Nimbus.
+ *
+ * @since Nimbus 0.2.4
+ */
+function nimbus_get_default_theme_options() {
+    $default_theme_options = array(
+        'theme_layout' => 'sidebar-content',
+    );
+
+    if ( is_rtl() )
+        $default_theme_options['theme_layout'] = 'content-sidebar';
+
+    return apply_filters( 'nimbus_default_theme_options', $default_theme_options );
+}
+
+
+/**
+ * Returns an array of layout options registered for Nimbus.
+ *
+ * @since Nimbus 0.2.4
+ */
+function nimbus_layouts() {
+    $layout_options = array(
+        'sidebar-content' => array(
+            'value' => 'sidebar-content',
+            'label' => __( 'Content on right', 'nimbus' ),
+        ),
+        'content-sidebar' => array(
+            'value' => 'content-sidebar',
+            'label' => __( 'Content on left', 'nimbus' ),
+        ),
+        /*
+        No 'no sidebar' option for now
+        'content' => array(
+            'value' => 'nosidebar',
+            'label' => __( 'One-column, no sidebar', 'nimbus' ),
+        ),*/
+    );
+
+    return apply_filters( 'nimbus_layouts', $layout_options );
+}
+
+
+/**
+ * Adds Nimbus layout classes to the array of body classes.
+ *
+ * @since Nimbus 0.2.4
+ */
+function nimbus_layout_classes( $existing_classes ) {
+    $options = nimbus_get_theme_options();
+    $current_layout = $options['theme_layout'];
+
+    if ( in_array( $current_layout, array( 'content-sidebar', 'sidebar-content' ) ) )
+        $classes = array( 'two-column' );
+    else
+        $classes = array( 'one-column' );
+
+    if ( 'content-sidebar' == $current_layout )
+        $classes[] = 'content-sidebar';
+    elseif ( 'sidebar-content' == $current_layout )
+        $classes[] = 'sidebar-content';
+    else
+        $classes[] = $current_layout;
+
+    $classes = apply_filters( 'nimbus_layout_classes', $classes, $current_layout );
+
+    return array_merge( $existing_classes, $classes );
+}
+add_filter( 'body_class', 'nimbus_layout_classes' );
