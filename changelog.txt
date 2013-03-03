@@ -1,5 +1,9 @@
-[02/03/2013 - version 0.2.4]
+[02/03/2013 - version 0.3]
 - Added layout options (Pilfered from TwentyEleven - kudos!)
+- Added typography options
+- Added navigation theme option
+- Re-added static front page theme option
+- Active nav styles only apply to top level links
 
 [22/02/2013 - version 0.2.3]
 - Changed header layout slightly to improve visual hierarchy and nav styling

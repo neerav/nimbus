@@ -4,12 +4,12 @@ Theme URI: https://github.com/jameskoster/nimbus
 Description: A responsive theme with a focus on typography. Nimbus has a light-on-dark aesthetic by default but that can be easily changed via the customisation options. Nimbus is also compatible with WooCommerce for your eCommerce needs. <a href="http://twitter.com/jameskoster/">Follow me on Twitter</a> for updates.
 Author: James Koster
 Author URI: http://jameskoster.co.uk/
-Version: 0.2.3
+Version: 0.3
 Tags: gray, two-columns, left-sidebar, flexible-width, post-formats, sticky-post, threaded-comments, translation-ready, theme-options, dark
 
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-FontAweome License: SIL Open Font License - http://scripts.sil.org/OFL
+FontAwesome License: SIL Open Font License - http://scripts.sil.org/OFL
 Modular Scale: http://modularscale.com/scale/?px1=16&px2=18&ra1=1.333&ra2=0
 */
 
@@ -46,17 +46,18 @@ Modular Scale: http://modularscale.com/scale/?px1=16&px2=18&ra1=1.333&ra2=0
 }
 
 html {
-	font: 80% @fontstack_body;
-	font-weight: 400;
-	text-align: center;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: none;
 	background: @color_bg;
+	font-size:80%;
+	font-family: @fontstack_body;
 }
 
 body {
 	text-align: left;
+	font-family:; @fontstack_body;
+	font-weight: 400;
 	font-size:1.125em;
 	line-height: 1.777;
 	overflow-x:hidden;
@@ -959,7 +960,10 @@ table {
 	                content: "\f107";
 	            }
 	        }
-	        &.current-menu-item {
+	    }
+	    > li {
+	    	margin-right:.563em;
+	    	&.current-menu-item {
 	        	> a {
 	        		position: relative;
 	        		&:before {
@@ -975,9 +979,6 @@ table {
 	        		}
 	        	}
 	        }
-	    }
-	    > li {
-	    	margin-right:.563em;
 	    }
 	    /* CHILDREN */
 	    ul {
@@ -1202,6 +1203,36 @@ table {
 }
 
 /**
+ * Typograph options
+ * Open Sans is default, these styles override typography based on selection
+ */
+body.georgia, body.helvetica {
+	h1, h2, h3, h4, h5, h6, blockquote, .post-date, ul.menu li a, .comments .comment-author cite, input[type="submit"], .button {
+		text-transform: none;
+		letter-spacing: 0;
+	}
+	blockquote {
+		font-size:1em;
+	}
+}
+body.georgia {
+	font-family: georgia, serif;
+	h1, h2, h3, h4, h5, h6, blockquote, .post-date, ul.menu li a, .comments .comment-author cite, input[type="submit"], .button {
+		font-family: georgia, serif;
+		font-weight: 400;
+	}
+}
+body.helvetica {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+	h1, h2, h3, h4, h5, h6, blockquote, .post-date, ul.menu li a, .comments .comment-author cite, input[type="submit"], .button {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    	font-weight: 300;
+	}
+}
+
+
+/**
  * Secondary Layout
  * @type 1024x768
  */
@@ -1210,6 +1241,7 @@ table {
 		font-size:1.125em;
 	}
 }
+
 
 /**
  * Tertiary Layout
@@ -1220,6 +1252,7 @@ table {
 		//font-size:1.555em;
 	}
 }
+
 
 /**
  * Retina

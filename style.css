@@ -4,12 +4,12 @@ Theme URI: https://github.com/jameskoster/nimbus
 Description: A responsive theme with a focus on typography. Nimbus has a light-on-dark aesthetic by default but that can be easily changed via the customisation options. Nimbus is also compatible with WooCommerce for your eCommerce needs. <a href="http://twitter.com/jameskoster/">Follow me on Twitter</a> for updates.
 Author: James Koster
 Author URI: http://jameskoster.co.uk/
-Version: 0.2.3
+Version: 0.3
 Tags: gray, two-columns, left-sidebar, flexible-width, post-formats, sticky-post, threaded-comments, translation-ready, theme-options, dark
 
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-FontAweome License: SIL Open Font License - http://scripts.sil.org/OFL
+FontAwesome License: SIL Open Font License - http://scripts.sil.org/OFL
 Modular Scale: http://modularscale.com/scale/?px1=16&px2=18&ra1=1.333&ra2=0
 */
 /**
@@ -535,21 +535,23 @@ body:after {
   font-style: normal;
 }
 html {
-  font: 80% 'Open Sans', sans-serif;
-  font-weight: 400;
-  text-align: center;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
   background: #2b2b2b;
+  font-size: 80%;
+  font-family: 'Open Sans', sans-serif;
 }
 body {
   text-align: left;
+  font-family: ;
+  font-weight: 400;
   font-size: 1.125em;
   line-height: 1.777;
   overflow-x: hidden;
   color: #666666;
 }
+@fontstack _body;
 body:before,
 body:after {
   display: block;
@@ -1912,10 +1914,13 @@ table {
     text-align: right;
     content: "\f107";
   }
-  ul.menu li.current-menu-item > a {
+  ul.menu > li {
+    margin-right: .563em;
+  }
+  ul.menu > li.current-menu-item > a {
     position: relative;
   }
-  ul.menu li.current-menu-item > a:before {
+  ul.menu > li.current-menu-item > a:before {
     content: "";
     display: block;
     position: absolute;
@@ -1928,9 +1933,6 @@ table {
     -moz-opacity: 0.2;
     -khtml-opacity: 0.2;
     opacity: 0.2;
-  }
-  ul.menu > li {
-    margin-right: .563em;
   }
   ul.menu ul {
     width: 15em;
@@ -2263,6 +2265,78 @@ table {
     *margin-left: 2.03125%;
     *margin-right: 2.03125%;
   }
+}
+/**
+ * Typograph options
+ * Open Sans is default, these styles override typography based on selection
+ */
+body.georgia h1,
+body.helvetica h1,
+body.georgia h2,
+body.helvetica h2,
+body.georgia h3,
+body.helvetica h3,
+body.georgia h4,
+body.helvetica h4,
+body.georgia h5,
+body.helvetica h5,
+body.georgia h6,
+body.helvetica h6,
+body.georgia blockquote,
+body.helvetica blockquote,
+body.georgia .post-date,
+body.helvetica .post-date,
+body.georgia ul.menu li a,
+body.helvetica ul.menu li a,
+body.georgia .comments .comment-author cite,
+body.helvetica .comments .comment-author cite,
+body.georgia input[type="submit"],
+body.helvetica input[type="submit"],
+body.georgia .button,
+body.helvetica .button {
+  text-transform: none;
+  letter-spacing: 0;
+}
+body.georgia blockquote,
+body.helvetica blockquote {
+  font-size: 1em;
+}
+body.georgia {
+  font-family: georgia, serif;
+}
+body.georgia h1,
+body.georgia h2,
+body.georgia h3,
+body.georgia h4,
+body.georgia h5,
+body.georgia h6,
+body.georgia blockquote,
+body.georgia .post-date,
+body.georgia ul.menu li a,
+body.georgia .comments .comment-author cite,
+body.georgia input[type="submit"],
+body.georgia .button {
+  font-family: georgia, serif;
+  font-weight: 400;
+}
+body.helvetica {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+body.helvetica h1,
+body.helvetica h2,
+body.helvetica h3,
+body.helvetica h4,
+body.helvetica h5,
+body.helvetica h6,
+body.helvetica blockquote,
+body.helvetica .post-date,
+body.helvetica ul.menu li a,
+body.helvetica .comments .comment-author cite,
+body.helvetica input[type="submit"],
+body.helvetica .button {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
 }
 /**
  * Secondary Layout
