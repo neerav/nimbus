@@ -30,8 +30,8 @@ The link post format is automatically converted to markup. Put the anchor text a
 
 ## WooCommerce
 
-Nimbus has been prepared for use with [WooCommerce](http://www.woothemes.com/woocommerce/). For now this is _simple preparation_. This means the layout will work but for now all styles will be inherited from the woocommerce.css file within WooCommerce. This may not mesh too nicely depending on which color scheme you configure. Light color schemes will work best.
+Nimbus has been prepared for use with [WooCommerce](http://www.woothemes.com/woocommerce/). For now this is _simple preparation_, that means the layout will work, but styles will be inherited from the woocommerce.css file within WooCommerce. This may not mesh too nicely depending on which color scheme you configure. Light color schemes will work best.
 
 # Misc
 
-Modular Scale: http://modularscale.com/scale/?px1=16&px2=18&ra1=1.333&ra2=0
+[Modular Scale](http://modularscale.com/scale/?px1=16&px2=18&ra1=1.333&ra2=0)
