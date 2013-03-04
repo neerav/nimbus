@@ -2,8 +2,12 @@
 - Added layout options (Pilfered from TwentyEleven - kudos!)
 - Added typography options
 - Added navigation theme option
+- Google loaded conditionally based on typography settings
 - Re-added static front page theme option
 - Active nav styles only apply to top level links
+- Gave the sidebar a name / id
+- Centrally aligned the layout. Left aligned looked too crazy on large screens.
+- Max-height on images in lightbox for mobile & desktop
 
 [22/02/2013 - version 0.2.3]
 - Changed header layout slightly to improve visual hierarchy and nav styling

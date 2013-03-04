@@ -30,6 +30,9 @@ if ( ! function_exists( 'nimbus_setup' ) ) {
  */
 if ( ! function_exists( 'nimbus_add_scripts' ) ) {
 	function nimbus_add_scripts() {
+		$options = nimbus_get_theme_options();
+    	$current_typography = $options['theme_typography'];
+
 		// Register styles
 		wp_register_style( 'woocommerce', get_template_directory_uri() . '/css/woocommerce.css' );
 
@@ -44,10 +47,12 @@ if ( ! function_exists( 'nimbus_add_scripts' ) ) {
 		wp_enqueue_script( 'nimbus-script', get_template_directory_uri() . '/js/script.min.js', array( 'jquery' ), '', true );
 		wp_enqueue_script( 'comment-reply' );
 
-		// Enqueue Google fonts
-		wp_enqueue_style( 'open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700' );
-		wp_enqueue_style( 'open-sans-condensed', 'http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' );
-		wp_enqueue_style( 'cantarell', 'http://fonts.googleapis.com/css?family=Cantarell' );
+		// Enqueue Google fonts if typography setting requires it
+		if ( 'open-sans' == $current_typography ) {
+			wp_enqueue_style( 'open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700' );
+			wp_enqueue_style( 'open-sans-condensed', 'http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' );
+			wp_enqueue_style( 'cantarell', 'http://fonts.googleapis.com/css?family=Cantarell' );
+		}
 	}
 }
 
@@ -88,10 +93,12 @@ if ( ! function_exists( 'nimbus_html5' ) ) {
 if ( ! function_exists( 'nimbus_widgets_init' ) ) {
 	function nimbus_widgets_init() {
 	    register_sidebar( array(
+	    	'name'          => __( 'Sidebar', 'nimbus' ),
+			'id'            => 'primary-sidebar',
 		    'before_widget' => '<section class="widget">',
-		    'after_widget' => '</section>',
-		    'before_title' => '<h3>',
-		    'after_title' => '</h3>',
+		    'after_widget' 	=> '</section>',
+		    'before_title' 	=> '<h3>',
+		    'after_title' 	=> '</h3>',
 		) );
 	}
 }

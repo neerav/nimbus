@@ -1,7 +1,7 @@
 /*
 Theme Name: nimbus
 Theme URI: https://github.com/jameskoster/nimbus
-Description: A responsive theme with a focus on typography. Nimbus has a light-on-dark aesthetic by default but that can be easily changed via the customisation options. Nimbus is also compatible with WooCommerce for your eCommerce needs. <a href="http://twitter.com/jameskoster/">Follow me on Twitter</a> for updates.
+Description: Nimbus is a lightweight, free WordPress theme designed with your content in mind. It features a clean design with a strong focus on typography, plus a bunch of presentational options allowing you to make your site unique. <a href="http://twitter.com/jameskoster/">Follow me on Twitter</a> for updates.
 Author: James Koster
 Author URI: http://jameskoster.co.uk/
 Version: 0.3
@@ -1692,6 +1692,7 @@ table {
 }
 #lightbox img {
   max-width: 300px;
+  max-height: 460px;
   box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
@@ -1858,6 +1859,7 @@ table {
   }
   .wrapper {
     max-width: 62.918em;
+    margin: 0 auto;
     *zoom: 1;
   }
   .wrapper:before,
@@ -2137,17 +2139,8 @@ table {
   .page:after {
     clear: both;
   }
-  .page .article-content {
+  .page .article-content p:first-child {
     font-size: 1.125em;
-  }
-  /**
-  	 * Footer
-  	 */
-  .footer {
-    clear: both;
-    margin: 1.777em 0 0 0;
-    padding: 1.777em 0 2.665em;
-    font-size: .844em;
   }
   /**
   	 * Single Posts
@@ -2216,6 +2209,14 @@ table {
   	 * Footer
   	 */
   .footer {
+    clear: both;
+    margin: 1.777em 0 0 0;
+    padding: 1.777em 0 2.665em;
+    float: none;
+    display: block;
+  }
+  .footer p {
+    font-size: .844em;
     display: inline;
     float: left;
     width: 95.83333333333334%;
@@ -2224,14 +2225,13 @@ table {
     *width: 95.78125000000001%;
     *margin-left: 2.03125%;
     *margin-right: 2.03125%;
-    float: none;
-    display: block;
   }
   /**
   	 * Lightbox
   	 */
   #lightbox img {
     max-width: 940px;
+    max-height: 750px;
   }
   /**
   	 * Layout options
