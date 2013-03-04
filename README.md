@@ -7,8 +7,8 @@ Tags: gray, two-columns, left-sidebar, flexible-width, post-formats, sticky-post
 
 # License
 
-License: [GNU General Public License v2.0](http://www.gnu.org/licenses/gpl-2.0.html)
-FontAwesome Icon font License: [SIL Open Font License (OFL)](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+* License: [GNU General Public License v2.0](http://www.gnu.org/licenses/gpl-2.0.html)
+* FontAwesome Icon font License: [SIL Open Font License (OFL)](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 
 # Usage
 
