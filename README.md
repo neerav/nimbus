@@ -34,4 +34,4 @@ Nimbus has been prepared for use with [WooCommerce](http://www.woothemes.com/woo
 
 # Misc
 
-[Modular Scale](http://modularscale.com/scale/?px1=16&px2=18&ra1=1.333&ra2=0)
+* [Modular Scale](http://modularscale.com/scale/?px1=16&px2=18&ra1=1.333&ra2=0)

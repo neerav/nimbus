@@ -107,7 +107,6 @@ h1, .site-title, .alpha {
 	display:block;
 	font-size:1.777em;
 	letter-spacing: -1px;
-	text-transform: uppercase;
 	&.archive-header {
 		font-weight: 400;
 		font-size:1.125em;
@@ -173,7 +172,6 @@ blockquote {
 		text-transform: uppercase;
 		font-style: normal;
 		font-family: @fontstack_body;
-		text-transform: uppercase;
 		letter-spacing: 1px;
 		font-size:.844em;
 		display: block;
@@ -289,8 +287,7 @@ input[type="submit"], .button {
 	display: inline-block;
 	padding:.422em .844em;
 	font-size: 1em;
-	font-family: @fontstack_navigation;
-	text-transform: uppercase;
+	font-family: @fontstack_body;
 	background: @color_theme;
 	color: @color_bg;
 	border:0;
@@ -953,7 +950,6 @@ table {
 	            -webkit-box-sizing: border-box;
 	            -moz-box-sizing: border-box;
 	            box-sizing: border-box;
-	            text-transform: uppercase;
 	            text-decoration: none;
 	        }
 	        &.parent { // Styles applied to all parent list items
@@ -1217,8 +1213,8 @@ table {
  * Typograph options
  * Open Sans is default, these styles override typography based on selection
  */
-body.georgia, body.helvetica {
-	h1, h2, h3, h4, h5, h6, blockquote, .post-date, ul.menu li a, .comments .comment-author cite, input[type="submit"], .button {
+body.georgia, body.helvetica, body.merriweather, body.domine {
+	h1, h2, h3, h4, h5, h6, blockquote, blockquote cite, .post-date, ul.menu li a, .comments .comment-author cite, input[type="submit"], .button {
 		text-transform: none;
 		letter-spacing: 0;
 	}
@@ -1228,7 +1224,7 @@ body.georgia, body.helvetica {
 }
 body.georgia {
 	font-family: georgia, serif;
-	h1, h2, h3, h4, h5, h6, blockquote, .post-date, ul.menu li a, .comments .comment-author cite, input[type="submit"], .button {
+	h1, h2, h3, h4, h5, h6, blockquote, blockquote cite, .post-date, ul.menu li a, .comments .comment-author cite, input[type="submit"], .button {
 		font-family: georgia, serif;
 		font-weight: 400;
 	}
@@ -1236,12 +1232,56 @@ body.georgia {
 body.helvetica {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 300;
-	h1, h2, h3, h4, h5, h6, blockquote, .post-date, ul.menu li a, .comments .comment-author cite, input[type="submit"], .button {
+	h1, h2, h3, h4, h5, h6, blockquote, blockquote cite, .post-date, ul.menu li a, .comments .comment-author cite, input[type="submit"], .button {
 		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     	font-weight: 300;
 	}
+	h1, h2, h3, h4, h5, h6, a, ul.menu li a {
+		font-weight: 700;
+	}
+	h1, h2, h3 {
+		letter-spacing: -1px;
+	}
 }
-
+body.merriweather {
+	font-family: 'Merriweather Sans', sans-serif;
+	font-weight: 300;
+	h1, h2, h3, h4, h5, h6, blockquote, blockquote cite, .post-date, ul.menu li a, .comments .comment-author cite, input[type="submit"], .button {
+    	font-family: 'Merriweather Sans', sans-serif;
+    	font-weight: 300;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 400;
+	}
+	a, ul.menu li a {
+		font-weight: 700;
+	}
+	h1, h2, h3 {
+		letter-spacing: -1px;
+	}
+}
+body.domine {
+	font-family: 'Domine', serif;
+	font-weight: 400;
+	h1, h2, h3, h4, h5, h6, blockquote, blockquote cite, .post-date, ul.menu li a, .comments .comment-author cite, input[type="submit"], .button {
+    	font-family: 'Domine', serif;
+    	font-weight: 400;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 700;
+	}
+	a, ul.menu li a {
+		font-weight: 700;
+	}
+	h1, h2, h3 {
+		letter-spacing: -1px;
+	}
+	.sidebar {
+		h1, h2, h3, h4, h5, h6 {
+			text-transform: none;
+		}
+	}
+}
 
 /**
  * Secondary Layout

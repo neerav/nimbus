@@ -35,7 +35,9 @@
 
 <body <?php body_class(); ?>>
 
+<div class="outer-wrap">
 
+	<div class="inner-wrap">
 
 	<header class="header">
 

@@ -584,7 +584,7 @@ h6,
 .beta,
 .gamma,
 .delta {
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   margin: 0;
   margin-bottom: 1em;
@@ -614,7 +614,6 @@ h1,
   display: block;
   font-size: 1.777em;
   letter-spacing: -1px;
-  text-transform: uppercase;
 }
 h1.archive-header,
 .site-title.archive-header,
@@ -699,9 +698,9 @@ blockquote p:last-child {
 blockquote cite {
   font-size: 0.844em;
   line-height: 1.75em;
+  text-transform: uppercase;
   font-style: normal;
   font-family: 'Open Sans', sans-serif;
-  text-transform: uppercase;
   letter-spacing: 1px;
   font-size: .844em;
   display: block;
@@ -826,8 +825,7 @@ input[type="submit"],
   display: inline-block;
   padding: .422em .844em;
   font-size: 1em;
-  font-family: 'Cantarell', sans-serif;
-  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
   background: #49a0a0;
   color: #2b2b2b;
   border: 0;
@@ -1389,7 +1387,7 @@ p.nocomments:before {
 }
 .comments .comment-author cite {
   font-style: normal;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   margin: 0;
   margin-bottom: 1em;
@@ -1421,7 +1419,7 @@ p.nocomments:before {
   content: "\f08e";
 }
 .comments .comment-author .comment-meta {
-  font-family: 'Cantarell', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   font-size: .75em;
   letter-spacing: 1px;
@@ -1495,7 +1493,7 @@ table {
  * Posts
  */
 .post-date {
-  font-family: 'Cantarell', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   font-size: .75em;
   letter-spacing: 1px;
@@ -1901,7 +1899,6 @@ table {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    text-transform: uppercase;
     text-decoration: none;
   }
   ul.menu li.parent > a:after {
@@ -2272,33 +2269,63 @@ table {
  */
 body.georgia h1,
 body.helvetica h1,
+body.merriweather h1,
+body.domine h1,
 body.georgia h2,
 body.helvetica h2,
+body.merriweather h2,
+body.domine h2,
 body.georgia h3,
 body.helvetica h3,
+body.merriweather h3,
+body.domine h3,
 body.georgia h4,
 body.helvetica h4,
+body.merriweather h4,
+body.domine h4,
 body.georgia h5,
 body.helvetica h5,
+body.merriweather h5,
+body.domine h5,
 body.georgia h6,
 body.helvetica h6,
+body.merriweather h6,
+body.domine h6,
 body.georgia blockquote,
 body.helvetica blockquote,
+body.merriweather blockquote,
+body.domine blockquote,
+body.georgia blockquote cite,
+body.helvetica blockquote cite,
+body.merriweather blockquote cite,
+body.domine blockquote cite,
 body.georgia .post-date,
 body.helvetica .post-date,
+body.merriweather .post-date,
+body.domine .post-date,
 body.georgia ul.menu li a,
 body.helvetica ul.menu li a,
+body.merriweather ul.menu li a,
+body.domine ul.menu li a,
 body.georgia .comments .comment-author cite,
 body.helvetica .comments .comment-author cite,
+body.merriweather .comments .comment-author cite,
+body.domine .comments .comment-author cite,
 body.georgia input[type="submit"],
 body.helvetica input[type="submit"],
+body.merriweather input[type="submit"],
+body.domine input[type="submit"],
 body.georgia .button,
-body.helvetica .button {
+body.helvetica .button,
+body.merriweather .button,
+body.domine .button {
   text-transform: none;
   letter-spacing: 0;
 }
 body.georgia blockquote,
-body.helvetica blockquote {
+body.helvetica blockquote,
+body.merriweather blockquote,
+body.domine blockquote {
   font-size: 1em;
 }
 body.georgia {
@@ -2311,6 +2338,7 @@ body.georgia h4,
 body.georgia h5,
 body.georgia h6,
 body.georgia blockquote,
+body.georgia blockquote cite,
 body.georgia .post-date,
 body.georgia ul.menu li a,
 body.georgia .comments .comment-author cite,
@@ -2330,6 +2358,7 @@ body.helvetica h4,
 body.helvetica h5,
 body.helvetica h6,
 body.helvetica blockquote,
+body.helvetica blockquote cite,
 body.helvetica .post-date,
 body.helvetica ul.menu li a,
 body.helvetica .comments .comment-author cite,
@@ -2337,6 +2366,103 @@ body.helvetica input[type="submit"],
 body.helvetica .button {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
+}
+body.helvetica h1,
+body.helvetica h2,
+body.helvetica h3,
+body.helvetica h4,
+body.helvetica h5,
+body.helvetica h6,
+body.helvetica a,
+body.helvetica ul.menu li a {
+  font-weight: 700;
+}
+body.helvetica h1,
+body.helvetica h2,
+body.helvetica h3 {
+  letter-spacing: -1px;
+}
+body.merriweather {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 300;
+}
+body.merriweather h1,
+body.merriweather h2,
+body.merriweather h3,
+body.merriweather h4,
+body.merriweather h5,
+body.merriweather h6,
+body.merriweather blockquote,
+body.merriweather blockquote cite,
+body.merriweather .post-date,
+body.merriweather ul.menu li a,
+body.merriweather .comments .comment-author cite,
+body.merriweather input[type="submit"],
+body.merriweather .button {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 300;
+}
+body.merriweather h1,
+body.merriweather h2,
+body.merriweather h3,
+body.merriweather h4,
+body.merriweather h5,
+body.merriweather h6 {
+  font-weight: 400;
+}
+body.merriweather a,
+body.merriweather ul.menu li a {
+  font-weight: 700;
+}
+body.merriweather h1,
+body.merriweather h2,
+body.merriweather h3 {
+  letter-spacing: -1px;
+}
+body.domine {
+  font-family: 'Domine', serif;
+  font-weight: 400;
+}
+body.domine h1,
+body.domine h2,
+body.domine h3,
+body.domine h4,
+body.domine h5,
+body.domine h6,
+body.domine blockquote,
+body.domine blockquote cite,
+body.domine .post-date,
+body.domine ul.menu li a,
+body.domine .comments .comment-author cite,
+body.domine input[type="submit"],
+body.domine .button {
+  font-family: 'Domine', serif;
+  font-weight: 400;
+}
+body.domine h1,
+body.domine h2,
+body.domine h3,
+body.domine h4,
+body.domine h5,
+body.domine h6 {
+  font-weight: 700;
+}
+body.domine a,
+body.domine ul.menu li a {
+  font-weight: 700;
+}
+body.domine h1,
+body.domine h2,
+body.domine h3 {
+  letter-spacing: -1px;
+}
+body.domine .sidebar h1,
+body.domine .sidebar h2,
+body.domine .sidebar h3,
+body.domine .sidebar h4,
+body.domine .sidebar h5,
+body.domine .sidebar h6 {
+  text-transform: none;
 }
 /**
  * Secondary Layout

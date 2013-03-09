@@ -16,11 +16,10 @@
 @color_sticky:		#1b60d3;
 @FontAwesomePath:   "includes/typefaces";
 
-@fontstack_headings: 			'Open Sans Condensed', sans-serif;
-@fontstack_headings_sidebar: 	'Open Sans Condensed', sans-serif;
 @fontstack_body: 				'Open Sans', sans-serif;
+@fontstack_headings: 			@fontstack_body;
+@fontstack_headings_sidebar: 	'Open Sans Condensed', sans-serif;
 @fontstack_monospace: 			monospace, sans-serif; /* Monospace */
-@fontstack_navigation: 			'Cantarell', sans-serif;
 
 /* -- [ Functions ] --------------------------------------------------------------------------*/
 
@@ -116,7 +115,7 @@
 }
 
 .small_upper() {
-	font-family: @fontstack_navigation;
+	font-family: @fontstack_body;
 	text-transform: uppercase;
 	font-size:.75em;
 	letter-spacing: 1px;

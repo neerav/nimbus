@@ -340,6 +340,14 @@ function nimbus_typography() {
             'value' => 'georgia',
             'label' => __( 'Georgia', 'nimbus' ),
         ),
+        'merriweather' => array(
+            'value' => 'merriweather',
+            'label' => __( 'Merriweather', 'nimbus' ),
+        ),
+        'domine' => array(
+            'value' => 'domine',
+            'label' => __( 'Domine', 'nimbus' ),
+        ),
     );
 
     return apply_filters( 'nimbus_typography', $typography_options );
@@ -360,6 +368,10 @@ function nimbus_typography_classes( $existing_classes ) {
         $classes[] = 'helvetica';
     elseif ( 'georgia' == $current_typography )
         $classes[] = 'georgia';
+    elseif ( 'merriweather' == $current_typography )
+        $classes[] = 'merriweather';
+    elseif ( 'domine' == $current_typography )
+        $classes[] = 'domine';
     else
         $classes[] = $current_typography;
 

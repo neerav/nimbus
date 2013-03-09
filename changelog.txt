@@ -8,6 +8,7 @@
 - Gave the sidebar a name / id
 - Centrally aligned the layout. Left aligned looked too crazy on large screens.
 - Max-height on images in lightbox for mobile & desktop
+- Adjusted default typography slightly
 
 [22/02/2013 - version 0.2.3]
 - Changed header layout slightly to improve visual hierarchy and nav styling
