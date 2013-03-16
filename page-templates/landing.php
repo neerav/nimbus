@@ -1,6 +1,8 @@
 <?php
 /**
- * The page template.
+ * Template Name: Landing Page
+ *
+ * The landing page template. Full width, no comments, featuring three footer widget regions
  *
  * @package WordPress
  * @subpackage Nimbus
@@ -30,8 +32,6 @@ get_header();
 			<?php nimbus_entry_bottom(); ?>
 
 		</article><!-- #post-<?php the_ID(); ?> -->
-
-		<?php comments_template( '', true ); ?>
 
 	<?php endwhile; // end of the loop. ?>
 

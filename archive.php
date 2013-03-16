@@ -13,7 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 get_header();
 ?>
 
+<?php nimbus_content_before(); ?>
+
 <section class="content" role="main">
+
+	<?php nimbus_content_top(); ?>
+
 	<?php if (is_category()) { ?>
 
     	<h1 class="archive-header category">
@@ -41,8 +46,6 @@ get_header();
 
 		<?php get_template_part( 'loop' ); ?>
 
-		<?php nimbus_content_nav( 'nav-below' ); ?>
-
 	<?php else : ?>
 
 		<article id="post-0" class="post no-results not-found">
@@ -57,6 +60,11 @@ get_header();
 		</article><!-- #post-0 -->
 
 	<?php endif; ?>
+
+	<?php nimbus_content_bottom(); ?>
+
 </section>
+
+<?php nimbus_content_after(); ?>
 
 <?php get_footer(); ?>

@@ -10,7 +10,9 @@
 
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
-	<div class="comments" <?php if ( ! comments_open() && post_type_supports( get_post_type(), 'comments' ) && is_page() ) { echo 'class="page-nocomments"'; } ?>>
+<?php nimbus_comments_before(); ?>
+
+<div class="comments" <?php if ( ! comments_open() && post_type_supports( get_post_type(), 'comments' ) && is_page() ) { echo 'class="page-nocomments"'; } ?>>
 	<?php if ( post_password_required() ) : ?>
 		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'nimbus' ); ?></p>
 	</div><!-- #comments -->
@@ -57,4 +59,6 @@
 
 	<?php comment_form(); ?>
 
-</div><!-- #comments -->
+</div><!-- .comments -->
+
+<?php nimbus_comments_after(); ?>

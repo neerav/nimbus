@@ -2,13 +2,23 @@
 - Added layout options (Pilfered from TwentyEleven - kudos!)
 - Added typography options
 - Added navigation theme option
-- Google loaded conditionally based on typography settings
+- Added Modernizr to detect css3 transformations
+- Added back to top link
+- Added theme-hooks.php and several functions are now hooked into these actions
+- Added Theme Hook Alliance (https://github.com/zamoose/themehookalliance) support
+- Added page-templates/landing.php
+- Added Custom header support
+- Google fonts loaded conditionally based on typography settings
 - Re-added static front page theme option
 - Active nav styles only apply to top level links
 - Gave the sidebar a name / id
 - Centrally aligned the layout. Left aligned looked too crazy on large screens.
 - Max-height on images in lightbox for mobile & desktop
 - Adjusted default typography slightly
+- Removed html5shiv (included in modernizr)
+- Rewritted mobile navigation system
+- Gravatar no longer 100% rounded
+- Improved link and status post format styling
 
 [22/02/2013 - version 0.2.3]
 - Changed header layout slightly to improve visual hierarchy and nav styling

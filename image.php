@@ -12,16 +12,22 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 get_header();
 ?>
 
+<?php nimbus_content_before(); ?>
 
 <section class="content" role="main">
+
+	<?php nimbus_content_top(); ?>
 
 	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 	<article <?php post_class(); ?>>
 
 		<header class="post-header">
+
 			<time class="post-date"><?php the_time(get_option('date_format')); ?></time>
+
 			<h1 class="title" data-text="<?php the_title(); ?>"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'nimbus' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+
 		</header>
 
 		<?php
@@ -66,15 +72,18 @@ get_header();
 				?></a>
 
 				<?php if ( ! empty( $post->post_excerpt ) ) : ?>
+
 				<div class="entry-caption">
+
 					<?php the_excerpt(); ?>
+
 				</div>
+
 				<?php endif; ?>
+
 			</div><!-- .attachment -->
 
 			<?php edit_post_link( __( 'Edit', 'nimbus' ), '', '' ); ?>
-
-
 
 			<?php comments_template( '', true ); ?>
 
@@ -83,7 +92,9 @@ get_header();
 		<aside class="meta">
 
 			<nav class="gallery-nav">
+
 				<?php next_image_link(); ?>
+
 				<?php previous_image_link(); ?>
 			</nav>
 
@@ -94,7 +105,10 @@ get_header();
 
 	<?php endwhile; // end of the loop. ?>
 
+	<?php nimbus_content_bottom(); ?>
+
 </section>
 
+<?php nimbus_content_after(); ?>
 
 <?php get_footer(); ?>

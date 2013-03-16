@@ -13,9 +13,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 get_header();
 ?>
 
+<?php nimbus_content_before(); ?>
+
 <section class="content" role="main">
 
-	<section role="main">
+	<?php nimbus_content_top(); ?>
 
 	<h1><?php _e('404 not found', 'nimbus'); ?></h1>
 
@@ -23,8 +25,10 @@ get_header();
 
 	<?php get_search_form(); ?>
 
-	</section>
+	<?php nimbus_content_bottom(); ?>
 
 </section>
+
+<?php nimbus_content_after(); ?>
 
 <?php get_footer(); ?>

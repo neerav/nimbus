@@ -17,14 +17,17 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 
 <?php get_header(); ?>
 
+<?php nimbus_content_before(); ?>
+
 <section class="content" role="main">
-	<?php if ( have_posts() ) : ?>
+
+	<?php nimbus_content_top(); ?>
+
+	<?php if ( have_posts() ) { ?>
 
 		<?php get_template_part( 'loop' ); ?>
 
-		<?php nimbus_content_nav( 'nav-below' ); ?>
-
-	<?php else : ?>
+	<?php } else { ?>
 
 		<article id="post-0" class="post no-results not-found">
 			<header class="entry-header">
@@ -37,7 +40,12 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 			</div><!-- .entry-content -->
 		</article><!-- #post-0 -->
 
-	<?php endif; ?>
+	<?php } ?>
+
+	<?php nimbus_content_bottom(); ?>
+
 </section>
+
+<?php nimbus_content_after(); ?>
 
 <?php get_footer(); ?>

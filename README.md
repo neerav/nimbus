@@ -19,6 +19,7 @@ You can customise Nimbus' appearance in a bunch of different ways to suit your s
 * Site Title & Tagline - Change your site title & tagline.
 * Colors - Change theme colors such as background, text, link etc
 * Layout - Position the sidebar on the left or the right
+* Header Image - The image will tile in the header so be sure to pick one that's sufficiently wide, or which seamlessly tiles.
 * Typography - Choose from preset typographical configurations
 * Background Image - Change the background image
 * Navigation - Specify which menu to use in the menu location
@@ -28,9 +29,17 @@ You can customise Nimbus' appearance in a bunch of different ways to suit your s
 
 The link post format is automatically converted to markup. Put the anchor text as the post title and the URL as the post content.
 
+## Page template - landing page
+
+The landing page template is a full width page template featuring three columns of widgetised regions above the footer.
+
 ## WooCommerce
 
 Nimbus has been prepared for use with [WooCommerce](http://www.woothemes.com/woocommerce/). For now this is _simple preparation_, that means the layout will work, but styles will be inherited from the woocommerce.css file within WooCommerce. This may not mesh too nicely depending on which color scheme you configure. Light color schemes will work best.
+
+## Theme Hook Alliance
+
+Nimbus fully supports the [Theme Hook Alliance](https://github.com/zamoose/themehookalliance).
 
 # Misc
 

@@ -17,6 +17,12 @@ require_once ( get_template_directory() . '/includes/theme-functions.php' );
 // Load theme actions
 require_once ( get_template_directory() . '/includes/theme-actions.php' );
 
+// Load theme hooks
+require_once ( get_template_directory() . '/includes/theme-hooks.php' );
+
+// Load tha hooks
+require_once ( get_template_directory() . '/includes/tha-theme-hooks.php' );
+
 // Lod WooCommerce functions if WooCommerce is activated
 if (class_exists('woocommerce')) {
 	require_once ( get_template_directory() . '/includes/theme-woocommerce.php' );

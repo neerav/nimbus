@@ -22,7 +22,6 @@
   speak: none;
   width: 1.5em;
   display: inline-block;
-  float: right;
   text-align: right;
 }
 .contentbox {
@@ -69,7 +68,6 @@
   speak: none;
   width: 1.5em;
   display: inline-block;
-  float: right;
   text-align: right;
   content: "\f08e";
 }
@@ -180,7 +178,9 @@ body:after {
     width: 59.8%;
   }
 }
-.post-type-archive-product .woocommerce ul.products {
+.post-type-archive-product .woocommerce ul.products,
+.tax-product_cat .woocommerce ul.products,
+.tax-product_tag .woocommerce ul.products {
   display: block;
   width: 105.55555555555554%;
   margin-left: -2.777777777777778%;
@@ -191,14 +191,22 @@ body:after {
   *zoom: 1;
 }
 .post-type-archive-product .woocommerce ul.products:before,
-.post-type-archive-product .woocommerce ul.products:after {
+.tax-product_cat .woocommerce ul.products:before,
+.tax-product_tag .woocommerce ul.products:before,
+.post-type-archive-product .woocommerce ul.products:after,
+.tax-product_cat .woocommerce ul.products:after,
+.tax-product_tag .woocommerce ul.products:after {
   content: "";
   display: table;
 }
-.post-type-archive-product .woocommerce ul.products:after {
+.post-type-archive-product .woocommerce ul.products:after,
+.tax-product_cat .woocommerce ul.products:after,
+.tax-product_tag .woocommerce ul.products:after {
   clear: both;
 }
-.post-type-archive-product .woocommerce ul.products li.product {
+.post-type-archive-product .woocommerce ul.products li.product,
+.tax-product_cat .woocommerce ul.products li.product,
+.tax-product_tag .woocommerce ul.products li.product {
   display: inline;
   float: left;
   width: 27.77777777777778%;
