@@ -98,7 +98,6 @@ body.admin-bar {
 .inner-wrap {
 	position: relative;
 	width: 100%;
-	background: @color_bg;
 	left:0;
 }
 
@@ -539,7 +538,7 @@ ul.menu {
 /**
  * Posts
  */
-.post, .page {
+article.post, article.page, #respond {
 	margin-bottom:5.61em;
 	padding-bottom:1.999em;
 }
@@ -962,10 +961,16 @@ table {
 .page-template-page-templateslanding-php {
 	.content {
 		.column(12);
+		float: none;
 		.article-content {
 			p {
 				width:100%;
 			}
+		}
+	}
+	.widgets {
+		.widget {
+			.column(4);
 		}
 	}
 }
@@ -1508,11 +1513,11 @@ body.georgia {
 body.helvetica {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 300;
-	h1, h2, h3, h4, h5, h6, blockquote, blockquote cite, .post-date, ul.menu li a, .comments .comment-author cite, input[type="submit"], .button {
+	h1, h2, h3, h4, h5, h6, blockquote, blockquote cite, .post-date, ul.menu li a, .comments .comment-author cite {
 		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     	font-weight: 300;
 	}
-	h1, h2, h3, h4, h5, h6, a, ul.menu li a {
+	h1, h2, h3, h4, h5, h6, a, ul.menu li a, input[type="submit"], .button {
 		font-weight: 700;
 		font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 

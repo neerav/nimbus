@@ -173,7 +173,7 @@ class NimbusOptions
                     self::generate_css( '.navigation a, input[type="submit"], .button, input[type="text"], textarea, .button, .format-link h1 a', 'color', 'background_color', '#' );
 
                     // Background color applied to background
-                    self::generate_css( '.inner-wrap, .main-nav', 'background-color', 'background_color', '#' );
+                    self::generate_css( 'body, .main-nav', 'background-color', 'background_color', '#' );
                 ?>
                 @media only screen and (min-width: 769px) {
                     /* Styles only applied to desktop */

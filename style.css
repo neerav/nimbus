@@ -589,7 +589,6 @@ body.admin-bar:before {
 .inner-wrap {
   position: relative;
   width: 100%;
-  background: #2b2b2b;
   left: 0;
 }
 /**
@@ -1109,8 +1108,9 @@ ul.menu ul {
 /**
  * Posts
  */
-.post,
-.page {
+article.post,
+article.page,
+#respond {
   margin-bottom: 5.61em;
   padding-bottom: 1.999em;
 }
@@ -1876,9 +1876,20 @@ table {
   *width: 95.78125000000001%;
   *margin-left: 2.03125%;
   *margin-right: 2.03125%;
+  float: none;
 }
 .page-template-page-templateslanding-php .content .article-content p {
   width: 100%;
+}
+.page-template-page-templateslanding-php .widgets .widget {
+  display: inline;
+  float: left;
+  width: 29.166666666666668%;
+  margin-left: 2.0833333333333335%;
+  margin-right: 2.0833333333333335%;
+  *width: 29.114583333333336%;
+  *margin-left: 2.03125%;
+  *margin-right: 2.03125%;
 }
 /**
  * Lightbox
@@ -2713,9 +2724,7 @@ body.helvetica blockquote,
 body.helvetica blockquote cite,
 body.helvetica .post-date,
 body.helvetica ul.menu li a,
-body.helvetica .comments .comment-author cite,
-body.helvetica input[type="submit"],
-body.helvetica .button {
+body.helvetica .comments .comment-author cite {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
 }
@@ -2726,7 +2735,9 @@ body.helvetica h4,
 body.helvetica h5,
 body.helvetica h6,
 body.helvetica a,
-body.helvetica ul.menu li a {
+body.helvetica ul.menu li a,
+body.helvetica input[type="submit"],
+body.helvetica .button {
   font-weight: 700;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }

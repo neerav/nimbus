@@ -141,6 +141,8 @@ function nimbus_main_navigation() {
  */
 if ( ! function_exists( 'nimbus_widgets_init' ) ) {
 	function nimbus_widgets_init() {
+
+		// The sidebar
 	    register_sidebar( array(
 	    	'name'          => __( 'Sidebar', 'nimbus' ),
 			'id'            => 'primary-sidebar',
@@ -148,6 +150,17 @@ if ( ! function_exists( 'nimbus_widgets_init' ) ) {
 		    'after_widget' 	=> '</section>',
 		    'before_title' 	=> '<h3>',
 		    'after_title' 	=> '</h3>',
+		) );
+
+		// The landing page footer
+	    register_sidebar( array(
+	    	'name'          => __( 'Landing Page Footer', 'nimbus' ),
+			'id'            => 'landing-page-footer',
+		    'before_widget' => '<section class="widget">',
+		    'after_widget' 	=> '</section>',
+		    'before_title' 	=> '<h3>',
+		    'after_title' 	=> '</h3>',
+		    'description'	=> 'Widgets placed here will appear above the footer on the landing page template and be split into 3 columns.'
 		) );
 	}
 }

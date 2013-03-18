@@ -39,6 +39,12 @@ get_header();
 
 </section><!-- /.content -->
 
+<section class="widgets">
+
+	<?php dynamic_sidebar( 'landing-page-footer' ); ?>
+
+</section>
+
 <?php nimbus_content_after(); ?>
 
 <?php get_footer(); ?>
