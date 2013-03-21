@@ -141,6 +141,16 @@
   display: inline-block;
   content: "\f02b";
 }
+.icon_post:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  content: "\f0f6";
+}
 /* -- [ Mixins ] --------------------------------------------------------------------------*/
 /**
  * Animation

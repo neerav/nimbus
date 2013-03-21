@@ -60,6 +60,8 @@ body {
 	line-height: 1.777;
 	overflow-x:hidden;
 	color: @color_body;
+	-ms-word-wrap: break-word;
+	word-wrap:break-word;
 	&:before, &:after {
 		display: block;
 		content: "";
@@ -85,6 +87,9 @@ body.admin-bar {
 	}
 }
 
+.assistive-text {
+	display: none;
+}
 
 /**
  * Wrappers
@@ -147,7 +152,7 @@ p + h1, p + h2, p + h3, p + h4 {
 }
 
 p, ul, ol, dl, blockquote, pre, table, fieldset, article, article footer, nav {
-	margin: 0 0 1.777em 0;
+	margin: 0 0 1.999em 0;
 }
 
 ul, ol {
@@ -159,6 +164,11 @@ ul, ol {
 
 dd {
 	margin-left:1.777em;
+}
+
+mark {
+	background: none;
+	.opacity(0.5);
 }
 
 p {
@@ -173,8 +183,19 @@ p {
 
 small, .small {font-size:0.844em; line-height: 1.75em;}
 
-strong {
+strong, dt {
 	font-weight: 700;
+}
+acronym, abbr[title] {
+	cursor: help;
+	font-variant: small-caps;
+	font-weight: 700;
+	border:none;
+}
+
+ins {
+	border-bottom:1px solid rgba(0,0,0,0.1);
+	text-decoration: none;
 }
 
 blockquote {
@@ -244,7 +265,7 @@ span.ampersand {
 	font-style: italic;
 }
 
-img {
+img, .wp-caption {
 	max-width:100%;
 	height:auto;
 }
@@ -304,7 +325,7 @@ textarea {
 
 input[type="submit"], .button {
 	display: inline-block;
-	padding:.422em .844em;
+	padding:.844em 1.125em;
 	font-size: 1em;
 	font-family: @fontstack_body;
 	background: @color_theme;
@@ -314,8 +335,14 @@ input[type="submit"], .button {
 	.border_radius;
 	text-decoration: none;
 	font-weight: 700;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	position: relative;
 	&:hover {
 		text-decoration: none;
+	}
+	&:active {
+		top:1px;
 	}
 }
 
@@ -809,16 +836,24 @@ p.nocomments {
 	}
 }
 
-/**
- * Navigation
- */
-
 
 /**
  * Tables
  */
 table {
 	width:100%;
+	border-collapse: separate;
+	th, td {
+		padding:.563em;
+	}
+	tr {
+		th, td {
+			border-bottom:1px solid rgba(0,0,0,0.1);
+			&:first-child {
+				padding-left:0;
+			}
+		}
+	}
 }
 
 /**
@@ -858,9 +893,10 @@ table {
 }
 
 .navigation {
-	padding-top:1em;
+	margin-top:1em;
 	clear:both;
 	.clearfix;
+	margin-bottom:2.665em;
 	.prev, .next {
 		width:50%;
 		float: left;
@@ -885,13 +921,14 @@ table {
 			left:0;
 			width:100%;
 			text-indent: 0;
-			font-size:1.333em;
-			line-height: 2.1;
+			font-size:1em;
+			line-height: 2.8;
 			text-align: center;
 		}
 	}
 	.next {
 		text-align: right;
+		float: right;
 		a {
 			&:before {
 				content: "\f054";
@@ -963,8 +1000,14 @@ table {
 		.column(12);
 		float: none;
 		.article-content {
+			p:first-child {
+				font-size:1.618em;
+				&:first-line {
+					font-weight: 700;
+				}
+			}
 			p {
-				width:100%;
+				width:65.2%;
 			}
 		}
 	}
@@ -1233,7 +1276,6 @@ table {
 	        text-align: left;
 	        background-color: @color_theme;
 	        padding:.356em 0;
-	        .border_radius_bottom;
 	        .inset_box_shadow(0,1px,0,0,rgba(255,255,255,0.2));
 	        li {
 	            float: none;
@@ -1414,7 +1456,13 @@ table {
 	 */
 	.comments {
 		.row(8);
+		ol.commentlist {
+			margin-bottom:0;
+		}
 		ol.commentlist, .comments-title, #respond {
+			.column(6,8);
+		}
+		.navigation {
 			.column(6,8);
 		}
 	}
@@ -1495,7 +1543,7 @@ table {
  * Open Sans is default, these styles override typography based on selection
  */
 body.georgia, body.helvetica, body.merriweather, body.domine {
-	h1, h2, h3, h4, h5, h6, blockquote, blockquote cite, .post-date, ul.menu li a, .comments .comment-author cite, input[type="submit"], .button {
+	h1, h2, h3, h4, h5, h6, blockquote, blockquote cite, .post-date, ul.menu li a, .comments .comment-author cite, input[type="submit"], .button, .comments .comment-author .comment-meta {
 		text-transform: none;
 		letter-spacing: 0;
 	}

@@ -29,14 +29,6 @@
 			?>
 		</h2>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-above">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'nimbus' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'nimbus' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'nimbus' ) ); ?></div>
-		</nav>
-		<?php endif; // check for comment navigation ?>
-
 		<ol class="commentlist">
 			<?php
 				wp_list_comments( 'callback=nimbus_comment&avatar_size=96' );
@@ -44,10 +36,10 @@
 		</ol>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-below">
+		<nav class="navigation comments-nav">
 			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'nimbus' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'nimbus' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'nimbus' ) ); ?></div>
+			<div class="prev"><?php previous_comments_link( __( '&larr; Older Comments', 'nimbus' ) ); ?></div>
+			<div class="next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'nimbus' ) ); ?></div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
 

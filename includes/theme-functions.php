@@ -9,6 +9,7 @@
 
 /**
  * Setup Theme
+ * Hooked into after_setup_theme()
  * @since  0.1
  */
 if ( ! function_exists( 'nimbus_setup' ) ) {
@@ -29,6 +30,7 @@ if ( ! function_exists( 'nimbus_setup' ) ) {
 
 /**
  * Enqueue scripts
+ * Hooked into wp_enqueue_scripts()
  * @since  0.1
  */
 if ( ! function_exists( 'nimbus_add_scripts' ) ) {
@@ -137,6 +139,7 @@ function nimbus_main_navigation() {
 
 /**
  * Widget init
+ * Hooked into widgets_init()
  * @since  0.1
  */
 if ( ! function_exists( 'nimbus_widgets_init' ) ) {
@@ -169,6 +172,8 @@ if ( ! function_exists( 'nimbus_widgets_init' ) ) {
 /**
  * Sidebar
  * Displays the sidebar
+ * Hooked into nimbus_content_after()
+ * @since  0.3
  */
 if ( ! function_exists( 'nimbus_sidebar' ) ) {
 	function nimbus_sidebar() {
@@ -187,8 +192,8 @@ if ( ! function_exists( 'nimbus_sidebar' ) ) {
 
 /**
  * Post Meta
- * @since  0.1
  * Hooked into nimbus_entry_bottom()
+ * @since  0.1
  */
 if ( ! function_exists( 'nimbus_post_meta' ) ) {
 	function nimbus_post_meta() {
@@ -209,8 +214,8 @@ if ( ! function_exists( 'nimbus_post_meta' ) ) {
 
 /**
  * Archive Pagination
- * @since  0.1
  * Hooked into nimbus_entry_after()
+ * @since  0.1
  */
 if ( ! function_exists( 'nimbus_content_nav' ) ) {
 	function nimbus_content_nav() {
@@ -326,8 +331,8 @@ function woo_get_menu_name( $location ){
 
 /**
  * Credit
- * @since  0.3
  * Hooked into nimbus_footer
+ * @since  0.3
  */
 function nimbus_credit() {
 	?>
@@ -340,8 +345,8 @@ function nimbus_credit() {
 
 /**
  * Back to top link
- * @since  0.3
  * Hooked into nimbus_footer
+ * @since  0.3
  */
 function nimbus_back_to_top() {
 	?>
@@ -378,6 +383,7 @@ if ( ! function_exists( 'nimbus_excerpt_more' ) ) {
 
 /**
  * Simply outputs an <hr>
+ * Hooked into nimbus_header_after() and nimbus_footer_before()
  * @since  0.3
  */
 if ( ! function_exists( 'nimbus_hr' ) ) {
@@ -391,11 +397,11 @@ if ( ! function_exists( 'nimbus_hr' ) ) {
  * Creates a nicely formatted and more specific title element text
  * for output in head of document, based on current view.
  *
- * @since 0.3
  *
  * @param string $title Default title text for current view.
  * @param string $sep Optional separator.
  * @return string Filtered title.
+ * @since 0.3
  */
 function nimbus_wp_title( $title, $sep ) {
 	global $paged, $page;
