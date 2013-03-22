@@ -19,6 +19,7 @@
 - Rewritted mobile navigation system
 - Gravatar no longer 100% rounded
 - Improved link and status post format styling
+- Updated color scheme to be light by default
 
 [22/02/2013 - version 0.2.3]
 - Changed header layout slightly to improve visual hierarchy and nav styling

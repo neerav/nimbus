@@ -176,7 +176,7 @@ body#tinymce.wp-editor {
   font-size: 1.125em;
   line-height: 1.5;
   padding-right: 31%;
-  color: #666666;
+  color: #9b9b9b;
 }
 body#tinymce.wp-editor h1,
 body#tinymce.wp-editor h2,
@@ -197,5 +197,5 @@ body#tinymce.wp-editor pre {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
 }
 body#tinymce.wp-editor a {
-  color: #49a0a0;
+  color: #32b5c9;
 }

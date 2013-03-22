@@ -37,22 +37,22 @@ class NimbusOptions
 
         // Link Color Default
         $wp_customize->add_setting('link_textcolor', array(
-                'default'   => '#49a0a0',
+                'default'   => '#32b5c9',
         ) );
 
         // Heading Color Default
         $wp_customize->add_setting('headercolor', array(
-                'default'   => '#aaaaaa',
+                'default'   => '#898989',
         ) );
 
         // Text Color Default
         $wp_customize->add_setting('textcolor', array(
-                'default'   => '#666666',
+                'default'   => '#9b9b9b',
         ) );
 
         // Background Color Default
         $wp_customize->add_setting('background_color', array(
-                'default'   => '#2b2b2b',
+                'default'   => '#f9f9f9',
         ) );
 
 
@@ -235,7 +235,7 @@ add_action( 'wp_head'               , array( 'NimbusOptions' , 'nimbus_render' )
  * @var default background color
  */
 $args = array(
-    'default-color' => '2b2b2b',
+    'default-color' => 'f9f9f9',
 );
 add_theme_support( 'custom-background', $args );
 

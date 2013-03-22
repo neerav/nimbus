@@ -5,7 +5,7 @@ Description: Nimbus is a lightweight, free WordPress theme designed with your co
 Author: James Koster
 Author URI: http://jameskoster.co.uk/
 Version: 0.3
-Tags: gray, two-columns, left-sidebar, flexible-width, post-formats, sticky-post, threaded-comments, translation-ready, theme-options, dark
+Tags: white, two-columns, left-sidebar, right-sidebar, flexible-width, post-formats, sticky-post, threaded-comments, translation-ready, theme-options, light
 
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -556,7 +556,7 @@ body {
   font-size: 1.125em;
   line-height: 1.777;
   overflow-x: hidden;
-  color: #666666;
+  color: #9b9b9b;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
 }
@@ -568,7 +568,7 @@ body:after {
   position: fixed;
   left: 0;
   right: 0;
-  background: #666666;
+  background: #9b9b9b;
   z-index: 9999;
   width: 100%;
 }
@@ -624,7 +624,7 @@ h6,
   font-weight: 700;
   margin: 0;
   margin-bottom: 1em;
-  color: #aaaaaa;
+  color: #dfdfdf;
   line-height: 1.333;
   position: relative;
   word-spacing: .113em;
@@ -813,7 +813,7 @@ img,
  * Anchors
  */
 a {
-  color: #49a0a0;
+  color: #32b5c9;
   text-decoration: none;
 }
 a:hover {
@@ -869,8 +869,8 @@ textarea {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  background: #aaaaaa;
-  color: #2b2b2b;
+  background: #dfdfdf;
+  color: #f9f9f9;
   outline: none;
 }
 textarea {
@@ -882,8 +882,8 @@ input[type="submit"],
   padding: .844em 1.125em;
   font-size: 1em;
   font-family: 'Open Sans', sans-serif;
-  background: #49a0a0;
-  color: #2b2b2b;
+  background: #32b5c9;
+  color: #f9f9f9;
   border: 0;
   font-size: .844em;
   -webkit-border-radius: 3px;
@@ -906,7 +906,7 @@ input[type="submit"]:active,
 hr {
   height: 1px;
   border: 0;
-  background: #666666;
+  background: #9b9b9b;
   filter: alpha(opacity=@opacity * 100);
   -moz-opacity: 0.2;
   -khtml-opacity: 0.2;
@@ -1026,7 +1026,7 @@ ul.menu ul {
   top: 0;
   height: 100%;
   z-index: 99999;
-  background: #2b2b2b;
+  background: #f9f9f9;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2NkYGCQBAAAIwAbDJgTxgAAAABJRU5ErkJggg==);
 }
 .main-nav .buttons {
@@ -1255,8 +1255,8 @@ img.wp-post-image {
   display: inline-block;
   display: block;
   padding: .563em 1em .563em 2.665em;
-  background: #49a0a0;
-  color: #2b2b2b;
+  background: #32b5c9;
+  color: #f9f9f9;
   border: 0;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -1615,7 +1615,7 @@ p.nocomments:before {
   font-weight: 700;
   margin: 0;
   margin-bottom: 1em;
-  color: #aaaaaa;
+  color: #dfdfdf;
   line-height: 1.333;
   position: relative;
   word-spacing: .113em;
@@ -1628,7 +1628,7 @@ p.nocomments:before {
 }
 .comments .comment-author cite a {
   display: inline-block;
-  color: #aaaaaa;
+  color: #dfdfdf;
 }
 .comments .comment-author cite a:after {
   font-family: "FontAwesome";
@@ -1838,8 +1838,8 @@ table tr td:first-child {
   -moz-transition: all ease-in-out 0.2s;
   -o-transition: all ease-in-out 0.2s;
   transition: all ease-in-out 0.2s;
-  background: #49a0a0;
-  color: #2b2b2b;
+  background: #32b5c9;
+  color: #f9f9f9;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -2229,7 +2229,7 @@ table tr td:first-child {
     padding: 0;
   }
   .main-nav ul.menu a {
-    color: #49a0a0;
+    color: #32b5c9;
   }
   ul.menu {
     position: relative;
@@ -2253,7 +2253,7 @@ table tr td:first-child {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     text-decoration: none;
-    color: #2b2b2b;
+    color: #f9f9f9;
   }
   ul.menu li.parent > a:after {
     font-family: "FontAwesome";
@@ -2280,7 +2280,7 @@ table tr td:first-child {
     left: 0;
     bottom: 0;
     right: 0;
-    background: #666666;
+    background: #9b9b9b;
     filter: alpha(opacity=@opacity * 100);
     -moz-opacity: 0.2;
     -khtml-opacity: 0.2;
@@ -2296,7 +2296,7 @@ table tr td:first-child {
     margin: 0;
     padding: 0;
     text-align: left;
-    background-color: #49a0a0;
+    background-color: #32b5c9;
     padding: .356em 0;
     box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
     -webkit-box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
@@ -2316,7 +2316,7 @@ table tr td:first-child {
     font-size: .844em;
     padding: 0;
     background: none;
-    color: #2b2b2b;
+    color: #f9f9f9;
   }
   ul.menu ul li.parent > a:after {
     font-family: "FontAwesome";
