@@ -36,22 +36,22 @@ class NimbusOptions
         ) );
 
         // Link Color Default
-        $wp_customize->add_setting('link_textcolor', array(
+        $wp_customize->add_setting( 'link_textcolor', array(
                 'default'   => '#32b5c9',
         ) );
 
         // Heading Color Default
-        $wp_customize->add_setting('headercolor', array(
+        $wp_customize->add_setting( 'headercolor', array(
                 'default'   => '#898989',
         ) );
 
         // Text Color Default
-        $wp_customize->add_setting('textcolor', array(
+        $wp_customize->add_setting( 'textcolor', array(
                 'default'   => '#9b9b9b',
         ) );
 
         // Background Color Default
-        $wp_customize->add_setting('background_color', array(
+        $wp_customize->add_setting( 'background_color', array(
                 'default'   => '#f9f9f9',
         ) );
 
@@ -62,7 +62,7 @@ class NimbusOptions
 
         // Navigation Section
         $wp_customize->add_section( 'nav', array(
-             'title'          => __( 'Navigation' ),
+             'title'          => __( 'Navigation', 'nimbus' ),
              'theme_supports' => 'menus',
              'priority'       => 100,
         ) );
