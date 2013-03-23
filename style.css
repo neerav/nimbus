@@ -791,6 +791,7 @@ pre {
   padding: 0 .201em;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: 700;
 }
 pre {
   padding: .633em;
@@ -2794,8 +2795,7 @@ body.helvetica h6,
 body.helvetica blockquote,
 body.helvetica blockquote cite,
 body.helvetica .post-date,
-body.helvetica ul.menu li a,
-body.helvetica .comments .comment-author cite {
+body.helvetica ul.menu li a {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
 }
@@ -2808,7 +2808,8 @@ body.helvetica h6,
 body.helvetica a,
 body.helvetica ul.menu li a,
 body.helvetica input[type="submit"],
-body.helvetica .button {
+body.helvetica .button,
+body.helvetica cite.fn {
   font-weight: 700;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }

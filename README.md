@@ -31,11 +31,11 @@ The link post format is automatically converted to markup. Put the anchor text a
 
 ## Page template - landing page
 
-The landing page template is a full width page template featuring three columns of widgetised regions above the footer.
+The landing page template is a full width page template featuring three columns of widgetised regions above the footer. This template is perfect for static homepages or landing pages.
 
 ## WooCommerce
 
-Nimbus has been prepared for use with [WooCommerce](http://www.woothemes.com/woocommerce/). For now this is _simple preparation_, that means the layout will work, but styles will be inherited from the woocommerce.css file within WooCommerce. This may not mesh too nicely depending on which color scheme you configure. Light color schemes will work best.
+Nimbus has been prepared for use with [WooCommerce](http://www.woothemes.com/woocommerce/). For now this is _simple preparation_, that means the layout will work, but styles will be inherited from the woocommerce.css file within WooCommerce. This may not mesh too nicely depending on which color scheme you configure. Light color schemes will work best in this regard.
 
 ## Theme Hook Alliance
 

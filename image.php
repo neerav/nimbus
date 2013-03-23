@@ -83,13 +83,9 @@ get_header();
 
 			</div><!-- .attachment -->
 
-			<?php edit_post_link( __( 'Edit', 'nimbus' ), '', '' ); ?>
-
-			<?php comments_template( '', true ); ?>
-
 		</section><!--/.article-content-->
 
-		<aside class="meta">
+		<aside class="post-meta">
 
 			<nav class="gallery-nav">
 

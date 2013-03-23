@@ -1,3 +1,4 @@
+(function ($) {
 jQuery(document).ready(function(){
 
 	// Lightbox
@@ -107,3 +108,4 @@ jQuery(document).ready(function(){
     });
 
 });
+}(jQuery));
