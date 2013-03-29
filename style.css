@@ -4,7 +4,7 @@ Theme URI: https://github.com/jameskoster/nimbus
 Description: Nimbus is a lightweight, free WordPress theme designed with your content in mind. It features a clean design with a strong focus on typography, plus a bunch of presentational options allowing you to make your site unique. <a href="http://twitter.com/jameskoster/">Follow me on Twitter</a> for updates.
 Author: James Koster
 Author URI: http://jameskoster.co.uk/
-Version: 0.3
+Version: 0.3.1
 Tags: white, two-columns, left-sidebar, right-sidebar, flexible-width, post-formats, sticky-post, threaded-comments, translation-ready, theme-options, light
 
 License: GNU General Public License v2.0
@@ -2848,7 +2848,6 @@ body.merriweather blockquote,
 body.merriweather blockquote cite,
 body.merriweather .post-date,
 body.merriweather ul.menu li a,
-body.merriweather .comments .comment-author cite,
 body.merriweather input[type="submit"],
 body.merriweather .button {
   font-family: 'Merriweather Sans', sans-serif;
@@ -2860,10 +2859,13 @@ body.merriweather h3,
 body.merriweather h4,
 body.merriweather h5,
 body.merriweather h6 {
-  font-weight: 400;
+  font-weight: 700;
 }
 body.merriweather a,
-body.merriweather ul.menu li a {
+body.merriweather ul.menu li a,
+body.merriweather input[type="submit"],
+body.merriweather .button,
+body.merriweather cite.fn {
   font-weight: 700;
 }
 body.merriweather h1,
